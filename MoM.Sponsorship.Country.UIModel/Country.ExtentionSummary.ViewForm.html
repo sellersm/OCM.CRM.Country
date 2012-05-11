@@ -1,0 +1,113 @@
+﻿<style type="text/css">
+    .toolbar
+    {
+        width: 350px;
+        border-bottom: solid 1px #D4DCB9;
+        padding-bottom: 5px;
+    }
+    .toolbar-headertext
+    {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .boldtext
+    {
+        font-weight: bold;
+    }
+    .smallspacer
+    {
+        width: 2px;
+    }
+    .spacer
+    {
+        width: 7px;
+    }
+    .largespacer
+    {
+        width: 15px;
+    }
+    .verticalspacer
+    {
+        height: 1px;
+    }
+    
+    
+    /* Form / Section Divs */
+    
+    ##MAP#CountryExtentionViewForm
+    {
+        width: 300px;
+        padding: 10px;
+    }
+    #ColumnOne
+    {
+        float: left;
+        padding-right: 30px;
+        width: 400px;
+    }
+    #ColumnTwo
+    {
+        float: right;
+        width: 450px;
+    }
+    
+    /* object widths */
+    ##MAP#AREAINSQUAREKM_value, ##MAP#TOTALPOPULATION_value, ##MAP#URBANPOPULATION_value, ##MAP#RURALPOPULATION_value, ##MAP#TOTALPOPULATION_value
+    {
+        width: 75px;
+    }
+    ##MAP#LANGUAGEOTHERDESC_value, ##MAP#RELIGIONOTHERDESC_value, ##MAP#GOVERNMENTOTHERDESC_value
+    {
+        width: 125px;
+    }
+</style>
+<div id="#MAP#CountryExtentionViewForm">
+    <table>
+        <tr>
+            <td>
+                <span id="#MAP#FULLCOUNTRYNAME_caption" class="bbui-forms-captionlight"></span>
+            </td>
+            <td>
+                <span id="#MAP#FULLCOUNTRYNAME_value"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="verticalspacer">
+            </td>
+        </tr>
+        <tr id="#MAP#COUNTRYSTATUSCODE_container">
+            <td>
+                <span id="#MAP#COUNTRYSTATUSCODE_caption" class="bbui-forms-captionlight"></span>
+            </td>
+            <td>
+                <span id="#MAP#COUNTRYSTATUSCODE_value"></span>
+            </td>
+            <td class="largespacer">
+            </td>
+            <td>
+                <span id="#MAP#COUNTRYSTATUSDATE_caption" class="bbui-forms-captionlight"></span>
+            </td>
+            <td>
+                <span id="#MAP#COUNTRYSTATUSDATE_value"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="verticalspacer">
+            </td>
+        </tr>
+        <tr id="#MAP#COUNTRYREGIONCODE_container">
+            <td>
+                <span id="#MAP#COUNTRYREGIONCODE_caption" class="bbui-forms-captionlight"></span>
+            </td>
+            <td>
+                <span id="#MAP#COUNTRYREGIONCODE_value"></span>
+            </td>
+        </tr>
+    </table>
+    <!-- To define fields in multiple columns on the form, simply add/move the fields to this div
+        <div class="bbui-forms-fieldset-column">
+            <table>
+            </table>
+        </div>
+        -->
+</div>

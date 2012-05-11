@@ -1,0 +1,274 @@
+﻿<style type="text/css">
+    .toolbar
+    {
+        width: 350px;
+        border-bottom: solid 1px #D4DCB9;
+        padding-bottom: 5px;
+    }
+    .toolbar-headertext
+    {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .boldtext
+    {
+        font-weight: bold;
+    }
+    .smallspacer
+    {
+        width: 2px;
+    }
+    .spacer
+    {
+        width: 7px;
+    }
+    .largespacer
+    {
+        width: 20px;
+    }
+    
+    
+    /* Form / Section Divs */
+    
+    ##MAP#CountryExtentionOtherInfoViewDataForm
+    {
+        width: 800px;
+        padding: 10px;
+    }
+    #History
+    {
+        width: 800px;
+    }
+    #SocialIndicators
+    {
+        float: left;
+        padding-right: 30px;
+        width: 275px;
+    }
+    #Health
+    {
+        float: right;
+        width: 400px;
+    }
+    
+    /* object widths */
+    ##MAP#MAJORHOLIDAYSANDFESTIVALS_value, ##MAP#CULTURALTRADITIONS_value
+    {
+        width: 625px;
+    }
+</style>
+<div id="#MAP#CountryExtentionOtherInfoViewDataForm">
+    <div id="History">
+        <h3>
+            History</h3>
+        <table>
+            <tr id="#MAP#MAJORHOLIDAYSANDFESTIVALS_container">
+                <td>
+                    <span id="#MAP#MAJORHOLIDAYSANDFESTIVALS_caption" class="bbui-forms-captionlight">
+                    </span>
+                </td>
+                <td>
+                    <textarea id="#MAP#MAJORHOLIDAYSANDFESTIVALS_value" class="bbui-pre" rows="3" cols="1"  readonly="readonly"/>
+                </td>
+            </tr>
+            <tr id="#MAP#CULTURALTRADITIONS_container">
+                <td>
+                    <span id="#MAP#CULTURALTRADITIONS_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <textarea id="#MAP#CULTURALTRADITIONS_value" class="bbui-pre" rows="3" cols="1"  readonly="readonly"/>
+                </td>
+            </tr>
+        </table>
+        <br />
+    </div>
+    <div id="SocialIndicators">
+        <h3>
+            Social Indicators</h3>
+        <table>
+            <tr id="#MAP#CHILDMORTALITYRATEUNDERFIVE_container">
+                <td>
+                    <span id="#MAP#CHILDMORTALITYRATEUNDERFIVE_caption" class="bbui-forms-captionlight">
+                    </span>
+                </td>
+                <td>
+                    <span id="#MAP#CHILDMORTALITYRATEUNDERFIVE_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#INFANTMORTALITYRATE_container">
+                <td>
+                    <span id="#MAP#INFANTMORTALITYRATE_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <span id="#MAP#INFANTMORTALITYRATE_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#ANNUALINCOMEPERCAPITA_container">
+                <td>
+                    <span id="#MAP#ANNUALINCOMEPERCAPITA_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <span id="#MAP#ANNUALINCOMEPERCAPITA_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR_container">
+                <td>
+                    <span id="#MAP#PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR_caption" class="bbui-forms-captionlight">
+                    </span>
+                </td>
+                <td>
+                    <span id="#MAP#PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#LIFEEXPECTANCYATBIRTH_container">
+                <td>
+                    <span id="#MAP#LIFEEXPECTANCYATBIRTH_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <span id="#MAP#LIFEEXPECTANCYATBIRTH_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#FERTILITYRATE_container">
+                <td>
+                    <span id="#MAP#FERTILITYRATE_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <span id="#MAP#FERTILITYRATE_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#ADULTLITERACYRATE_container">
+                <td>
+                    <span id="#MAP#ADULTLITERACYRATE_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <span id="#MAP#ADULTLITERACYRATE_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#NETPRIMARYSCHOOLENROLLMENTATTENDANCE_container">
+                <td>
+                    <span id="#MAP#NETPRIMARYSCHOOLENROLLMENTATTENDANCE_caption" class="bbui-forms-captionlight">
+                    </span>
+                </td>
+                <td>
+                    <span id="#MAP#NETPRIMARYSCHOOLENROLLMENTATTENDANCE_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#PERCENTCHILDRENREACHINGGRADEFIVE_container">
+                <td>
+                    <span id="#MAP#PERCENTCHILDRENREACHINGGRADEFIVE_caption" class="bbui-forms-captionlight">
+                    </span>
+                </td>
+                <td>
+                    <span id="#MAP#PERCENTCHILDRENREACHINGGRADEFIVE_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#CHILDLABORPERCENTAGE_container">
+                <td>
+                    <span id="#MAP#CHILDLABORPERCENTAGE_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <span id="#MAP#CHILDLABORPERCENTAGE_value"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Health">
+        <h3>
+            Health</h3>
+        <table>
+            <tr id="#MAP#PERCENTINFANTSLOWBIRTHRATE_container">
+                <td>
+                    <span id="#MAP#PERCENTINFANTSLOWBIRTHRATE_caption" class="bbui-forms-captionlight">
+                    </span>
+                </td>
+                <td>
+                    <span id="#MAP#PERCENTINFANTSLOWBIRTHRATE_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#PERCENTCHILDRENUNDERFIVEUNDERWEIGHT_container">
+                <td>
+                    <span id="#MAP#PERCENTCHILDRENUNDERFIVEUNDERWEIGHT_caption" class="bbui-forms-captionlight">
+                    </span>
+                </td>
+                <td>
+                    <span id="#MAP#PERCENTCHILDRENUNDERFIVEUNDERWEIGHT_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED_container">
+                <td>
+                    <span id="#MAP#PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED_caption" class="bbui-forms-captionlight">
+                    </span>
+                </td>
+                <td>
+                    <span id="#MAP#PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED_value"></span>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table>
+            <tr id="#MAP#PERCENTURBANPOPULATIONUSINGIMPROVEDWATER_container">
+                <td class="toolbar bbui-forms-captionlight" colspan="3">
+                    Percent of population using improved water source
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="bbui-forms-captionlight">Urban:</span> <span id="#MAP#PERCENTURBANPOPULATIONUSINGIMPROVEDWATER_value">
+                    </span>
+                </td>
+                <td>
+                    <span class="bbui-forms-captionlight">Rural:</span> <span id="#MAP#PERCENTRUALPOPULATIONUSINGIMPROVEDWATER_value">
+                    </span>
+                </td>
+                <td>
+                    <span class="bbui-forms-captionlight">Total:</span> <span id="#MAP#PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER_value">
+                    </span>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table>
+            <tr id="#MAP#PERCENTURBANPOPULATIONUSINGADEQUATESANITATION_container">
+                <td class="toolbar bbui-forms-captionlight" colspan="3">
+                    Percent of population using adequate sanitation facilities
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="bbui-forms-captionlight">Urban:</span> <span id="#MAP#PERCENTURBANPOPULATIONUSINGADEQUATESANITATION_value">
+                    </span>
+                </td>
+                <td>
+                    <span class="bbui-forms-captionlight">Rural:</span> <span id="#MAP#PERCENTRURALPOPULATIONUSINGADEQUATESANITATION_value">
+                    </span>
+                </td>
+                <td>
+                    <span class="bbui-forms-captionlight">Total:</span> <span id="#MAP#PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION_value">
+                    </span>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table>
+            <tr id="#MAP#HIVAIDSADULTPREVALENCERATE_container">
+                <td>
+                    <span id="#MAP#HIVAIDSADULTPREVALENCERATE_caption" class="bbui-forms-captionlight">
+                    </span>
+                </td>
+                <td>
+                    <span id="#MAP#HIVAIDSADULTPREVALENCERATE_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#NUMBERPEOPLELIVINGWITHIVAIDS_container">
+                <td>
+                    <span id="#MAP#NUMBERPEOPLELIVINGWITHIVAIDS_caption" class="bbui-forms-captionlight">
+                    </span>
+                </td>
+                <td>
+                    <span id="#MAP#NUMBERPEOPLELIVINGWITHIVAIDS_value"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>

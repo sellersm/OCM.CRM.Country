@@ -1,0 +1,368 @@
+<AddDataFormTemplateSpec 
+    xmlns:c="bb_appfx_commontypes"
+    ID="8f4fe61e-4459-42da-99bc-7d4f53315d97"
+    Name="Country Extention Add Form"
+    Description="Used for adding a new Country Extention"
+    Author="Cary Mayeda"
+    RecordType="Country Extention"
+    DataFormInstanceID="a948530a-4c31-42ac-88d7-5d6610dadd07"
+	c:SecurityUIFolder="Sponsorship\Opportunity\Country"
+	xmlns="bb_appfx_adddataformtemplate"
+    >
+    <SPDataForm>
+        <SaveImplementation SPName="USP_DATAFORMTEMPLATE_ADD_COUNTRY_EXTENTION">
+            <c:CreateProcedureSQL>
+<![CDATA[
+create procedure dbo.USP_DATAFORMTEMPLATE_ADD_COUNTRY_EXTENTION
+(
+    @ID uniqueidentifier = null output,
+    @CHANGEAGENTID uniqueidentifier = null,
+    @FULLCOUNTRYNAME nvarchar(50) = '',
+    @COUNTRYCODE nvarchar(2) = '',
+    @COUNTRYSTATUSCODEID uniqueidentifier = null,
+    @COUNTRYSTATUSDATE datetime = null,
+    @COUNTRYREGIONCODEID uniqueidentifier = null,
+    @AREAINSQUAREKM int = 0,
+    @URBANPOPULATION int = 0,
+    @RURALPOPULATION int = 0,
+    @TOTALPOPULATION int = 0,
+    @PEOPLEGROUPS nvarchar(1000) = '',
+    @MAJORTOPOGRAPHICALFEATURECODEID uniqueidentifier = null,
+    @LANGUAGEAMHARIC bit = 0,
+    @LANGUAGEARABIC bit = 0,
+    @LANGUAGEBENGALI bit = 0,
+    @LANGUAGEBURMESE bit = 0,
+    @LANGUAGECHINESE bit = 0,
+    @LANGUAGECREOLE bit = 0,
+    @LANGUAGEENGLISH bit = 0,
+    @LANGUAGEFRENCH bit = 0,
+    @LANGUAGEHINDI bit = 0,
+    @LANGUAGEKHMER bit = 0,
+    @LANGUAGEKIRGHIZ bit = 0,
+    @LANGUAGELAO bit = 0,
+    @LANGUAGENEPALI bit = 0,
+    @LANGUAGEROMANIAN bit = 0,
+    @LANGUAGERUSSIAN bit = 0,
+    @LANGUAGESINHALESE bit = 0,
+    @LANGUAGESISWATI bit = 0,
+    @LANGUAGESPANISH bit = 0,
+    @LANGUAGESWAHILI bit = 0,
+    @LANGUAGETAGALOG bit = 0,
+    @LANGUAGETAMIL bit = 0,
+    @LANGUAGETHAI bit = 0,
+    @LANGUAGEURDU bit = 0,
+    @LANGUAGEOTHER bit = 0,
+    @LANGUAGEOTHERDESC nvarchar(50) = '',
+    @RELIGIONANIMIST bit = 0,
+    @RELIGIONBUDDHIST bit = 0,
+    @RELIGIONCATHOLIC bit = 0,
+    @RELIGIONCOPTIC bit = 0,
+    @RELIGIONHINDU bit = 0,
+    @RELIGIONMUSLIM bit = 0,
+    @RELIGIONORTHODOX bit = 0,
+    @RELIGIONPROTESTANT bit = 0,
+    @RELIGIONVOODOO bit = 0,
+    @RELIGIONWITCHCRAFT bit = 0,
+    @RELIGIONOTHER bit = 0,
+    @RELIGIONOTHERDESC nvarchar(50) = '',
+    @GOVERNMENTCAPITALIST bit = 0,
+    @GOVERNMENTCOMMUNIST bit = 0,
+    @GOVERNMENTDEMOCRACY bit = 0,
+    @GOVERNMENTDICTATORSHIP bit = 0,
+    @GOVERNMENTMONARCHY bit = 0,
+    @GOVERNMENTREPUBLIC bit = 0,
+    @GOVERNMENTREVOLUTIONARY bit = 0,
+    @GOVERNMENTSOCIALIST bit = 0,
+    @GOVERNMENTTRANSITIONAL bit = 0,
+    @GOVERNMENTOTHER bit = 0,
+    @GOVERNMENTOTHERDESC nvarchar(50) = '',
+    @MAJORHOLIDAYSANDFESTIVALS nvarchar(1000) = '',
+    @CULTURALTRADITIONS nvarchar(1000) = '',
+    @CHILDMORTALITYRATEUNDERFIVE smallint = 0,
+    @INFANTMORTALITYRATE smallint = 0,
+    @ANNUALINCOMEPERCAPITA money = 0,
+    @PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR tinyint = 0,
+    @LIFEEXPECTANCYATBIRTH tinyint = 0,
+    @FERTILITYRATE tinyint = 0,
+    @ADULTLITERACYRATE tinyint = 0,
+    @NETPRIMARYSCHOOLENROLLMENTATTENDANCE int = 0,
+    @PERCENTCHILDRENREACHINGGRADEFIVE tinyint = 0,
+    @CHILDLABORPERCENTAGE tinyint = 0,
+    @PERCENTINFANTSLOWBIRTHRATE tinyint = 0,
+    @PERCENTCHILDRENUNDERFIVEUNDERWEIGHT tinyint = 0,
+    @PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED tinyint = 0,
+    @PERCENTURBANPOPULATIONUSINGIMPROVEDWATER tinyint = 0,
+    @PERCENTRUALPOPULATIONUSINGIMPROVEDWATER tinyint = 0,
+    @PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER tinyint = 0,
+    @PERCENTURBANPOPULATIONUSINGADEQUATESANITATION tinyint = 0,
+    @PERCENTRURALPOPULATIONUSINGADEQUATESANITATION tinyint = 0,
+    @HIVAIDSADULTPREVALENCERATE tinyint = 0,
+    @NUMBERPEOPLELIVINGWITHIVAIDS int = 0,
+    @QUOTATYPECODE tinyint = 0,
+    @APPROVEDQUOTAINITIAL smallint = 0,
+    @APPROVEDQUOTA01OCT smallint = 0,
+    @APPROVEDQUOTA02NOV smallint = 0,
+    @APPROVEDQUOTA03DEC smallint = 0,
+    @APPROVEDQUOTA04JAN smallint = 0,
+    @APPROVEDQUOTA05FEB smallint = 0,
+    @APPROVEDQUOTA06MAR smallint = 0,
+    @APPROVEDQUOTA07APR smallint = 0,
+    @APPROVEDQUOTA08MAY smallint = 0,
+    @APPROVEDQUOTA09JUN smallint = 0,
+    @APPROVEDQUOTA10JUL smallint = 0,
+    @APPROVEDQUOTA11AUG smallint = 0,
+    @APPROVEDQUOTA12SEP smallint = 0,
+    @NEWCHILDRENSTATUSCODE tinyint = 0,
+    @PERFORMANCECODEID uniqueidentifier = null,
+    @MARKETINGDEMANDSTATUSCODE tinyint = 0,
+    @OVERRIDETRIGGERSTATUSCODE tinyint = 0,
+    @CHILDRENNOTENTERED smallint = 0
+)
+as
+
+set nocount on;
+
+if @ID is null
+    set @ID = newid()
+
+if @CHANGEAGENTID is null  
+    exec dbo.USP_CHANGEAGENT_GETORCREATECHANGEAGENT @CHANGEAGENTID output
+
+declare @CURRENTDATE datetime
+set @CURRENTDATE = getdate()
+
+begin try
+exec dbo.USP_ORGANIZATION_ADD	@ID output, 
+                                    @CHANGEAGENTID, 
+                                    @CHANGEAGENTID, 
+                                    @FULLCOUNTRYNAME, 		
+                                    '', --@WEBADDRESS
+                                    NULL, --@PICTURE, 
+                                    NULL, --@PICTURETHUMBNAIL, 
+                                    NULL, --@INDUSTRYCODEID,
+                                    NULL, --@NUMEMPLOYEES,
+                                    NULL, --@NUMSUBSIDIARIES,
+                                    NULL, --@PARENTCORPID,
+                                    NULL, --@ADDRESS_ADDRESSTYPECODEID,
+                                    0, --@ADDRESS_DONOTMAIL,
+                                    NULL, --@ADDRESS_COUNTRYID,
+                                    NULL, --@ADDRESS_STATEID,
+                                    '', --@ADDRESS_ADDRESSBLOCK,
+                                    '', --@ADDRESS_CITY,
+                                    '', --@ADDRESS_POSTCODE,
+                                    NULL, --@PHONE_PHONETYPECODEID,
+                                    NULL, --@PHONE_NUMBER,
+                                    NULL, --@SKIP_ADDING_SECURITYGROUPS,
+                                    NULL, --@EMAILADDRESS_EMAILADDRESSTYPECODEID,
+                                    NULL, --@EMAILADDRESS_EMAILADDRESS,
+                                    0, --@OMITFROMVALIDATION,
+                                    '', --@CART,
+                                    '', --@DPC,
+                                    '', --@LOT,
+                                    NULL, --@COUNTYCODEID,
+                                    NULL, --@CONGRESSIONALDISTRICTCODEID,
+                                    NULL, --@LASTVALIDATIONATTEMPTDATE,
+                                    '', --@VALIDATIONMESSAGE,
+                                    0, --@CERTIFICATIONDATA,
+                                    NULL, --@ADDRESS_DONOTMAILREASONCODEID,
+                                    1, --@ISPRIMARY,
+                                    NULL, --@SKIP_ADDING_SITES,
+                                    NULL, --@INFOSOURCECODEID,
+                                    1;
+
+
+	-- handle inserting the data
+	insert into dbo.USR_COUNTRYEXTENTION
+		(ID, FULLCOUNTRYNAME, COUNTRYCODE, COUNTRYSTATUSCODEID, COUNTRYSTATUSDATE, COUNTRYREGIONCODEID, AREAINSQUAREKM, URBANPOPULATION, RURALPOPULATION, TOTALPOPULATION, PEOPLEGROUPS, MAJORTOPOGRAPHICALFEATURECODEID, LANGUAGEAMHARIC, LANGUAGEARABIC, LANGUAGEBENGALI, LANGUAGEBURMESE, LANGUAGECHINESE, LANGUAGECREOLE, LANGUAGEENGLISH, LANGUAGEFRENCH, LANGUAGEHINDI, LANGUAGEKHMER, LANGUAGEKIRGHIZ, LANGUAGELAO, LANGUAGENEPALI, LANGUAGEROMANIAN, LANGUAGERUSSIAN, LANGUAGESINHALESE, LANGUAGESISWATI, LANGUAGESPANISH, LANGUAGESWAHILI, LANGUAGETAGALOG, LANGUAGETAMIL, LANGUAGETHAI, LANGUAGEURDU, LANGUAGEOTHER, LANGUAGEOTHERDESC, RELIGIONANIMIST, RELIGIONBUDDHIST, RELIGIONCATHOLIC, RELIGIONCOPTIC, RELIGIONHINDU, RELIGIONMUSLIM, RELIGIONORTHODOX, RELIGIONPROTESTANT, RELIGIONVOODOO, RELIGIONWITCHCRAFT, RELIGIONOTHER, RELIGIONOTHERDESC, GOVERNMENTCAPITALIST, GOVERNMENTCOMMUNIST, GOVERNMENTDEMOCRACY, GOVERNMENTDICTATORSHIP, GOVERNMENTMONARCHY, GOVERNMENTREPUBLIC, GOVERNMENTREVOLUTIONARY, GOVERNMENTSOCIALIST, GOVERNMENTTRANSITIONAL, GOVERNMENTOTHER, GOVERNMENTOTHERDESC, MAJORHOLIDAYSANDFESTIVALS, CULTURALTRADITIONS, CHILDMORTALITYRATEUNDERFIVE, INFANTMORTALITYRATE, ANNUALINCOMEPERCAPITA, PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR, LIFEEXPECTANCYATBIRTH, FERTILITYRATE, ADULTLITERACYRATE, NETPRIMARYSCHOOLENROLLMENTATTENDANCE, PERCENTCHILDRENREACHINGGRADEFIVE, CHILDLABORPERCENTAGE, PERCENTINFANTSLOWBIRTHRATE, PERCENTCHILDRENUNDERFIVEUNDERWEIGHT, PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED, PERCENTURBANPOPULATIONUSINGIMPROVEDWATER, PERCENTRUALPOPULATIONUSINGIMPROVEDWATER, PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER, PERCENTURBANPOPULATIONUSINGADEQUATESANITATION, PERCENTRURALPOPULATIONUSINGADEQUATESANITATION, HIVAIDSADULTPREVALENCERATE, NUMBERPEOPLELIVINGWITHIVAIDS, QUOTATYPECODE, APPROVEDQUOTAINITIAL, APPROVEDQUOTA01OCT, APPROVEDQUOTA02NOV, APPROVEDQUOTA03DEC, APPROVEDQUOTA04JAN, APPROVEDQUOTA05FEB, APPROVEDQUOTA06MAR, APPROVEDQUOTA07APR, APPROVEDQUOTA08MAY, APPROVEDQUOTA09JUN, APPROVEDQUOTA10JUL, APPROVEDQUOTA11AUG, APPROVEDQUOTA12SEP, NEWCHILDRENSTATUSCODE, PERFORMANCECODEID, MARKETINGDEMANDSTATUSCODE, OVERRIDETRIGGERSTATUSCODE, CHILDRENNOTENTERED, ADDEDBYID, CHANGEDBYID, DATEADDED, DATECHANGED)
+    values
+		(@ID, @FULLCOUNTRYNAME, @COUNTRYCODE, @COUNTRYSTATUSCODEID, @COUNTRYSTATUSDATE, @COUNTRYREGIONCODEID, @AREAINSQUAREKM, @URBANPOPULATION, @RURALPOPULATION, @TOTALPOPULATION, @PEOPLEGROUPS, @MAJORTOPOGRAPHICALFEATURECODEID, @LANGUAGEAMHARIC, @LANGUAGEARABIC, @LANGUAGEBENGALI, @LANGUAGEBURMESE, @LANGUAGECHINESE, @LANGUAGECREOLE, @LANGUAGEENGLISH, @LANGUAGEFRENCH, @LANGUAGEHINDI, @LANGUAGEKHMER, @LANGUAGEKIRGHIZ, @LANGUAGELAO, @LANGUAGENEPALI, @LANGUAGEROMANIAN, @LANGUAGERUSSIAN, @LANGUAGESINHALESE, @LANGUAGESISWATI, @LANGUAGESPANISH, @LANGUAGESWAHILI, @LANGUAGETAGALOG, @LANGUAGETAMIL, @LANGUAGETHAI, @LANGUAGEURDU, @LANGUAGEOTHER, @LANGUAGEOTHERDESC, @RELIGIONANIMIST, @RELIGIONBUDDHIST, @RELIGIONCATHOLIC, @RELIGIONCOPTIC, @RELIGIONHINDU, @RELIGIONMUSLIM, @RELIGIONORTHODOX, @RELIGIONPROTESTANT, @RELIGIONVOODOO, @RELIGIONWITCHCRAFT, @RELIGIONOTHER, @RELIGIONOTHERDESC, @GOVERNMENTCAPITALIST, @GOVERNMENTCOMMUNIST, @GOVERNMENTDEMOCRACY, @GOVERNMENTDICTATORSHIP, @GOVERNMENTMONARCHY, @GOVERNMENTREPUBLIC, @GOVERNMENTREVOLUTIONARY, @GOVERNMENTSOCIALIST, @GOVERNMENTTRANSITIONAL, @GOVERNMENTOTHER, @GOVERNMENTOTHERDESC, @MAJORHOLIDAYSANDFESTIVALS, @CULTURALTRADITIONS, @CHILDMORTALITYRATEUNDERFIVE, @INFANTMORTALITYRATE, @ANNUALINCOMEPERCAPITA, @PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR, @LIFEEXPECTANCYATBIRTH, @FERTILITYRATE, @ADULTLITERACYRATE, @NETPRIMARYSCHOOLENROLLMENTATTENDANCE, @PERCENTCHILDRENREACHINGGRADEFIVE, @CHILDLABORPERCENTAGE, @PERCENTINFANTSLOWBIRTHRATE, @PERCENTCHILDRENUNDERFIVEUNDERWEIGHT, @PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED, @PERCENTURBANPOPULATIONUSINGIMPROVEDWATER, @PERCENTRUALPOPULATIONUSINGIMPROVEDWATER, @PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER, @PERCENTURBANPOPULATIONUSINGADEQUATESANITATION, @PERCENTRURALPOPULATIONUSINGADEQUATESANITATION, @HIVAIDSADULTPREVALENCERATE, @NUMBERPEOPLELIVINGWITHIVAIDS, @QUOTATYPECODE, @APPROVEDQUOTAINITIAL, @APPROVEDQUOTA01OCT, @APPROVEDQUOTA02NOV, @APPROVEDQUOTA03DEC, @APPROVEDQUOTA04JAN, @APPROVEDQUOTA05FEB, @APPROVEDQUOTA06MAR, @APPROVEDQUOTA07APR, @APPROVEDQUOTA08MAY, @APPROVEDQUOTA09JUN, @APPROVEDQUOTA10JUL, @APPROVEDQUOTA11AUG, @APPROVEDQUOTA12SEP, @NEWCHILDRENSTATUSCODE, @PERFORMANCECODEID, @MARKETINGDEMANDSTATUSCODE, @OVERRIDETRIGGERSTATUSCODE, @CHILDRENNOTENTERED, @CHANGEAGENTID, @CHANGEAGENTID, @CURRENTDATE, @CURRENTDATE)
+end try
+
+begin catch
+    exec dbo.USP_RAISE_ERROR
+    return 1
+end catch
+
+return 0				
+
+]]>
+</c:CreateProcedureSQL>
+            <c:ExpectedDBExceptions>
+                <c:Constraints>
+                    <c:Constraint Name="FK_USR_COUNTRYEXTENTION_COUNTRYSTATUSCODEID" Field="COUNTRYSTATUSCODEID" Type="ForeignKey" />
+                    <c:Constraint Name="FK_USR_COUNTRYEXTENTION_COUNTRYREGIONCODEID" Field="COUNTRYREGIONCODEID" Type="ForeignKey" />
+                    <c:Constraint Name="FK_USR_COUNTRYEXTENTION_MAJORTOPOGRAPHICALFEATURECODEID" Field="MAJORTOPOGRAPHICALFEATURECODEID" Type="ForeignKey" />
+                    <c:Constraint Name="FK_USR_COUNTRYEXTENTION_PERFORMANCECODEID" Field="PERFORMANCECODEID" Type="ForeignKey" />
+                </c:Constraints>
+            </c:ExpectedDBExceptions>
+        </SaveImplementation>
+    </SPDataForm>
+    <c:FormMetaData FixedDialog="true">
+        <c:FormFields>
+            <c:FormField FieldID="FULLCOUNTRYNAME" MaxLength="50" Caption="Fullcountryname" />
+            <c:FormField FieldID="COUNTRYCODE" MaxLength="2" Caption="Countrycode" />
+            <c:FormField FieldID="COUNTRYSTATUSCODEID" DataType="Guid" Caption="Countrystatus">
+                <c:CodeTable CodeTableName="USR_COUNTRYSTATUSCODE" />
+            </c:FormField>
+            <c:FormField FieldID="COUNTRYSTATUSDATE" DataType="Date" Caption="Countrystatusdate" />
+            <c:FormField FieldID="COUNTRYREGIONCODEID" DataType="Guid" Caption="Countryregion">
+                <c:CodeTable CodeTableName="USR_COUNTRYREGIONCODE" />
+            </c:FormField>
+            <c:FormField FieldID="AREAINSQUAREKM" DataType="Integer" Caption="Areainsquarekm" />
+            <c:FormField FieldID="URBANPOPULATION" DataType="Integer" Caption="Urbanpopulation" />
+            <c:FormField FieldID="RURALPOPULATION" DataType="Integer" Caption="Ruralpopulation" />
+            <c:FormField FieldID="TOTALPOPULATION" DataType="Integer" Caption="Totalpopulation" />
+            <c:FormField FieldID="PEOPLEGROUPS" MaxLength="1000" Caption="Peoplegroups" Multiline="true" />
+            <c:FormField FieldID="MAJORTOPOGRAPHICALFEATURECODEID" DataType="Guid" Caption="Majortopographicalfeature">
+                <c:CodeTable CodeTableName="USR_MAJORTOPOGRAPHICALFEATURECODE" />
+            </c:FormField>
+            <c:FormField FieldID="LANGUAGEAMHARIC" DataType="Boolean" Caption="Languageamharic" />
+            <c:FormField FieldID="LANGUAGEARABIC" DataType="Boolean" Caption="Languagearabic" />
+            <c:FormField FieldID="LANGUAGEBENGALI" DataType="Boolean" Caption="Languagebengali" />
+            <c:FormField FieldID="LANGUAGEBURMESE" DataType="Boolean" Caption="Languageburmese" />
+            <c:FormField FieldID="LANGUAGECHINESE" DataType="Boolean" Caption="Languagechinese" />
+            <c:FormField FieldID="LANGUAGECREOLE" DataType="Boolean" Caption="Languagecreole" />
+            <c:FormField FieldID="LANGUAGEENGLISH" DataType="Boolean" Caption="Languageenglish" />
+            <c:FormField FieldID="LANGUAGEFRENCH" DataType="Boolean" Caption="Languagefrench" />
+            <c:FormField FieldID="LANGUAGEHINDI" DataType="Boolean" Caption="Languagehindi" />
+            <c:FormField FieldID="LANGUAGEKHMER" DataType="Boolean" Caption="Languagekhmer" />
+            <c:FormField FieldID="LANGUAGEKIRGHIZ" DataType="Boolean" Caption="Languagekirghiz" />
+            <c:FormField FieldID="LANGUAGELAO" DataType="Boolean" Caption="Languagelao" />
+            <c:FormField FieldID="LANGUAGENEPALI" DataType="Boolean" Caption="Languagenepali" />
+            <c:FormField FieldID="LANGUAGEROMANIAN" DataType="Boolean" Caption="Languageromanian" />
+            <c:FormField FieldID="LANGUAGERUSSIAN" DataType="Boolean" Caption="Languagerussian" />
+            <c:FormField FieldID="LANGUAGESINHALESE" DataType="Boolean" Caption="Languagesinhalese" />
+            <c:FormField FieldID="LANGUAGESISWATI" DataType="Boolean" Caption="Languagesiswati" />
+            <c:FormField FieldID="LANGUAGESPANISH" DataType="Boolean" Caption="Languagespanish" />
+            <c:FormField FieldID="LANGUAGESWAHILI" DataType="Boolean" Caption="Languageswahili" />
+            <c:FormField FieldID="LANGUAGETAGALOG" DataType="Boolean" Caption="Languagetagalog" />
+            <c:FormField FieldID="LANGUAGETAMIL" DataType="Boolean" Caption="Languagetamil" />
+            <c:FormField FieldID="LANGUAGETHAI" DataType="Boolean" Caption="Languagethai" />
+            <c:FormField FieldID="LANGUAGEURDU" DataType="Boolean" Caption="Languageurdu" />
+            <c:FormField FieldID="LANGUAGEOTHER" DataType="Boolean" Caption="Languageother" />
+            <c:FormField FieldID="LANGUAGEOTHERDESC" MaxLength="50" Caption="Languageotherdesc" />
+            <c:FormField FieldID="RELIGIONANIMIST" DataType="Boolean" Caption="Religionanimist" />
+            <c:FormField FieldID="RELIGIONBUDDHIST" DataType="Boolean" Caption="Religionbuddhist" />
+            <c:FormField FieldID="RELIGIONCATHOLIC" DataType="Boolean" Caption="Religioncatholic" />
+            <c:FormField FieldID="RELIGIONCOPTIC" DataType="Boolean" Caption="Religioncoptic" />
+            <c:FormField FieldID="RELIGIONHINDU" DataType="Boolean" Caption="Religionhindu" />
+            <c:FormField FieldID="RELIGIONMUSLIM" DataType="Boolean" Caption="Religionmuslim" />
+            <c:FormField FieldID="RELIGIONORTHODOX" DataType="Boolean" Caption="Religionorthodox" />
+            <c:FormField FieldID="RELIGIONPROTESTANT" DataType="Boolean" Caption="Religionprotestant" />
+            <c:FormField FieldID="RELIGIONVOODOO" DataType="Boolean" Caption="Religionvoodoo" />
+            <c:FormField FieldID="RELIGIONWITCHCRAFT" DataType="Boolean" Caption="Religionwitchcraft" />
+            <c:FormField FieldID="RELIGIONOTHER" DataType="Boolean" Caption="Religionother" />
+            <c:FormField FieldID="RELIGIONOTHERDESC" MaxLength="50" Caption="Religionotherdesc" />
+            <c:FormField FieldID="GOVERNMENTCAPITALIST" DataType="Boolean" Caption="Governmentcapitalist" />
+            <c:FormField FieldID="GOVERNMENTCOMMUNIST" DataType="Boolean" Caption="Governmentcommunist" />
+            <c:FormField FieldID="GOVERNMENTDEMOCRACY" DataType="Boolean" Caption="Governmentdemocracy" />
+            <c:FormField FieldID="GOVERNMENTDICTATORSHIP" DataType="Boolean" Caption="Governmentdictatorship" />
+            <c:FormField FieldID="GOVERNMENTMONARCHY" DataType="Boolean" Caption="Governmentmonarchy" />
+            <c:FormField FieldID="GOVERNMENTREPUBLIC" DataType="Boolean" Caption="Governmentrepublic" />
+            <c:FormField FieldID="GOVERNMENTREVOLUTIONARY" DataType="Boolean" Caption="Governmentrevolutionary" />
+            <c:FormField FieldID="GOVERNMENTSOCIALIST" DataType="Boolean" Caption="Governmentsocialist" />
+            <c:FormField FieldID="GOVERNMENTTRANSITIONAL" DataType="Boolean" Caption="Governmenttransitional" />
+            <c:FormField FieldID="GOVERNMENTOTHER" DataType="Boolean" Caption="Governmentother" />
+            <c:FormField FieldID="GOVERNMENTOTHERDESC" MaxLength="50" Caption="Governmentotherdesc" />
+            <c:FormField FieldID="MAJORHOLIDAYSANDFESTIVALS" MaxLength="1000" Caption="Majorholidaysandfestivals" Multiline="true" />
+            <c:FormField FieldID="CULTURALTRADITIONS" MaxLength="1000" Caption="Culturaltraditions" Multiline="true" />
+            <c:FormField FieldID="CHILDMORTALITYRATEUNDERFIVE" DataType="SmallInt" Caption="Childmortalityrateunderfive" />
+            <c:FormField FieldID="INFANTMORTALITYRATE" DataType="SmallInt" Caption="Infantmortalityrate" />
+            <c:FormField FieldID="ANNUALINCOMEPERCAPITA" DataType="Money" Caption="Annualincomepercapita" />
+            <c:FormField FieldID="PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR" DataType="TinyInt" Caption="Percentpopulationlivinglessthanonedollar" />
+            <c:FormField FieldID="LIFEEXPECTANCYATBIRTH" DataType="TinyInt" Caption="Lifeexpectancyatbirth" />
+            <c:FormField FieldID="FERTILITYRATE" DataType="TinyInt" Caption="Fertilityrate" />
+            <c:FormField FieldID="ADULTLITERACYRATE" DataType="TinyInt" Caption="Adultliteracyrate" />
+            <c:FormField FieldID="NETPRIMARYSCHOOLENROLLMENTATTENDANCE" DataType="Integer" Caption="Netprimaryschoolenrollmentattendance" />
+            <c:FormField FieldID="PERCENTCHILDRENREACHINGGRADEFIVE" DataType="TinyInt" Caption="Percentchildrenreachinggradefive" />
+            <c:FormField FieldID="CHILDLABORPERCENTAGE" DataType="TinyInt" Caption="Childlaborpercentage" />
+            <c:FormField FieldID="PERCENTINFANTSLOWBIRTHRATE" DataType="TinyInt" Caption="Percentinfantslowbirthrate" />
+            <c:FormField FieldID="PERCENTCHILDRENUNDERFIVEUNDERWEIGHT" DataType="TinyInt" Caption="Percentchildrenunderfiveunderweight" />
+            <c:FormField FieldID="PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED" DataType="TinyInt" Caption="Percentchildrenunderfivewastingstunted" />
+            <c:FormField FieldID="PERCENTURBANPOPULATIONUSINGIMPROVEDWATER" DataType="TinyInt" Caption="Percenturbanpopulationusingimprovedwater" />
+            <c:FormField FieldID="PERCENTRUALPOPULATIONUSINGIMPROVEDWATER" DataType="TinyInt" Caption="Percentrualpopulationusingimprovedwater" />
+            <c:FormField FieldID="PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER" DataType="TinyInt" Caption="Percenttotalpopulationusingimprovedwater" />
+            <c:FormField FieldID="PERCENTURBANPOPULATIONUSINGADEQUATESANITATION" DataType="TinyInt" Caption="Percenturbanpopulationusingadequatesanitation" />
+            <c:FormField FieldID="PERCENTRURALPOPULATIONUSINGADEQUATESANITATION" DataType="TinyInt" Caption="Percentruralpopulationusingadequatesanitation" />
+            <c:FormField FieldID="HIVAIDSADULTPREVALENCERATE" DataType="TinyInt" Caption="Hivaidsadultprevalencerate" />
+            <c:FormField FieldID="NUMBERPEOPLELIVINGWITHIVAIDS" DataType="Integer" Caption="Numberpeoplelivingwithivaids" />
+            <c:FormField FieldID="QUOTATYPECODE" DataType="TinyInt" Caption="Quotatype" DefaultValueText="0">
+                <c:ValueList>
+                    <c:Items>
+                        <c:Item>
+                            <c:Value>0</c:Value>
+                            <c:Label>Project quota</c:Label>
+                        </c:Item>
+                        <c:Item>
+                            <c:Value>1</c:Value>
+                            <c:Label>Country quota</c:Label>
+                        </c:Item>
+                    </c:Items>
+                </c:ValueList>
+            </c:FormField>
+            <c:FormField FieldID="DECREASEDQUOTA" ReadOnly="true" Caption="Decreasedquota" />
+            <c:FormField FieldID="GROWTHQUOTA" ReadOnly="true" Caption="Growthquota" />
+            <c:FormField FieldID="CURRENTQUOTA" ReadOnly="true" Caption="Currentquota" />
+            <c:FormField FieldID="APPROVEDQUOTAINITIAL" DataType="SmallInt" Caption="Approvedquotainitial" />
+            <c:FormField FieldID="APPROVEDQUOTA01OCT" DataType="SmallInt" Caption="Approvedquota01oct" />
+            <c:FormField FieldID="APPROVEDQUOTA02NOV" DataType="SmallInt" Caption="Approvedquota02nov" />
+            <c:FormField FieldID="APPROVEDQUOTA03DEC" DataType="SmallInt" Caption="Approvedquota03dec" />
+            <c:FormField FieldID="APPROVEDQUOTA04JAN" DataType="SmallInt" Caption="Approvedquota04jan" />
+            <c:FormField FieldID="APPROVEDQUOTA05FEB" DataType="SmallInt" Caption="Approvedquota05feb" />
+            <c:FormField FieldID="APPROVEDQUOTA06MAR" DataType="SmallInt" Caption="Approvedquota06mar" />
+            <c:FormField FieldID="APPROVEDQUOTA07APR" DataType="SmallInt" Caption="Approvedquota07apr" />
+            <c:FormField FieldID="APPROVEDQUOTA08MAY" DataType="SmallInt" Caption="Approvedquota08may" />
+            <c:FormField FieldID="APPROVEDQUOTA09JUN" DataType="SmallInt" Caption="Approvedquota09jun" />
+            <c:FormField FieldID="APPROVEDQUOTA10JUL" DataType="SmallInt" Caption="Approvedquota10jul" />
+            <c:FormField FieldID="APPROVEDQUOTA11AUG" DataType="SmallInt" Caption="Approvedquota11aug" />
+            <c:FormField FieldID="APPROVEDQUOTA12SEP" DataType="SmallInt" Caption="Approvedquota12sep" />
+            <c:FormField FieldID="NEWCHILDRENSTATUSCODE" DataType="TinyInt" Caption="Newchildrenstatus" DefaultValueText="0">
+                <c:ValueList>
+                    <c:Items>
+                        <c:Item>
+                            <c:Value>0</c:Value>
+                            <c:Label>No</c:Label>
+                        </c:Item>
+                        <c:Item>
+                            <c:Value>1</c:Value>
+                            <c:Label>Yes</c:Label>
+                        </c:Item>
+                    </c:Items>
+                </c:ValueList>
+            </c:FormField>
+            <c:FormField FieldID="PERFORMANCECODEID" DataType="Guid" Caption="Performance">
+                <c:CodeTable CodeTableName="USR_CHILDPROJECTCOUNTRYTPERFORMANCECODE" />
+            </c:FormField>
+            <c:FormField FieldID="MARKETINGDEMANDSTATUSCODE" DataType="TinyInt" Caption="Marketingdemandstatus" DefaultValueText="0">
+                <c:ValueList>
+                    <c:Items>
+                        <c:Item>
+                            <c:Value>0</c:Value>
+                            <c:Label>No</c:Label>
+                        </c:Item>
+                        <c:Item>
+                            <c:Value>1</c:Value>
+                            <c:Label>Yes</c:Label>
+                        </c:Item>
+                    </c:Items>
+                </c:ValueList>
+            </c:FormField>
+            <c:FormField FieldID="OVERRIDETRIGGERSTATUSCODE" DataType="TinyInt" Caption="Overridetriggerstatus" DefaultValueText="0">
+                <c:ValueList>
+                    <c:Items>
+                        <c:Item>
+                            <c:Value>0</c:Value>
+                            <c:Label>No</c:Label>
+                        </c:Item>
+                        <c:Item>
+                            <c:Value>1</c:Value>
+                            <c:Label>Yes</c:Label>
+                        </c:Item>
+                    </c:Items>
+                </c:ValueList>
+            </c:FormField>
+            <c:FormField FieldID="CHILDRENNOTENTERED" DataType="SmallInt" Caption="Childrennotentered" />
+        </c:FormFields>
+        <c:FormUIComponent />
+    </c:FormMetaData>
+</AddDataFormTemplateSpec>

@@ -1,0 +1,21 @@
+﻿<TaskSpec
+	xmlns="bb_appfx_task"
+	xmlns:common="bb_appfx_commontypes" 
+	ID="34b1c652-ff7a-4e7c-bf71-fbe1974333d5"
+	Name="Country search"
+	Description="Search for and view country records."
+	Author="Cary Mayeda"
+	FunctionalAreaID="9ea48d9c-7e2d-42e6-91cc-210792618017"
+	TaskGroup="Opportunity"
+	Sequence="23"
+	ImageKey="CATALOG:Blackbaud.AppFx.Mapping.Catalog,Blackbaud.AppFx.Mapping.Catalog.map.png"		
+	>
+
+	<!-- indicate what this task should do (navigate to a page, show a form, etc. -->
+	<ShowPage PageID="8bc1a2a0-c984-49b3-bd7a-6b4a62dba25f" TabID="00000000-0000-0000-0000-000000000000" xmlns="bb_appfx_commontypes">
+		<ActionContext>
+			<SearchListReturnValue SearchListID="f4c9a6f2-4579-4f0c-82f5-b1b33753e018" />
+		</ActionContext>
+	</ShowPage>
+
+</TaskSpec>

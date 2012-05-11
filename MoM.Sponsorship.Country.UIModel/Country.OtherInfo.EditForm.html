@@ -1,0 +1,292 @@
+﻿<style type="text/css">
+    .toolbar
+    {
+        width: 350px;
+        border-bottom: solid 1px #D4DCB9;
+        padding-bottom: 5px;
+    }
+    .toolbar-headertext
+    {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .boldtext
+    {
+        font-weight: bold;
+    }
+    .smallspacer
+    {
+        width: 2px;
+    }
+    .spacer
+    {
+        width: 7px;
+    }
+    .largespacer
+    {
+        width: 20px;
+    }
+    
+    
+    /* Form / Section Divs */
+    
+    ##MAP#CountryExtentionOtherInfoEditDataForm
+    {
+        width: 800px;
+        padding: 10px;
+    }
+    #History
+    {
+        width: 800px;
+    }
+    #SocialIndicators
+    {
+        float: left;
+        padding-right: 30px;
+        width: 330px;
+    }
+    #Health
+    {
+        float: right;
+        width: 400px;
+    }
+    
+    /* object widths */
+    ##MAP#MAJORHOLIDAYSANDFESTIVALS_value, ##MAP#CULTURALTRADITIONS_value
+    {
+        width: 625px;
+    }
+    ##MAP#CHILDMORTALITYRATEUNDERFIVE_value, ##MAP#INFANTMORTALITYRATE_value, ##MAP#PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR_value, ##MAP#LIFEEXPECTANCYATBIRTH_value, 
+    ##MAP#FERTILITYRATE_value, ##MAP#ADULTLITERACYRATE_value, ##MAP#NETPRIMARYSCHOOLENROLLMENTATTENDANCE_value, ##MAP#PERCENTCHILDRENREACHINGGRADEFIVE_value, ##MAP#CHILDLABORPERCENTAGE_value, 
+    ##MAP#PERCENTURBANPOPULATIONUSINGIMPROVEDWATER_value, ##MAP#PERCENTRURALPOPULATIONUSINGIMPROVEDWATER_value, ##MAP#PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER_value, 
+    ##MAP#PERCENTURBANPOPULATIONUSINGADEQUATESANITATION_value, ##MAP#PERCENTRURALPOPULATIONUSINGADEQUATESANITATION_value, ##MAP#PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION_value,
+    ##MAP#PERCENTINFANTSLOWBIRTHRATE_value, ##MAP#PERCENTCHILDRENUNDERFIVEUNDERWEIGHT_value, ##MAP#PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED_value, ##MAP#HIVAIDSADULTPREVALENCERATE_value
+    {
+        width: 30px;
+    }
+    ##MAP#ANNUALINCOMEPERCAPITA_value, ##MAP#NUMBERPEOPLELIVINGWITHIVAIDS_value
+    {
+        width: 75px;
+    }
+</style>
+<div id="#MAP#CountryExtentionOtherInfoEditDataForm">
+    <div id="History">
+        <h3>
+            History</h3>
+        <table>
+            <tr id="#MAP#MAJORHOLIDAYSANDFESTIVALS_container">
+                <td>
+                    <span id="#MAP#MAJORHOLIDAYSANDFESTIVALS_caption" >
+                    </span>
+                </td>
+                <td>
+                    <textarea id="#MAP#MAJORHOLIDAYSANDFESTIVALS_value" class="bbui-pre" rows="3" cols="1" />
+                </td>
+            </tr>
+            <tr id="#MAP#CULTURALTRADITIONS_container">
+                <td>
+                    <span id="#MAP#CULTURALTRADITIONS_caption" ></span>
+                </td>
+                <td>
+                    <textarea id="#MAP#CULTURALTRADITIONS_value" class="bbui-pre" rows="3" cols="1" />
+                </td>
+            </tr>
+        </table>
+        <br />
+    </div>
+    <div id="SocialIndicators">
+        <h3>
+            Social Indicators</h3>
+        <table>
+            <tr id="#MAP#CHILDMORTALITYRATEUNDERFIVE_container">
+                <td>
+                    <label id="#MAP#CHILDMORTALITYRATEUNDERFIVE_caption" for="#MAP#CHILDMORTALITYRATEUNDERFIVE_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#CHILDMORTALITYRATEUNDERFIVE_value" type="text" />
+                </td>
+            </tr>
+            <tr id="#MAP#INFANTMORTALITYRATE_container">
+                <td>
+                    <label id="#MAP#INFANTMORTALITYRATE_caption" for="#MAP#INFANTMORTALITYRATE_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#INFANTMORTALITYRATE_value" type="text" />
+                </td>
+            </tr>
+            <tr id="#MAP#ANNUALINCOMEPERCAPITA_container">
+                <td>
+                    <label id="#MAP#ANNUALINCOMEPERCAPITA_caption" for="#MAP#ANNUALINCOMEPERCAPITA_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#ANNUALINCOMEPERCAPITA_value" type="text" />
+                </td>
+                <td class="smallspacer" />
+            </tr>
+            <tr id="#MAP#PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR_container">
+                <td>
+                    <label id="#MAP#PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR_caption" for="#MAP#PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR_value" type="text" />
+                </td>
+            </tr>
+            <tr id="#MAP#LIFEEXPECTANCYATBIRTH_container">
+                <td>
+                    <label id="#MAP#LIFEEXPECTANCYATBIRTH_caption" for="#MAP#LIFEEXPECTANCYATBIRTH_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#LIFEEXPECTANCYATBIRTH_value" type="text" />
+                </td>
+            </tr>
+            <tr id="#MAP#FERTILITYRATE_container">
+                <td>
+                    <label id="#MAP#FERTILITYRATE_caption" for="#MAP#FERTILITYRATE_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#FERTILITYRATE_value" type="text" />
+                </td>
+            </tr>
+            <tr id="#MAP#ADULTLITERACYRATE_container">
+                <td>
+                    <label id="#MAP#ADULTLITERACYRATE_caption" for="#MAP#ADULTLITERACYRATE_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#ADULTLITERACYRATE_value" type="text" />
+                </td>
+            </tr>
+            <tr id="#MAP#NETPRIMARYSCHOOLENROLLMENTATTENDANCE_container">
+                <td>
+                    <label id="#MAP#NETPRIMARYSCHOOLENROLLMENTATTENDANCE_caption" for="#MAP#NETPRIMARYSCHOOLENROLLMENTATTENDANCE_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#NETPRIMARYSCHOOLENROLLMENTATTENDANCE_value" type="text" />
+                </td>
+            </tr>
+            <tr id="#MAP#PERCENTCHILDRENREACHINGGRADEFIVE_container">
+                <td>
+                    <label id="#MAP#PERCENTCHILDRENREACHINGGRADEFIVE_caption" for="#MAP#PERCENTCHILDRENREACHINGGRADEFIVE_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#PERCENTCHILDRENREACHINGGRADEFIVE_value" type="text" />
+                </td>
+            </tr>
+            <tr id="#MAP#CHILDLABORPERCENTAGE_container">
+                <td>
+                    <label id="#MAP#CHILDLABORPERCENTAGE_caption" for="#MAP#CHILDLABORPERCENTAGE_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#CHILDLABORPERCENTAGE_value" type="text" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Health">
+        <h3>
+            Health</h3>
+        <table>
+            <tr id="#MAP#PERCENTINFANTSLOWBIRTHRATE_container">
+                <td>
+                    <label id="#MAP#PERCENTINFANTSLOWBIRTHRATE_caption" for="#MAP#PERCENTINFANTSLOWBIRTHRATE_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#PERCENTINFANTSLOWBIRTHRATE_value" type="text" />
+                </td>
+            </tr>
+            <tr id="#MAP#PERCENTCHILDRENUNDERFIVEUNDERWEIGHT_container">
+                <td>
+                    <label id="#MAP#PERCENTCHILDRENUNDERFIVEUNDERWEIGHT_caption" for="#MAP#PERCENTCHILDRENUNDERFIVEUNDERWEIGHT_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#PERCENTCHILDRENUNDERFIVEUNDERWEIGHT_value" type="text" />
+                </td>
+            </tr>
+            <tr id="#MAP#PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED_container">
+                <td>
+                    <label id="#MAP#PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED_caption" for="#MAP#PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED_value" type="text" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table>
+            <tr>
+                <td class="toolbar" colspan="3">
+                    Percent of population using improved water source
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Urban:</span> <input type="text" id="#MAP#PERCENTURBANPOPULATIONUSINGIMPROVEDWATER_value" />
+                </td>
+                <td>
+                    <span>Rural:</span> <input type="text" id="#MAP#PERCENTRURALPOPULATIONUSINGIMPROVEDWATER_value"/>
+                </td>
+                <td>
+                    <span>Total:</span> <input type="text" id="#MAP#PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER_value" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table>
+            <tr>
+                <td class="toolbar" colspan="3">
+                    Percent of population using adequate sanitation facilities
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Urban:</span> <input type="text" id="#MAP#PERCENTURBANPOPULATIONUSINGADEQUATESANITATION_value" />
+                </td>
+                <td>
+                    <span>Rural:</span> <input type="text" id="#MAP#PERCENTRURALPOPULATIONUSINGADEQUATESANITATION_value" />
+                </td>
+                <td>
+                    <span>Total:</span> <input type="text" id="#MAP#PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION_value" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table>
+            <tr id="#MAP#HIVAIDSADULTPREVALENCERATE_container">
+                <td>
+                    <label id="#MAP#HIVAIDSADULTPREVALENCERATE_caption" for="#MAP#HIVAIDSADULTPREVALENCERATE_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#HIVAIDSADULTPREVALENCERATE_value" type="text" />
+                </td>
+            </tr>
+            <tr id="#MAP#NUMBERPEOPLELIVINGWITHIVAIDS_container">
+                <td>
+                    <label id="#MAP#NUMBERPEOPLELIVINGWITHIVAIDS_caption" for="#MAP#NUMBERPEOPLELIVINGWITHIVAIDS_value">
+                    </label>
+                </td>
+                <td>
+                    <input id="#MAP#NUMBERPEOPLELIVINGWITHIVAIDS_value" type="text" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- To define fields in multiple columns on the form, simply add/move the fields to this div
+        <div class="bbui-forms-fieldset-column">
+            <table>
+            </table>
+        </div>
+        -->
+</div>

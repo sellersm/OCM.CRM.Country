@@ -1,0 +1,373 @@
+﻿<style type="text/css">
+    .toolbar
+    {
+        width: 350px;
+        border-bottom: solid 1px #D4DCB9;
+        padding-bottom: 5px;
+    }
+    .toolbar-headertext
+    {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .boldtext
+    {
+        font-weight: bold;
+    }
+    .smallspacer
+    {
+        width: 2px;
+    }
+    .spacer
+    {
+        width: 7px;
+    }
+    .largespacer
+    {
+        width: 20px;
+    }
+    
+    
+    /* Form / Section Divs */
+    
+    ##MAP#CountryDemographicsViewForm
+    {
+        width: 880px;
+        padding: 10px;
+    }
+    #ColumnOne
+    {
+        float: left;
+        padding-right: 30px;
+        width: 400px;
+    }
+    #ColumnTwo
+    {
+        float: right;
+        width: 450px;
+    }
+    #Community2
+    {
+        clear: both;
+    }
+    
+    /* object widths */
+</style>
+<div id="#MAP#CountryDemographicsViewForm">
+    <div id="ColumnOne">
+        <table>
+            <tr id="#MAP#AREAINSQUAREKM_container">
+                <td>
+                    <span id="#MAP#AREAINSQUAREKM_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <span id="#MAP#AREAINSQUAREKM_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#URBANPOPULATION_container">
+                <td>
+                    <span id="#MAP#URBANPOPULATION_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <span id="#MAP#URBANPOPULATION_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#RURALPOPULATION_container">
+                <td>
+                    <span id="#MAP#RURALPOPULATION_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <span id="#MAP#RURALPOPULATION_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#TOTALPOPULATION_container">
+                <td>
+                    <span id="#MAP#TOTALPOPULATION_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <span id="#MAP#TOTALPOPULATION_value"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#PEOPLEGROUPS_container">
+                <td>
+                    <span id="#MAP#PEOPLEGROUPS_caption" class="bbui-forms-captionlight"></span>
+                </td>
+                <td>
+                    <span id="#MAP#PEOPLEGROUPS_value" class="bbui-pre"></span>
+                </td>
+            </tr>
+            <tr id="#MAP#MAJORTOPOGRAPHICALFEATURECODE_container">
+                <td>
+                    <span id="#MAP#MAJORTOPOGRAPHICALFEATURECODE_caption" class="bbui-forms-captionlight">
+                    </span>
+                </td>
+                <td>
+                    <span id="#MAP#MAJORTOPOGRAPHICALFEATURECODE_value"></span>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <h3>
+            Language</h3>
+        <table>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGEAMHARIC_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEAMHARIC_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEARABIC_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEARABIC_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEBENGALI_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEBENGALI_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEBURMESE_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEBURMESE_value" class="bbui-forms-captionlight" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGECHINESE_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGECHINESE_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGECREOLE_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGECREOLE_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEENGLISH_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEENGLISH_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEFRENCH_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEFRENCH_value" class="bbui-forms-captionlight" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGEHINDI_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEHINDI_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEKHMER_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEKHMER_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEKIRGHIZ_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEKIRGHIZ_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGELAO_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGELAO_value" class="bbui-forms-captionlight" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGENEPALI_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGENEPALI_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEROMANIAN_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEROMANIAN_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGERUSSIAN_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGERUSSIAN_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGESINHALESE_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGESINHALESE_value" class="bbui-forms-captionlight" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGESISWATI_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGESISWATI_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGESPANISH_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGESPANISH_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGESWAHILI_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGESWAHILI_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGETAGALOG_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGETAGALOG_value" class="bbui-forms-captionlight" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGETAMIL_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGETAMIL_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGETHAI_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGETHAI_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEURDU_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEURDU_value" class="bbui-forms-captionlight" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <input id="#MAP#LANGUAGEOTHER_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#LANGUAGEOTHER_value" class="bbui-forms-captionlight" />
+                    <span id="#MAP#LANGUAGEOTHERSEPARATOR_value" /> &nbsp; <span id="#MAP#LANGUAGEOTHERDESC_value"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="ColumnTwo">
+        <h3>
+            Religion</h3>
+        <table>
+            <tr>
+                <td>
+                    <input id="#MAP#RELIGIONANIMIST_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#RELIGIONANIMIST_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONBUDDHIST_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#RELIGIONBUDDHIST_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONCATHOLIC_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#RELIGIONCATHOLIC_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONCOPTIC_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#RELIGIONCOPTIC_value" class="bbui-forms-captionlight" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#RELIGIONHINDU_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#RELIGIONHINDU_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONMUSLIM_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#RELIGIONMUSLIM_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONORTHODOX_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#RELIGIONORTHODOX_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONPROTESTANT_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#RELIGIONPROTESTANT_value" class="bbui-forms-captionlight" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#RELIGIONVOODOO_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#RELIGIONVOODOO_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONWITCHCRAFT_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#RELIGIONWITCHCRAFT_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td colspan="3">
+                    <input id="#MAP#RELIGIONOTHER_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#RELIGIONOTHER_value" class="bbui-forms-captionlight" />
+                    <span id="#MAP#RELIGIONOTHERSEPARATOR_value" /> &nbsp; <span id="#MAP#RELIGIONOTHERDESC_value" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <h3>
+            Government</h3>
+        <table>
+            <tr>
+                <td>
+                    <input id="#MAP#GOVERNMENTCAPITALIST_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#GOVERNMENTCAPITALIST_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTCOMMUNIST_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#GOVERNMENTCOMMUNIST_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTDEMOCRACY_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#GOVERNMENTDEMOCRACY_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTDICTATORSHIP_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#GOVERNMENTDICTATORSHIP_value" class="bbui-forms-captionlight" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#GOVERNMENTMONARCHY_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#GOVERNMENTMONARCHY_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTREPUBLIC_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#GOVERNMENTREPUBLIC_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTREVOLUTIONARY_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#GOVERNMENTREVOLUTIONARY_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTSOCIALIST_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#GOVERNMENTSOCIALIST_value" class="bbui-forms-captionlight" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#GOVERNMENTTRANSITIONAL_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#GOVERNMENTTRANSITIONAL_value" class="bbui-forms-captionlight" />
+                </td>
+                <td class="largespacer" />
+                <td colspan="6">
+                    <input id="#MAP#GOVERNMENTOTHER_value" type="checkbox" disabled="disabled" />
+                    <label for="#MAP#GOVERNMENTOTHER_value" class="bbui-forms-captionlight" />
+                    <span id="#MAP#GOVERNMENTOTHERSEPARATOR_value" /> &nbsp; <span id="#MAP#GOVERNMENTOTHERDESC_value" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- To define fields in multiple columns on the form, simply add/move the fields to this div
+        <div class="bbui-forms-fieldset-column">
+            <table>
+            </table>
+        </div>
+        -->
+</div>

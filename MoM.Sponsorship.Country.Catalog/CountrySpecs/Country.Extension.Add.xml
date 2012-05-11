@@ -1,0 +1,138 @@
+﻿<AddDataFormTemplateSpec
+    xmlns:c="bb_appfx_commontypes"
+    ID="8f4fe61e-4459-42da-99bc-7d4f53315d97"
+    Name="Country Extention Add Form"
+    Description="Used for adding a new Country Extention"
+    Author="BETHESDA\cmayeda"
+    RecordType="Country Extention"
+    DataFormInstanceID="a948530a-4c31-42ac-88d7-5d6610dadd07"
+    c:SecurityUIFolder="Country Extention"
+    xmlns="bb_appfx_adddataformtemplate"
+    >
+	<SPDataForm>
+		<SaveImplementation SPName="USP_DATAFORMTEMPLATE_ADD_COUNTRY_EXTENTION">
+			<c:CreateProcedureSQL>
+				<![CDATA[
+create procedure dbo.USP_DATAFORMTEMPLATE_ADD_COUNTRY_EXTENTION
+(
+    @ID uniqueidentifier = null output,
+    @CHANGEAGENTID uniqueidentifier = null,
+    @FULLCOUNTRYNAME nvarchar(50) = '',
+    @COUNTRYCODE nvarchar(2) = '',
+    @COUNTRYSTATUSCODEID uniqueidentifier = null,
+    @COUNTRYSTATUSDATE datetime = null,
+    @COUNTRYREGIONCODEID uniqueidentifier = null
+)
+as
+
+set nocount on;
+
+if @ID is null
+    set @ID = newid()
+
+if @CHANGEAGENTID is null  
+    exec dbo.USP_CHANGEAGENT_GETORCREATECHANGEAGENT @CHANGEAGENTID output
+
+declare @CURRENTDATE datetime
+set @CURRENTDATE = getdate()
+
+declare @countryOfficeConstituencyCode uniqueidentifier
+
+begin try    
+	select @countryOfficeConstituencyCode = ID from CONSTITUENCYCODE where lower(DESCRIPTION) = 'country office'
+	if @countryOfficeConstituencyCode is null
+		  RAISERROR 1000000 'Could not find Country Office constituency code'		
+
+	exec dbo.USP_ORGANIZATION_ADD	@ID output, 
+                                    @CHANGEAGENTID, 
+                                    @CHANGEAGENTID, 
+                                    @FULLCOUNTRYNAME, 		
+                                    '', --@WEBADDRESS
+                                    NULL, --@PICTURE, 
+                                    NULL, --@PICTURETHUMBNAIL, 
+                                    NULL, --@INDUSTRYCODEID,
+                                    NULL, --@NUMEMPLOYEES,
+                                    NULL, --@NUMSUBSIDIARIES,
+                                    NULL, --@PARENTCORPID,
+                                    NULL, --@ADDRESS_ADDRESSTYPECODEID,
+                                    0, --@ADDRESS_DONOTMAIL,
+                                    NULL, --@ADDRESS_COUNTRYID,
+                                    NULL, --@ADDRESS_STATEID,
+                                    '', --@ADDRESS_ADDRESSBLOCK,
+                                    '', --@ADDRESS_CITY,
+                                    '', --@ADDRESS_POSTCODE,
+                                    NULL, --@PHONE_PHONETYPECODEID,
+                                    NULL, --@PHONE_NUMBER,
+                                    NULL, --@SKIP_ADDING_SECURITYGROUPS,
+                                    NULL, --@EMAILADDRESS_EMAILADDRESSTYPECODEID,
+                                    NULL, --@EMAILADDRESS_EMAILADDRESS,
+                                    0, --@OMITFROMVALIDATION,
+                                    '', --@CART,
+                                    '', --@DPC,
+                                    '', --@LOT,
+                                    NULL, --@COUNTYCODEID,
+                                    NULL, --@CONGRESSIONALDISTRICTCODEID,
+                                    NULL, --@LASTVALIDATIONATTEMPTDATE,
+                                    '', --@VALIDATIONMESSAGE,
+                                    0, --@CERTIFICATIONDATA,
+                                    NULL, --@ADDRESS_DONOTMAILREASONCODEID,
+                                    1, --@ISPRIMARY,
+                                    NULL, --@SKIP_ADDING_SITES,
+                                    NULL, --@INFOSOURCECODEID,
+                                    1;
+
+	-- Change the LookupID to the one entered by the user
+	update CONSTITUENT
+	   set CUSTOMIDENTIFIER = @COUNTRYCODE
+	 where ID = @ID;
+
+	 -- Add the Child Project constituency code
+	 if @countryOfficeConstituencyCode is not null
+		exec dbo.USP_DATAFORMTEMPLATE_ADD_CONSTITUENCY
+					@CHANGEAGENTID = @CHANGEAGENTID,
+					@CONSTITUENTID = @ID,
+					@CONSTITUENCYCODEID = @countryOfficeConstituencyCode;
+					
+	-- handle inserting the data
+	insert into dbo.USR_COUNTRYEXTENTION
+		(ID, FULLCOUNTRYNAME, COUNTRYCODE, COUNTRYSTATUSCODEID, COUNTRYSTATUSDATE, COUNTRYREGIONCODEID, ADDEDBYID, CHANGEDBYID, DATEADDED, DATECHANGED)
+    values
+		(@ID, @FULLCOUNTRYNAME, @COUNTRYCODE, @COUNTRYSTATUSCODEID, @COUNTRYSTATUSDATE, @COUNTRYREGIONCODEID, @CHANGEAGENTID, @CHANGEAGENTID, @CURRENTDATE, @CURRENTDATE)
+end try
+
+begin catch
+    exec dbo.USP_RAISE_ERROR
+    return 1
+end catch
+
+return 0				
+
+]]>
+			</c:CreateProcedureSQL>
+			<c:ExpectedDBExceptions>
+				<c:Constraints>
+					<c:Constraint Name="FK_USR_COUNTRYEXTENTION_COUNTRYSTATUSCODEID" Field="COUNTRYSTATUSCODEID" Type="ForeignKey" />
+					<c:Constraint Name="FK_USR_COUNTRYEXTENTION_COUNTRYREGIONCODEID" Field="COUNTRYREGIONCODEID" Type="ForeignKey" />
+				</c:Constraints>
+			</c:ExpectedDBExceptions>
+		</SaveImplementation>
+	</SPDataForm>
+	<c:FormMetaData FixedDialog="true">
+		<c:FormFields>
+			<c:FormField FieldID="FULLCOUNTRYNAME" MaxLength="50" Caption="Country name" />
+			<c:FormField FieldID="COUNTRYCODE" MaxLength="2" Caption="ISO Country code (2 digit code)" />
+			<c:FormField FieldID="COUNTRYSTATUSCODEID" DataType="Guid" Caption="Country status">
+				<c:CodeTable CodeTableName="USR_COUNTRYSTATUSCODE" />
+			</c:FormField>
+			<c:FormField FieldID="COUNTRYSTATUSDATE" DataType="Date" Caption="Country status date" />
+			<c:FormField FieldID="COUNTRYREGIONCODEID" DataType="Guid" Caption="Country region">
+				<c:CodeTable CodeTableName="USR_COUNTRYREGIONCODE" />
+			</c:FormField>
+		</c:FormFields>
+		<c:WebUIComponent>
+			<c:WebUI>
+				<c:DefaultWebUI/>
+			</c:WebUI>
+		</c:WebUIComponent>
+	</c:FormMetaData>
+</AddDataFormTemplateSpec>
