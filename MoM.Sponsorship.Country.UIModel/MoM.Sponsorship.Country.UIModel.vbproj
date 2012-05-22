@@ -119,10 +119,10 @@
     </Compile>
     <Compile Include="Country.Demographics.ViewForm.UIModel.vb" />
     <Compile Include="Country.OtherInfo.EditForm.UIModel.vb" />
-    <Compile Include="CountryExtentionSummaryViewFormUIModel.CodeGen.vb">
-      <DependentUpon>Country.ExtentionSummary.ViewForm.UIModel.vb</DependentUpon>
+    <Compile Include="CountryExtensionSummaryViewFormUIModel.CodeGen.vb">
+      <DependentUpon>Country.ExtensionSummary.ViewForm.UIModel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Country.ExtentionSummary.ViewForm.UIModel.vb" />
+    <Compile Include="Country.ExtensionSummary.ViewForm.UIModel.vb" />
     <Compile Include="CountryOtherInfoEditFormUIModel.CodeGen.vb">
       <DependentUpon>Country.OtherInfo.EditForm.UIModel.vb</DependentUpon>
     </Compile>
@@ -164,9 +164,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Country.ExtentionSummary.ViewForm.html" />
-    <Content Include="CountryExtentionSummaryViewFormUIModel.xml">
-      <DependentUpon>Country.ExtentionSummary.ViewForm.UIModel.vb</DependentUpon>
+    <Content Include="Country.ExtensionSummary.ViewForm.html" />
+    <Content Include="Country.ExtensionSummary.ViewForm.UIModel.xml">
+      <DependentUpon>Country.ExtensionSummary.ViewForm.UIModel.vb</DependentUpon>
     </Content>
     <None Include="..\MoM.Sponsorship.Country.Catalog\CountrySpecs\Country.ExtensionSummary.View.xml">
       <Link>LinkedSpecs\Country.ExtensionSummary.View.xml</Link>

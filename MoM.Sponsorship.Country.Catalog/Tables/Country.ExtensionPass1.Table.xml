@@ -1,0 +1,194 @@
+﻿<TableSpec 
+	xmlns="bb_appfx_table"
+	xmlns:common="bb_appfx_commontypes" 
+	ID="3bf26333-7755-4fe7-adf8-8b9e17db6502"
+	Name="Country Extension"
+	Description="Country - Constituent Organization Extension"
+	Author="Bill Elfstrom"
+	Tablename="USR_COUNTRYEXTENSION"
+	PrimaryKeyAsForeignKeyTablename="CONSTITUENT"
+
+	>
+
+<!-- 
+	Remarks:  *************               THIS IS ONLY USED WHEN USR_COUNTRYEXTENSION DOES NOT EXIST YET                *************
+	          *************  USE THE SPEC FILE Country.Extension.Table.xml TO MAKE ANY CHANGES TO USR_COUNTRYEXTENSION  *************
+			  ***********************************************************************************************************************
+	
+			  This is used to create the first pass of the table to extend an Organization Constituent to accomadate Country information.  
+			  The reason is that the fields DECREASEDQUOTA, GROWTHQUOTA, CURRENTQUOTA all use USR_UFN_COUNTRYCURRENTQUOTA. 
+			  However, USR_UFN_COUNTRYCURRENTQUOTA can not be loaded until the table exists. 
+			  Therefore, in this spec DECREASEDQUOTA, GROWTHQUOTA, CURRENTQUOTA are all set to 0
+			  Country.ExtensionPass1.Table.xml is only used once.  After that use Country.Extension.Table.xml
+
+			  Make sure not to change the ID guid.  They need to match in both table specs.
+
+	History:
+	Date            Modified By     Comments
+	17-May-2012     CMayeda         Initial Version
+	19-May-2012     CMayeda			fixed spelling error (extention) and created Country.ExtensionPass1.Table.xml to fix package load error.
+-->
+  
+	<!-- define fields on the table -->
+	<Fields>
+		<TextField Name="FULLCOUNTRYNAME" Description="Full Country Name" Length="50"/>
+		<TextField Name="COUNTRYCODE" Description="ISO Country Code" Length="2"/>
+	
+		<CodeTableField Name="COUNTRYSTATUSCODEID" Description="Country Status Code" CodeTable="USR_COUNTRYSTATUSCODE" />
+		<DateField Name="COUNTRYSTATUSDATE" Description="Country Status Date" />
+
+		<CodeTableField Name="COUNTRYREGIONCODEID" Description="Country Region Code" CodeTable="USR_COUNTRYREGIONCODE" />
+
+		<NumberField Name="AREAINSQUAREKM" Description="Area in Square KM" DefaultValue="0" Type="int"/>
+		<NumberField Name="URBANPOPULATION" Description="Urban Population" DefaultValue="0" Type="int"/>
+		<NumberField Name="RURALPOPULATION" Description="Rural Population" DefaultValue="0" Type="int" />
+		<NumberField Name="TOTALPOPULATION" Description="Total Population" DefaultValue="0" Type="int" />
+		<TextField Name="PEOPLEGROUPS" Description="People Groups" Length="1000"/>
+
+		<!--Code table - Major Topographical Features-->
+		<CodeTableField Name="MAJORTOPOGRAPHICALFEATURECODEID" Description="Major Topographical Feature Code" CodeTable="USR_MAJORTOPOGRAPHICALFEATURECODE"/>
+
+		<!-- Language - check boxes -->
+		<BooleanField Name="LANGUAGEAMHARIC" Description="Amharic" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGEARABIC" Description="Arabic" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGEBENGALI" Description="Bengali" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGEBURMESE" Description="Burmese" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGECHINESE" Description="Chinese" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGECREOLE" Description="Creole" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGEENGLISH" Description="English" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGEFRENCH" Description="French" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGEHINDI" Description="Hindi" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGEKHMER" Description="Khmer" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGEKIRGHIZ" Description="Kirghiz" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGELAO" Description="Lao" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGENEPALI" Description="Nepali" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGEROMANIAN" Description="Romanian" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGERUSSIAN" Description="Russian" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGESINHALESE" Description="Sinhalses" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGESISWATI" Description="SiSwati" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGESPANISH" Description="Spanish" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGESWAHILI" Description="Swahili" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGETAGALOG" Description="Tagalog" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGETAMIL" Description="Tamil" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGETHAI" Description="Thai" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGEURDU" Description="Urdu" DefaultValue="false"/>
+		<BooleanField Name="LANGUAGEOTHER" Description="Language - Other" DefaultValue="false"/>
+		<TextField Name="LANGUAGEOTHERDESC" Description="Language Other - Desc" Length="50"/>
+     
+		<!-- Religion -->
+		<BooleanField Name="RELIGIONANIMIST" Description="Animist" DefaultValue="false"/>
+		<BooleanField Name="RELIGIONBUDDHIST" Description="Buddhist" DefaultValue="false"/>
+		<BooleanField Name="RELIGIONCATHOLIC" Description="Catholic" DefaultValue="false"/>
+		<BooleanField Name="RELIGIONCOPTIC" Description="Coptic" DefaultValue="false"/>
+		<BooleanField Name="RELIGIONHINDU" Description="Hindu" DefaultValue="false"/>
+		<BooleanField Name="RELIGIONMUSLIM" Description="Muslim" DefaultValue="false"/>
+		<BooleanField Name="RELIGIONORTHODOX" Description="Orthodox" DefaultValue="false"/>
+		<BooleanField Name="RELIGIONPROTESTANT" Description="Protestant" DefaultValue="false"/>
+		<BooleanField Name="RELIGIONVOODOO" Description="Voodoo" DefaultValue="false"/>
+		<BooleanField Name="RELIGIONWITCHCRAFT" Description="Witchcraft" DefaultValue="false"/>
+		<BooleanField Name="RELIGIONOTHER" Description="Religion - Other" DefaultValue="false"/>
+		<TextField Name="RELIGIONOTHERDESC" Description="Religion Other - Desc" Length="50"/>
+    
+		<!-- Government -->
+		<BooleanField Name="GOVERNMENTCAPITALIST" Description="Capitalist" DefaultValue="false"/>
+		<BooleanField Name="GOVERNMENTCOMMUNIST" Description="Communist" DefaultValue="false"/>
+		<BooleanField Name="GOVERNMENTDEMOCRACY" Description="Democracy" DefaultValue="false"/>
+		<BooleanField Name="GOVERNMENTDICTATORSHIP" Description="Dictatorship" DefaultValue="false"/>
+		<BooleanField Name="GOVERNMENTMONARCHY" Description="Monarchy" DefaultValue="false"/>
+		<BooleanField Name="GOVERNMENTREPUBLIC" Description="Republic" DefaultValue="false"/>
+		<BooleanField Name="GOVERNMENTREVOLUTIONARY" Description="Revolutionary" DefaultValue="false"/>
+		<BooleanField Name="GOVERNMENTSOCIALIST" Description="Socialist" DefaultValue="false"/>
+		<BooleanField Name="GOVERNMENTTRANSITIONAL" Description="Transitional" DefaultValue="false"/>
+		<BooleanField Name="GOVERNMENTOTHER" Description="Government - Other" DefaultValue="false"/>
+		<TextField Name="GOVERNMENTOTHERDESC" Description="Government Other - Desc" Length="50"/>
+
+		<!-- History -->
+		<TextField Name="MAJORHOLIDAYSANDFESTIVALS" Description="Major holidays and festivals" Length="1000"/>
+		<TextField Name="CULTURALTRADITIONS" Description="Cultural traditions, customs, and rituals" Length="1000"/>
+
+		<!-- Social Indicators -->
+		<NumberField Name="CHILDMORTALITYRATEUNDERFIVE" Description="Mortality rate of children under age five" DefaultValue="0" Type="smallint"/>
+		<NumberField Name="INFANTMORTALITYRATE" Description="Infant mortatlity rate" DefaultValue="0" Type="smallint"/>
+		<MoneyField Name="ANNUALINCOMEPERCAPITA" Description="Annual income per capita" DefaultValue="0"/>
+		<NumberField Name="PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR" Description="Percent of population living on less than the equivalent of one US dollar per day" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="LIFEEXPECTANCYATBIRTH" Description="Life expectancy at birth" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="FERTILITYRATE" Description="Fertility rate" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="ADULTLITERACYRATE" Description="Adult literacy rate" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="NETPRIMARYSCHOOLENROLLMENTATTENDANCE" Description="Net primary school enrollment/attendance" DefaultValue="0" Type="int"/>
+		<NumberField Name="PERCENTCHILDRENREACHINGGRADEFIVE" Description="Percent of children reaching grade five" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="CHILDLABORPERCENTAGE" Description="Child Labor percentage" DefaultValue="0" Type="tinyint"/>
+
+		<!-- Health -->
+		<NumberField Name="PERCENTINFANTSLOWBIRTHRATE" Description="Percent of infants with low birth rate" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="PERCENTCHILDRENUNDERFIVEUNDERWEIGHT" Description="Percent of children under age five that are underweight" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED" Description="Percent of children under age five that are wasting or stunted" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="PERCENTURBANPOPULATIONUSINGIMPROVEDWATER" Description="Percent of urban population using improved water sources" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="PERCENTRUALPOPULATIONUSINGIMPROVEDWATER" Description="Percent of rural population using improved water sources" DefaultValue="0" Type="tinyint"/> 
+		<NumberField Name="PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER" Description="Percent of total population using improved water sources" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="PERCENTURBANPOPULATIONUSINGADEQUATESANITATION" Description="Percent of urban population using adequate sanitation facilities" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="PERCENTRURALPOPULATIONUSINGADEQUATESANITATION" Description="Percent of rural population using adequate sanitation facilities" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION" Description="Percent of total population using adequate sanitation facilities" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="HIVAIDSADULTPREVALENCERATE" Description="HIV/AIDS adult prevalence rate" DefaultValue="0" Type="tinyint"/>
+		<NumberField Name="NUMBERPEOPLELIVINGWITHIVAIDS" Description="Number of people living with HIV/AIDS" DefaultValue="0" Type="int"/>
+		
+		<!-- Country Quota -->
+		<EnumField Name="QUOTATYPECODE" DefaultValue="0" Description="Specify whether it's Project or Country quota">
+			<EnumValues>
+				<EnumValue ID="0" Translation="Project quota"/>
+				<EnumValue ID="1" Translation="Country quota"/>
+			</EnumValues>
+		</EnumField>
+		<ComputedColumnField Name="DECREASEDQUOTA" Description ="Decreased Quota"  Expression="0" />
+		<ComputedColumnField Name="GROWTHQUOTA" Description ="Growth Quota"  Expression="0" />
+		<ComputedColumnField Name="CURRENTQUOTA" Description ="Current Quota"  Expression="0" />
+
+		<NumberField Name="APPROVEDQUOTAINITIAL" Description ="Approved Quota Initial" DefaultValue="0" Type="smallint" />
+		<NumberField Name="APPROVEDQUOTA01OCT" Description ="Approved Quota 01 Oct" DefaultValue="0" Type="smallint" /> 
+		<NumberField Name="APPROVEDQUOTA02NOV" Description ="Approved Quota 02 Nov" DefaultValue="0" Type="smallint" />
+		<NumberField Name="APPROVEDQUOTA03DEC" Description ="Approved Quota 03 Dec" DefaultValue="0" Type="smallint" />
+		<NumberField Name="APPROVEDQUOTA04JAN" Description ="Approved Quota 04 Jan" DefaultValue="0" Type="smallint" />
+		<NumberField Name="APPROVEDQUOTA05FEB" Description ="Approved Quota 05 Feb" DefaultValue="0" Type="smallint" />
+		<NumberField Name="APPROVEDQUOTA06MAR" Description ="Approved Quota 06 Mar" DefaultValue="0" Type="smallint" />
+		<NumberField Name="APPROVEDQUOTA07APR" Description ="Approved Quota 07 Apr" DefaultValue="0" Type="smallint" />
+		<NumberField Name="APPROVEDQUOTA08MAY" Description ="Approved Quota 08 May" DefaultValue="0" Type="smallint" />
+		<NumberField Name="APPROVEDQUOTA09JUN" Description ="Approved Quota 09 Jun" DefaultValue="0" Type="smallint" />
+		<NumberField Name="APPROVEDQUOTA10JUL" Description ="Approved Quota 10 Jul" DefaultValue="0" Type="smallint" />
+		<NumberField Name="APPROVEDQUOTA11AUG" Description ="Approved Quota 11 Aug" DefaultValue="0" Type="smallint" />
+		<NumberField Name="APPROVEDQUOTA12SEP" Description ="Approved Quota 12 Sep" DefaultValue="0" Type="smallint" />
+
+		<EnumField Name="NEWCHILDRENSTATUSCODE" DefaultValue="0" Description="New Children Status">
+			<EnumValues>
+				<EnumValue ID="0" Translation="No"/>
+				<EnumValue ID="1" Translation="Yes"/>
+			</EnumValues>
+		</EnumField>
+		<CodeTableField Name="PERFORMANCECODEID" Description="Country Performance Status" CodeTable="USR_CHILDPROJECTCOUNTRYPERFORMANCECODE" />
+		<EnumField Name="MARKETINGDEMANDSTATUSCODE" DefaultValue="0" Description="Marketing Demand Status">
+			<EnumValues>
+				<EnumValue ID="0" Translation="No"/>
+				<EnumValue ID="1" Translation="Yes"/>
+			</EnumValues>
+		</EnumField>
+		<EnumField Name="OVERRIDETRIGGERSTATUSCODE" DefaultValue="0" Description="Override Trigger Status">
+			<EnumValues>
+				<EnumValue ID="0" Translation="No"/>
+				<EnumValue ID="1" Translation="Yes"/>
+			</EnumValues>
+		</EnumField>
+
+		<NumberField Name="CHILDRENNOTENTERED" Description ="Country Children Not Entered" DefaultValue="0" Type="smallint" />
+	</Fields>
+
+	<!-- define any additional check constraints on the table
+	<CheckConstraints>
+	</CheckConstraints> -->
+
+	<!-- define any indexes on the table -->
+	<!--Indexes>
+	</Indexes-->
+		
+	<!-- define any triggers on the table
+	<Triggers>
+	</Triggers> -->
+
+</TableSpec>

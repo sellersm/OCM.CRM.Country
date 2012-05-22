@@ -66,9 +66,6 @@ Partial Public Class [CountryQuotaEditFormUIModel]
 #End Region
 
     Private WithEvents _quotatypecode As Global.Blackbaud.AppFx.UIModeling.Core.ValueListField(Of Nullable(Of QUOTATYPECODES))
-    Private WithEvents _decreasedquota As Global.Blackbaud.AppFx.UIModeling.Core.IntegerField
-    Private WithEvents _growthquota As Global.Blackbaud.AppFx.UIModeling.Core.IntegerField
-    Private WithEvents _currentquota As Global.Blackbaud.AppFx.UIModeling.Core.IntegerField
     Private WithEvents _approvedquotainitial As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
     Private WithEvents _approvedquota01oct As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
     Private WithEvents _approvedquota02nov As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
@@ -93,9 +90,6 @@ Partial Public Class [CountryQuotaEditFormUIModel]
         MyBase.New()
 
         _quotatypecode = New Global.Blackbaud.AppFx.UIModeling.Core.ValueListField(Of Nullable(Of QUOTATYPECODES))
-        _decreasedquota = New Global.Blackbaud.AppFx.UIModeling.Core.IntegerField
-        _growthquota = New Global.Blackbaud.AppFx.UIModeling.Core.IntegerField
-        _currentquota = New Global.Blackbaud.AppFx.UIModeling.Core.IntegerField
         _approvedquotainitial = New Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         _approvedquota01oct = New Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         _approvedquota02nov = New Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
@@ -120,119 +114,99 @@ Partial Public Class [CountryQuotaEditFormUIModel]
         MyBase.DataFormInstanceId = New Guid("f29fddda-7ff0-4f95-96d9-59f0582f58cc")
         MyBase.RecordType = "Country Extention"
         MyBase.FixedDialog = True
+        MyBase.UserInterfaceUrl = "browser/htmlforms/custom/Country.Quota.EditForm.html"
 
         '
         '_quotatypecode
         '
         _quotatypecode.Name = "QUOTATYPECODE"
-        _quotatypecode.Caption = "Quotatype"
+        _quotatypecode.Caption = "Quota type"
         _quotatypecode.DataSource.Add(New Global.Blackbaud.AppFx.UIModeling.Core.ValueListItem(Of Nullable(Of QUOTATYPECODES)) With {.Value = QUOTATYPECODES.[ProjectQuota], .Translation = "Project quota"})
         _quotatypecode.DataSource.Add(New Global.Blackbaud.AppFx.UIModeling.Core.ValueListItem(Of Nullable(Of QUOTATYPECODES)) With {.Value = QUOTATYPECODES.[CountryQuota], .Translation = "Country quota"})
         Me.Fields.Add(_quotatypecode)
         '
-        '_decreasedquota
-        '
-        _decreasedquota.Name = "DECREASEDQUOTA"
-        _decreasedquota.Caption = "Decreasedquota"
-        _decreasedquota.DBReadOnly = True
-        Me.Fields.Add(_decreasedquota)
-        '
-        '_growthquota
-        '
-        _growthquota.Name = "GROWTHQUOTA"
-        _growthquota.Caption = "Growthquota"
-        _growthquota.DBReadOnly = True
-        Me.Fields.Add(_growthquota)
-        '
-        '_currentquota
-        '
-        _currentquota.Name = "CURRENTQUOTA"
-        _currentquota.Caption = "Currentquota"
-        _currentquota.DBReadOnly = True
-        Me.Fields.Add(_currentquota)
-        '
         '_approvedquotainitial
         '
         _approvedquotainitial.Name = "APPROVEDQUOTAINITIAL"
-        _approvedquotainitial.Caption = "Approvedquotainitial"
+        _approvedquotainitial.Caption = "Initial quota"
         Me.Fields.Add(_approvedquotainitial)
         '
         '_approvedquota01oct
         '
         _approvedquota01oct.Name = "APPROVEDQUOTA01OCT"
-        _approvedquota01oct.Caption = "Approvedquota01oct"
+        _approvedquota01oct.Caption = "01 - October"
         Me.Fields.Add(_approvedquota01oct)
         '
         '_approvedquota02nov
         '
         _approvedquota02nov.Name = "APPROVEDQUOTA02NOV"
-        _approvedquota02nov.Caption = "Approvedquota02nov"
+        _approvedquota02nov.Caption = "02 - November"
         Me.Fields.Add(_approvedquota02nov)
         '
         '_approvedquota03dec
         '
         _approvedquota03dec.Name = "APPROVEDQUOTA03DEC"
-        _approvedquota03dec.Caption = "Approvedquota03dec"
+        _approvedquota03dec.Caption = "03 - December"
         Me.Fields.Add(_approvedquota03dec)
         '
         '_approvedquota04jan
         '
         _approvedquota04jan.Name = "APPROVEDQUOTA04JAN"
-        _approvedquota04jan.Caption = "Approvedquota04jan"
+        _approvedquota04jan.Caption = "04 - January"
         Me.Fields.Add(_approvedquota04jan)
         '
         '_approvedquota05feb
         '
         _approvedquota05feb.Name = "APPROVEDQUOTA05FEB"
-        _approvedquota05feb.Caption = "Approvedquota05feb"
+        _approvedquota05feb.Caption = "05 - February"
         Me.Fields.Add(_approvedquota05feb)
         '
         '_approvedquota06mar
         '
         _approvedquota06mar.Name = "APPROVEDQUOTA06MAR"
-        _approvedquota06mar.Caption = "Approvedquota06mar"
+        _approvedquota06mar.Caption = "06 - March"
         Me.Fields.Add(_approvedquota06mar)
         '
         '_approvedquota07apr
         '
         _approvedquota07apr.Name = "APPROVEDQUOTA07APR"
-        _approvedquota07apr.Caption = "Approvedquota07apr"
+        _approvedquota07apr.Caption = "07 - April"
         Me.Fields.Add(_approvedquota07apr)
         '
         '_approvedquota08may
         '
         _approvedquota08may.Name = "APPROVEDQUOTA08MAY"
-        _approvedquota08may.Caption = "Approvedquota08may"
+        _approvedquota08may.Caption = "08 - May"
         Me.Fields.Add(_approvedquota08may)
         '
         '_approvedquota09jun
         '
         _approvedquota09jun.Name = "APPROVEDQUOTA09JUN"
-        _approvedquota09jun.Caption = "Approvedquota09jun"
+        _approvedquota09jun.Caption = "09 - June"
         Me.Fields.Add(_approvedquota09jun)
         '
         '_approvedquota10jul
         '
         _approvedquota10jul.Name = "APPROVEDQUOTA10JUL"
-        _approvedquota10jul.Caption = "Approvedquota10jul"
+        _approvedquota10jul.Caption = "10 - July"
         Me.Fields.Add(_approvedquota10jul)
         '
         '_approvedquota11aug
         '
         _approvedquota11aug.Name = "APPROVEDQUOTA11AUG"
-        _approvedquota11aug.Caption = "Approvedquota11aug"
+        _approvedquota11aug.Caption = "11 - August"
         Me.Fields.Add(_approvedquota11aug)
         '
         '_approvedquota12sep
         '
         _approvedquota12sep.Name = "APPROVEDQUOTA12SEP"
-        _approvedquota12sep.Caption = "Approvedquota12sep"
+        _approvedquota12sep.Caption = "12 - September"
         Me.Fields.Add(_approvedquota12sep)
         '
         '_newchildrenstatuscode
         '
         _newchildrenstatuscode.Name = "NEWCHILDRENSTATUSCODE"
-        _newchildrenstatuscode.Caption = "Newchildrenstatus"
+        _newchildrenstatuscode.Caption = "New children status"
         _newchildrenstatuscode.DataSource.Add(New Global.Blackbaud.AppFx.UIModeling.Core.ValueListItem(Of Nullable(Of NEWCHILDRENSTATUSCODES)) With {.Value = NEWCHILDRENSTATUSCODES.[No], .Translation = "No"})
         _newchildrenstatuscode.DataSource.Add(New Global.Blackbaud.AppFx.UIModeling.Core.ValueListItem(Of Nullable(Of NEWCHILDRENSTATUSCODES)) With {.Value = NEWCHILDRENSTATUSCODES.[Yes], .Translation = "Yes"})
         Me.Fields.Add(_newchildrenstatuscode)
@@ -241,13 +215,13 @@ Partial Public Class [CountryQuotaEditFormUIModel]
         '
         _performancecodeid.Name = "PERFORMANCECODEID"
         _performancecodeid.Caption = "Performance"
-        _performancecodeid.CodeTableName = "USR_CHILDPROJECTCOUNTRYTPERFORMANCECODE"
+        _performancecodeid.CodeTableName = "USR_CHILDPROJECTPERFORMANCECODE"
         Me.Fields.Add(_performancecodeid)
         '
         '_marketingdemandstatuscode
         '
         _marketingdemandstatuscode.Name = "MARKETINGDEMANDSTATUSCODE"
-        _marketingdemandstatuscode.Caption = "Marketingdemandstatus"
+        _marketingdemandstatuscode.Caption = "Marketing demand status"
         _marketingdemandstatuscode.DataSource.Add(New Global.Blackbaud.AppFx.UIModeling.Core.ValueListItem(Of Nullable(Of MARKETINGDEMANDSTATUSCODES)) With {.Value = MARKETINGDEMANDSTATUSCODES.[No], .Translation = "No"})
         _marketingdemandstatuscode.DataSource.Add(New Global.Blackbaud.AppFx.UIModeling.Core.ValueListItem(Of Nullable(Of MARKETINGDEMANDSTATUSCODES)) With {.Value = MARKETINGDEMANDSTATUSCODES.[Yes], .Translation = "Yes"})
         Me.Fields.Add(_marketingdemandstatuscode)
@@ -255,7 +229,7 @@ Partial Public Class [CountryQuotaEditFormUIModel]
         '_overridetriggerstatuscode
         '
         _overridetriggerstatuscode.Name = "OVERRIDETRIGGERSTATUSCODE"
-        _overridetriggerstatuscode.Caption = "Overridetriggerstatus"
+        _overridetriggerstatuscode.Caption = "Override trigger status"
         _overridetriggerstatuscode.DataSource.Add(New Global.Blackbaud.AppFx.UIModeling.Core.ValueListItem(Of Nullable(Of OVERRIDETRIGGERSTATUSCODES)) With {.Value = OVERRIDETRIGGERSTATUSCODES.[No], .Translation = "No"})
         _overridetriggerstatuscode.DataSource.Add(New Global.Blackbaud.AppFx.UIModeling.Core.ValueListItem(Of Nullable(Of OVERRIDETRIGGERSTATUSCODES)) With {.Value = OVERRIDETRIGGERSTATUSCODES.[Yes], .Translation = "Yes"})
         Me.Fields.Add(_overridetriggerstatuscode)
@@ -263,7 +237,7 @@ Partial Public Class [CountryQuotaEditFormUIModel]
         '_childrennotentered
         '
         _childrennotentered.Name = "CHILDRENNOTENTERED"
-        _childrennotentered.Caption = "Childrennotentered"
+        _childrennotentered.Caption = "Children not entered"
         Me.Fields.Add(_childrennotentered)
 
 		OnCreated()
@@ -271,9 +245,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Sub
     
     ''' <summary>
-    ''' Quotatype
+    ''' Quota type
     ''' </summary>
-    <System.ComponentModel.Description("Quotatype")> _
+    <System.ComponentModel.Description("Quota type")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [QUOTATYPECODE]() As Global.Blackbaud.AppFx.UIModeling.Core.ValueListField(Of Nullable(Of QUOTATYPECODES))
         Get
@@ -282,42 +256,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Decreasedquota
+    ''' Initial quota
     ''' </summary>
-    <System.ComponentModel.Description("Decreasedquota")> _
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
-    Public ReadOnly Property [DECREASEDQUOTA]() As Global.Blackbaud.AppFx.UIModeling.Core.IntegerField
-        Get
-            Return _decreasedquota
-        End Get
-    End Property
-    
-    ''' <summary>
-    ''' Growthquota
-    ''' </summary>
-    <System.ComponentModel.Description("Growthquota")> _
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
-    Public ReadOnly Property [GROWTHQUOTA]() As Global.Blackbaud.AppFx.UIModeling.Core.IntegerField
-        Get
-            Return _growthquota
-        End Get
-    End Property
-    
-    ''' <summary>
-    ''' Currentquota
-    ''' </summary>
-    <System.ComponentModel.Description("Currentquota")> _
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
-    Public ReadOnly Property [CURRENTQUOTA]() As Global.Blackbaud.AppFx.UIModeling.Core.IntegerField
-        Get
-            Return _currentquota
-        End Get
-    End Property
-    
-    ''' <summary>
-    ''' Approvedquotainitial
-    ''' </summary>
-    <System.ComponentModel.Description("Approvedquotainitial")> _
+    <System.ComponentModel.Description("Initial quota")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTAINITIAL]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -326,9 +267,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota01oct
+    ''' 01 - October
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota01oct")> _
+    <System.ComponentModel.Description("01 - October")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA01OCT]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -337,9 +278,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota02nov
+    ''' 02 - November
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota02nov")> _
+    <System.ComponentModel.Description("02 - November")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA02NOV]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -348,9 +289,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota03dec
+    ''' 03 - December
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota03dec")> _
+    <System.ComponentModel.Description("03 - December")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA03DEC]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -359,9 +300,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota04jan
+    ''' 04 - January
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota04jan")> _
+    <System.ComponentModel.Description("04 - January")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA04JAN]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -370,9 +311,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota05feb
+    ''' 05 - February
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota05feb")> _
+    <System.ComponentModel.Description("05 - February")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA05FEB]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -381,9 +322,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota06mar
+    ''' 06 - March
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota06mar")> _
+    <System.ComponentModel.Description("06 - March")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA06MAR]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -392,9 +333,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota07apr
+    ''' 07 - April
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota07apr")> _
+    <System.ComponentModel.Description("07 - April")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA07APR]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -403,9 +344,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota08may
+    ''' 08 - May
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota08may")> _
+    <System.ComponentModel.Description("08 - May")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA08MAY]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -414,9 +355,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota09jun
+    ''' 09 - June
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota09jun")> _
+    <System.ComponentModel.Description("09 - June")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA09JUN]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -425,9 +366,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota10jul
+    ''' 10 - July
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota10jul")> _
+    <System.ComponentModel.Description("10 - July")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA10JUL]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -436,9 +377,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota11aug
+    ''' 11 - August
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota11aug")> _
+    <System.ComponentModel.Description("11 - August")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA11AUG]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -447,9 +388,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Approvedquota12sep
+    ''' 12 - September
     ''' </summary>
-    <System.ComponentModel.Description("Approvedquota12sep")> _
+    <System.ComponentModel.Description("12 - September")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [APPROVEDQUOTA12SEP]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get
@@ -458,9 +399,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Newchildrenstatus
+    ''' New children status
     ''' </summary>
-    <System.ComponentModel.Description("Newchildrenstatus")> _
+    <System.ComponentModel.Description("New children status")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [NEWCHILDRENSTATUSCODE]() As Global.Blackbaud.AppFx.UIModeling.Core.ValueListField(Of Nullable(Of NEWCHILDRENSTATUSCODES))
         Get
@@ -480,9 +421,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Marketingdemandstatus
+    ''' Marketing demand status
     ''' </summary>
-    <System.ComponentModel.Description("Marketingdemandstatus")> _
+    <System.ComponentModel.Description("Marketing demand status")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [MARKETINGDEMANDSTATUSCODE]() As Global.Blackbaud.AppFx.UIModeling.Core.ValueListField(Of Nullable(Of MARKETINGDEMANDSTATUSCODES))
         Get
@@ -491,9 +432,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Overridetriggerstatus
+    ''' Override trigger status
     ''' </summary>
-    <System.ComponentModel.Description("Overridetriggerstatus")> _
+    <System.ComponentModel.Description("Override trigger status")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [OVERRIDETRIGGERSTATUSCODE]() As Global.Blackbaud.AppFx.UIModeling.Core.ValueListField(Of Nullable(Of OVERRIDETRIGGERSTATUSCODES))
         Get
@@ -502,9 +443,9 @@ Partial Public Class [CountryQuotaEditFormUIModel]
     End Property
     
     ''' <summary>
-    ''' Childrennotentered
+    ''' Children not entered
     ''' </summary>
-    <System.ComponentModel.Description("Childrennotentered")> _
+    <System.ComponentModel.Description("Children not entered")> _
     <System.CodeDom.Compiler.GeneratedCodeAttribute("BBUIModelLibrary", "2.91.1535.0")> _
     Public ReadOnly Property [CHILDRENNOTENTERED]() As Global.Blackbaud.AppFx.UIModeling.Core.SmallIntField
         Get

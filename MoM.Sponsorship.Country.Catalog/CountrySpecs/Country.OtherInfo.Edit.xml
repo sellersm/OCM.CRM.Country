@@ -3,20 +3,30 @@
     xmlns:common="bb_appfx_commontypes"
     ID="ff9baac8-13d8-4a15-bf3e-007b01b98b62"
     Name="Country Other Info Edit Data Form"
-    Description="Used for editing the given Country Extention other information fields"
+    Description="Used for editing the given Country Extension other information fields"
     Author="Cary Mayeda"
     DataFormInstanceID="6174582c-29a2-4afd-a919-9457c862baa2"
-    RecordType="Country Extention"
+    RecordType="Country Extension"
     common:SecurityUIFolder="Sponsorship\Opportunity\Country"
     >
 
+<!-- 
+	Remarks:    
+
+	History:
+	Date            Modified By     Comments
+	02-May-2012		CMayeda			Initial Version
+	19-May-2012     CMayeda			fixed spelling error (extention)
+
+-->
+	
 	<SPDataForm>
 
 		<!-- define the edit load SP, which is used to load the data for the form -->
-		<LoadImplementation SPName="USP_DATAFORMTEMPLATE_EDITLOAD_COUNTRYEXTENTION_OTHERINFO">
+		<LoadImplementation SPName="USP_DATAFORMTEMPLATE_EDITLOAD_COUNTRYEXTENSION_OTHERINFO">
 			<common:CreateProcedureSQL>
 				<![CDATA[
-create procedure dbo.USP_DATAFORMTEMPLATE_EDITLOAD_COUNTRYEXTENTION_OTHERINFO(
+create procedure dbo.USP_DATAFORMTEMPLATE_EDITLOAD_COUNTRYEXTENSION_OTHERINFO(
     @ID uniqueidentifier,
     @DATALOADED bit = 0 output,
     @TSLONG bigint = 0 output,
@@ -84,7 +94,7 @@ as
         @HIVAIDSADULTPREVALENCERATE = HIVAIDSADULTPREVALENCERATE, 
         @NUMBERPEOPLELIVINGWITHIVAIDS = NUMBERPEOPLELIVINGWITHIVAIDS
        
-	from dbo.USR_COUNTRYEXTENTION
+	from dbo.USR_COUNTRYEXTENSION
 	where ID = @ID
 
 
@@ -93,10 +103,10 @@ as
 			</common:CreateProcedureSQL>
 		</LoadImplementation>
 
-		<SaveImplementation SPName="USP_DATAFORMTEMPLATE_EDIT_COUNTRYEXTENTION_OTHERINFO">
+		<SaveImplementation SPName="USP_DATAFORMTEMPLATE_EDIT_COUNTRYEXTENSION_OTHERINFO">
 			<common:CreateProcedureSQL>
 				<![CDATA[
-create procedure dbo.USP_DATAFORMTEMPLATE_EDIT_COUNTRYEXTENTION_OTHERINFO (
+create procedure dbo.USP_DATAFORMTEMPLATE_EDIT_COUNTRYEXTENSION_OTHERINFO (
 	@ID uniqueidentifier,
 	@CHANGEAGENTID uniqueidentifier = null,
     @MAJORHOLIDAYSANDFESTIVALS nvarchar(1000),
@@ -136,7 +146,7 @@ as
 
 	begin try
 		-- handle updating the data
-		update dbo.USR_COUNTRYEXTENTION set
+		update dbo.USR_COUNTRYEXTENSION set
 		    MAJORHOLIDAYSANDFESTIVALS = @MAJORHOLIDAYSANDFESTIVALS,
             CULTURALTRADITIONS = @CULTURALTRADITIONS,
             CHILDMORTALITYRATEUNDERFIVE = @CHILDMORTALITYRATEUNDERFIVE,

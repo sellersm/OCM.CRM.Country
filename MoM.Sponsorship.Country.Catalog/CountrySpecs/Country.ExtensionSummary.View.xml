@@ -2,19 +2,28 @@
     xmlns="bb_appfx_viewdataformtemplate"
     xmlns:common="bb_appfx_commontypes"
     ID="5b4584b5-8925-4401-b001-75895eeaf978"
-    Name="Country Extention View Form"
-    Description="Used for viewing a given Country Extention"
+    Name="Country Extension View Form"
+    Description="Used for viewing a given Country Extension"
     Author="Cary Mayeda"
     DataFormInstanceID="1a997144-6598-47dc-966a-62ff307b0feb"
-    RecordType="Country Extention"
+    RecordType="Country Extension"
     common:SecurityUIFolder="Sponsorship\Opportunity\Country"
     >
 
+<!-- 
+	Remarks:    
+
+	History:
+	Date            Modified By     Comments
+	02-May-2012		CMayeda			Initial Version
+	19-May-2012     CMayeda			fixed spelling error (extention)
+
+-->
 	<!-- define the SP that returns the data used by the form -->
-	<SPDataForm SPName="USP_DATAFORMTEMPLATE_VIEW_COUNTRY_EXTENTION">
+	<SPDataForm SPName="USP_DATAFORMTEMPLATE_VIEW_COUNTRY_EXTENSION">
 		<common:CreateProcedureSQL>
 			<![CDATA[
-create procedure dbo.USP_DATAFORMTEMPLATE_VIEW_COUNTRY_EXTENTION
+create procedure dbo.USP_DATAFORMTEMPLATE_VIEW_COUNTRY_EXTENSION
 (
 	@ID uniqueidentifier,
 	@DATALOADED bit = 0 output,
@@ -39,7 +48,7 @@ as
            @COUNTRYSTATUSCODE = (select DESCRIPTION from dbo.USR_COUNTRYSTATUSCODE where ID = COUNTRYSTATUSCODEID), 
            @COUNTRYSTATUSDATE = COUNTRYSTATUSDATE, 
            @COUNTRYREGIONCODE = (select DESCRIPTION from dbo.USR_COUNTRYREGIONCODE where ID = COUNTRYREGIONCODEID)
-	 from dbo.USR_COUNTRYEXTENTION
+	 from dbo.USR_COUNTRYEXTENSION
 	where ID = @ID
 	
 	return 0;
@@ -59,9 +68,9 @@ as
 		</common:FormFields>
 
         <common:WebUIComponent>
-            <common:UIModel AssemblyName="MoM.Sponsorship.Country.UIModel.dll" ClassName="MoM.Sponsorship.Country.UIModel.CountryExtentionSummaryViewFormUIModel" />
+            <common:UIModel AssemblyName="MoM.Sponsorship.Country.UIModel.dll" ClassName="MoM.Sponsorship.Country.UIModel.CountryExtensionSummaryViewFormUIModel" />
             <common:WebUI>
-                <common:ExternalResource Url="browser/htmlforms/custom/Country.ExtentionSummary.ViewForm.html" />
+                <common:ExternalResource Url="browser/htmlforms/custom/Country.ExtensionSummary.ViewForm.html" />
             </common:WebUI>
         </common:WebUIComponent>
 

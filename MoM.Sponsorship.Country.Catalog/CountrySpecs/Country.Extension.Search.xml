@@ -8,8 +8,19 @@
     RecordType="Country Extension"
     TranslationFunctionID="ec1bc00b-fc28-435a-a6ad-07938211558f" 
 	QuickFindCriteriaFieldID="LOOKUPID"
+	common:SecurityUIFolder="Sponsorship\Opportunity\Country"
 >
 
+<!-- 
+	Remarks:    
+
+	History:
+	Date            Modified By     Comments
+	02-May-2012		CMayeda			Initial Version
+	19-May-2012     CMayeda			fixed spelling error (extention)
+
+-->
+	
 	<!-- describe the SP used to fetch the results from the given filters.  Note that the @MAXROWS parameter is required, and should be 
 	used to limit the number of rows returned to a reasonable number. -->
 	<SPSearchList SPName="USR_USP_SEARCHLIST_COUNTRYEXTENSION">
@@ -31,7 +42,7 @@ as
 			c.LOOKUPID, 
 			c.NAME, 
 			sc.DESCRIPTION as STATUS 
-	  from  dbo.USR_COUNTRYEXTENTION  c_ext
+	  from  dbo.USR_COUNTRYEXTENSION  c_ext
       join	dbo.CONSTITUENT c on
 				c_ext.ID = c.ID
 	  join  dbo.USR_COUNTRYSTATUSCODE sc on

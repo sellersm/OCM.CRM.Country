@@ -92,11 +92,6 @@
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Tables\Country.Extention.Table.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -140,7 +135,9 @@
     <EmbeddedResource Include="CountrySpecs\Country.Add.Task.xml" />
     <EmbeddedResource Include="Tables\Code Tables\Country.Region.CodeTable.xml" />
     <EmbeddedResource Include="Tables\Code Tables\Country.Status.CodeTable.xml" />
-    <EmbeddedResource Include="Tables\Code Tables\MajorTopographicalFeatures.CodeTable.xml" />
+    <EmbeddedResource Include="Tables\Code Tables\MajorTopographicalFeatures.CodeTable.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CountrySpecs\Country.Extension.Search.xml" />
@@ -150,6 +147,15 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CountrySpecs\Country.Extension.Package.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tables\Country.ExtensionPass1.Table.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CountrySpecs\Country.ExtensionPass1.Package.xml" />
+    <Content Include="Tables\Country.Extension.Table.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>

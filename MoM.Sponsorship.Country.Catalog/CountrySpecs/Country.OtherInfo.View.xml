@@ -3,18 +3,28 @@
     xmlns:common="bb_appfx_commontypes"
     ID="69828304-2a9f-4876-8e1f-63081f48a5fe"
     Name="Country Other Info View Data Form"
-    Description="Used for displaying the given Country Extention other information fields"
+    Description="Used for displaying the given Country Extension other information fields"
     Author="Cary Mayeda"
     DataFormInstanceID="6e1e7cea-452e-4ef9-b564-aeead1b56bd5"
-    RecordType="Country Extention"
+    RecordType="Country Extension"
     common:SecurityUIFolder="Sponsorship\Opportunity\Country"
     >
 
+<!-- 
+	Remarks:    
+
+	History:
+	Date            Modified By     Comments
+	02-May-2012		CMayeda			Initial Version
+	19-May-2012     CMayeda			fixed spelling error (extention)
+
+-->
+	
 	<!-- define the SP that returns the data used by the form -->
-	<SPDataForm SPName="USP_DATAFORMTEMPLATE_VIEW_COUNTRYEXTENTION_OTHERINFO">
+	<SPDataForm SPName="USP_DATAFORMTEMPLATE_VIEW_COUNTRYEXTENSION_OTHERINFO">
 		<common:CreateProcedureSQL>
 			<![CDATA[
-create procedure dbo.USP_DATAFORMTEMPLATE_VIEW_COUNTRYEXTENTION_OTHERINFO
+create procedure dbo.USP_DATAFORMTEMPLATE_VIEW_COUNTRYEXTENSION_OTHERINFO
 (
 	@ID uniqueidentifier,
 	@DATALOADED bit = 0 output,
@@ -75,7 +85,7 @@ as
 		   @PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION = PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION,
            @HIVAIDSADULTPREVALENCERATE = HIVAIDSADULTPREVALENCERATE, 
            @NUMBERPEOPLELIVINGWITHIVAIDS = NUMBERPEOPLELIVINGWITHIVAIDS
-	  from  dbo.USR_COUNTRYEXTENTION
+	  from  dbo.USR_COUNTRYEXTENSION
 	 where  ID = @ID	
 	return 0;
 			]]>
