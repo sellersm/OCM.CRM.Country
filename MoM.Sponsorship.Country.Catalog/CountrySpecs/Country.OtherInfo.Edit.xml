@@ -1,0 +1,219 @@
+﻿<EditDataFormTemplateSpec 
+    xmlns="bb_appfx_editdataformtemplate"
+    xmlns:common="bb_appfx_commontypes"
+    ID="ff9baac8-13d8-4a15-bf3e-007b01b98b62"
+    Name="Country Other Info Edit Data Form"
+    Description="Used for editing the given Country Extention other information fields"
+    Author="Cary Mayeda"
+    DataFormInstanceID="6174582c-29a2-4afd-a919-9457c862baa2"
+    RecordType="Country Extention"
+    common:SecurityUIFolder="Sponsorship\Opportunity\Country"
+    >
+
+	<SPDataForm>
+
+		<!-- define the edit load SP, which is used to load the data for the form -->
+		<LoadImplementation SPName="USP_DATAFORMTEMPLATE_EDITLOAD_COUNTRYEXTENTION_OTHERINFO">
+			<common:CreateProcedureSQL>
+				<![CDATA[
+create procedure dbo.USP_DATAFORMTEMPLATE_EDITLOAD_COUNTRYEXTENTION_OTHERINFO(
+    @ID uniqueidentifier,
+    @DATALOADED bit = 0 output,
+    @TSLONG bigint = 0 output,
+	@MAJORHOLIDAYSANDFESTIVALS nvarchar(1000) = null output,
+    @CULTURALTRADITIONS nvarchar(1000) = null output,
+    @CHILDMORTALITYRATEUNDERFIVE smallint = null output,
+    @INFANTMORTALITYRATE smallint = null output,
+    @ANNUALINCOMEPERCAPITA money = null output,
+    @PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR tinyint = null output,
+    @LIFEEXPECTANCYATBIRTH tinyint = null output,
+    @FERTILITYRATE tinyint = null output,
+    @ADULTLITERACYRATE tinyint = null output,
+    @NETPRIMARYSCHOOLENROLLMENTATTENDANCE int = null output,
+    @PERCENTCHILDRENREACHINGGRADEFIVE tinyint = null output,
+    @CHILDLABORPERCENTAGE tinyint = null output,
+    @PERCENTINFANTSLOWBIRTHRATE tinyint = null output,
+    @PERCENTCHILDRENUNDERFIVEUNDERWEIGHT tinyint = null output,
+    @PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED tinyint = null output,
+    @PERCENTURBANPOPULATIONUSINGIMPROVEDWATER tinyint = null output,
+    @PERCENTRUALPOPULATIONUSINGIMPROVEDWATER tinyint = null output,
+    @PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER tinyint = null output,
+    @PERCENTURBANPOPULATIONUSINGADEQUATESANITATION tinyint = null output,
+    @PERCENTRURALPOPULATIONUSINGADEQUATESANITATION tinyint = null output,
+    @PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION tinyint = null output,
+    @HIVAIDSADULTPREVALENCERATE tinyint = null output,
+    @NUMBERPEOPLELIVINGWITHIVAIDS int = null output
+    
+)
+as
+
+	set nocount on;
+
+	-- be sure to set these, in case the select returns no rows
+	set @DATALOADED = 0
+	set @TSLONG = 0
+
+	-- populate the output parameters, which correspond to fields on the form.  Note that
+	-- we set @DATALOADED = 1 to indicate that the load was successful.  Otherwise, the system
+	-- will display a "no data loaded" message.  Also note that we fetch the TSLONG so that concurrency
+	-- can be considered.
+	select
+		@DATALOADED = 1,
+		@TSLONG = TSLONG,
+        @MAJORHOLIDAYSANDFESTIVALS = MAJORHOLIDAYSANDFESTIVALS, 
+        @CULTURALTRADITIONS = CULTURALTRADITIONS, 
+        @CHILDMORTALITYRATEUNDERFIVE = CHILDMORTALITYRATEUNDERFIVE, 
+        @INFANTMORTALITYRATE = INFANTMORTALITYRATE, 
+        @ANNUALINCOMEPERCAPITA = ANNUALINCOMEPERCAPITA, 
+        @PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR = PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR, 
+        @LIFEEXPECTANCYATBIRTH = LIFEEXPECTANCYATBIRTH, 
+        @FERTILITYRATE = FERTILITYRATE, 
+        @ADULTLITERACYRATE = ADULTLITERACYRATE, 
+        @NETPRIMARYSCHOOLENROLLMENTATTENDANCE = NETPRIMARYSCHOOLENROLLMENTATTENDANCE, 
+        @PERCENTCHILDRENREACHINGGRADEFIVE = PERCENTCHILDRENREACHINGGRADEFIVE, 
+        @CHILDLABORPERCENTAGE = CHILDLABORPERCENTAGE, 
+        @PERCENTINFANTSLOWBIRTHRATE = PERCENTINFANTSLOWBIRTHRATE, 
+        @PERCENTCHILDRENUNDERFIVEUNDERWEIGHT = PERCENTCHILDRENUNDERFIVEUNDERWEIGHT, 
+        @PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED = PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED, 
+        @PERCENTURBANPOPULATIONUSINGIMPROVEDWATER = PERCENTURBANPOPULATIONUSINGIMPROVEDWATER, 
+        @PERCENTRUALPOPULATIONUSINGIMPROVEDWATER = PERCENTRUALPOPULATIONUSINGIMPROVEDWATER, 
+        @PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER = PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER, 
+        @PERCENTURBANPOPULATIONUSINGADEQUATESANITATION = PERCENTURBANPOPULATIONUSINGADEQUATESANITATION, 
+        @PERCENTRURALPOPULATIONUSINGADEQUATESANITATION = PERCENTRURALPOPULATIONUSINGADEQUATESANITATION, 
+	    @PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION = PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION,
+        @HIVAIDSADULTPREVALENCERATE = HIVAIDSADULTPREVALENCERATE, 
+        @NUMBERPEOPLELIVINGWITHIVAIDS = NUMBERPEOPLELIVINGWITHIVAIDS
+       
+	from dbo.USR_COUNTRYEXTENTION
+	where ID = @ID
+
+
+	return 0;
+				]]>
+			</common:CreateProcedureSQL>
+		</LoadImplementation>
+
+		<SaveImplementation SPName="USP_DATAFORMTEMPLATE_EDIT_COUNTRYEXTENTION_OTHERINFO">
+			<common:CreateProcedureSQL>
+				<![CDATA[
+create procedure dbo.USP_DATAFORMTEMPLATE_EDIT_COUNTRYEXTENTION_OTHERINFO (
+	@ID uniqueidentifier,
+	@CHANGEAGENTID uniqueidentifier = null,
+    @MAJORHOLIDAYSANDFESTIVALS nvarchar(1000),
+    @CULTURALTRADITIONS nvarchar(1000),
+    @CHILDMORTALITYRATEUNDERFIVE smallint,
+    @INFANTMORTALITYRATE smallint,
+    @ANNUALINCOMEPERCAPITA money,
+    @PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR tinyint,
+    @LIFEEXPECTANCYATBIRTH tinyint,
+    @FERTILITYRATE tinyint,
+    @ADULTLITERACYRATE tinyint,
+    @NETPRIMARYSCHOOLENROLLMENTATTENDANCE int,
+    @PERCENTCHILDRENREACHINGGRADEFIVE tinyint,
+    @CHILDLABORPERCENTAGE tinyint,
+    @PERCENTINFANTSLOWBIRTHRATE tinyint,
+    @PERCENTCHILDRENUNDERFIVEUNDERWEIGHT tinyint,
+    @PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED tinyint,
+    @PERCENTURBANPOPULATIONUSINGIMPROVEDWATER tinyint,
+    @PERCENTRUALPOPULATIONUSINGIMPROVEDWATER tinyint,
+    @PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER tinyint,
+    @PERCENTURBANPOPULATIONUSINGADEQUATESANITATION tinyint,
+    @PERCENTRURALPOPULATIONUSINGADEQUATESANITATION tinyint,
+	@PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION tinyint,
+    @HIVAIDSADULTPREVALENCERATE tinyint,
+    @NUMBERPEOPLELIVINGWITHIVAIDS int
+
+)
+as
+
+	set nocount on;
+
+	if @CHANGEAGENTID is null  
+		exec dbo.USP_CHANGEAGENT_GETORCREATECHANGEAGENT @CHANGEAGENTID output
+				
+	declare @CURRENTDATE datetime
+	set @CURRENTDATE = getdate()
+
+	begin try
+		-- handle updating the data
+		update dbo.USR_COUNTRYEXTENTION set
+		    MAJORHOLIDAYSANDFESTIVALS = @MAJORHOLIDAYSANDFESTIVALS,
+            CULTURALTRADITIONS = @CULTURALTRADITIONS,
+            CHILDMORTALITYRATEUNDERFIVE = @CHILDMORTALITYRATEUNDERFIVE,
+            INFANTMORTALITYRATE = @INFANTMORTALITYRATE,
+            ANNUALINCOMEPERCAPITA = @ANNUALINCOMEPERCAPITA,
+            PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR = @PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR,
+            LIFEEXPECTANCYATBIRTH = @LIFEEXPECTANCYATBIRTH,
+            FERTILITYRATE = @FERTILITYRATE,
+            ADULTLITERACYRATE = @ADULTLITERACYRATE,
+            NETPRIMARYSCHOOLENROLLMENTATTENDANCE = @NETPRIMARYSCHOOLENROLLMENTATTENDANCE,
+            PERCENTCHILDRENREACHINGGRADEFIVE = @PERCENTCHILDRENREACHINGGRADEFIVE,
+            CHILDLABORPERCENTAGE = @CHILDLABORPERCENTAGE,
+            PERCENTINFANTSLOWBIRTHRATE = @PERCENTINFANTSLOWBIRTHRATE,
+            PERCENTCHILDRENUNDERFIVEUNDERWEIGHT = @PERCENTCHILDRENUNDERFIVEUNDERWEIGHT,
+            PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED = @PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED,
+            PERCENTURBANPOPULATIONUSINGIMPROVEDWATER = @PERCENTURBANPOPULATIONUSINGIMPROVEDWATER,
+            PERCENTRUALPOPULATIONUSINGIMPROVEDWATER = @PERCENTRUALPOPULATIONUSINGIMPROVEDWATER,
+            PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER = @PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER,
+            PERCENTURBANPOPULATIONUSINGADEQUATESANITATION = @PERCENTURBANPOPULATIONUSINGADEQUATESANITATION,
+            PERCENTRURALPOPULATIONUSINGADEQUATESANITATION = @PERCENTRURALPOPULATIONUSINGADEQUATESANITATION,
+			PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION = @PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION,
+            HIVAIDSADULTPREVALENCERATE = @HIVAIDSADULTPREVALENCERATE,
+            NUMBERPEOPLELIVINGWITHIVAIDS = @NUMBERPEOPLELIVINGWITHIVAIDS,
+
+			CHANGEDBYID = @CHANGEAGENTID,
+			DATECHANGED = @CURRENTDATE
+		where ID = @ID
+	end try
+	begin catch
+		exec dbo.USP_RAISE_ERROR
+		return 1
+	end catch
+
+return 0;
+				]]>
+			</common:CreateProcedureSQL>
+		</SaveImplementation>
+
+	</SPDataForm>
+
+	<!-- describe fields on the form, which correspond to parameters on the SP.  Note that system paramters 
+	like the record ID, DATALOADED, TSLONG, and CURRENTAPPUSERID need not be listed. -->
+	<common:FormMetaData FixedDialog="true">
+		<common:FormFields>
+			<common:FormField FieldID="MAJORHOLIDAYSANDFESTIVALS" MaxLength="1000" Caption="Major holidays and festivals" Multiline="true" />
+			<common:FormField FieldID="CULTURALTRADITIONS" MaxLength="1000" Caption="Cultural traditions" Multiline="true" />
+			<common:FormField FieldID="CHILDMORTALITYRATEUNDERFIVE" DataType="SmallInt" Caption="Mortality rate of children under age five" />
+			<common:FormField FieldID="INFANTMORTALITYRATE" DataType="SmallInt" Caption="Infant mortality rate" />
+			<common:FormField FieldID="ANNUALINCOMEPERCAPITA" DataType="Money" Caption="Annual income per capita" />
+			<common:FormField FieldID="PERCENTPOPULATIONLIVINGLESSTHANONEDOLLAR" DataType="TinyInt" Caption="Percent of population living on less than the equivalent of one US dollar per day" />
+			<common:FormField FieldID="LIFEEXPECTANCYATBIRTH" DataType="TinyInt" Caption="Life expectancy at birth" />
+			<common:FormField FieldID="FERTILITYRATE" DataType="TinyInt" Caption="Fertility rate" />
+			<common:FormField FieldID="ADULTLITERACYRATE" DataType="TinyInt" Caption="Adult literacy rate" />
+			<common:FormField FieldID="NETPRIMARYSCHOOLENROLLMENTATTENDANCE" DataType="Integer" Caption="Net primary school enrollment/attendance" />
+			<common:FormField FieldID="PERCENTCHILDRENREACHINGGRADEFIVE" DataType="TinyInt" Caption="Percent of children reaching grade five" />
+			<common:FormField FieldID="CHILDLABORPERCENTAGE" DataType="TinyInt" Caption="Child Labor Percentage" />
+			<common:FormField FieldID="PERCENTINFANTSLOWBIRTHRATE" DataType="TinyInt" Caption="Percent of infants with low birth weight" />
+			<common:FormField FieldID="PERCENTCHILDRENUNDERFIVEUNDERWEIGHT" DataType="TinyInt" Caption="Percent of children under age five that are underweight" />
+			<common:FormField FieldID="PERCENTCHILDRENUNDERFIVEWASTINGSTUNTED" DataType="TinyInt" Caption="Percent of children under age five that are wasting or stunted" />
+			<common:FormField FieldID="PERCENTURBANPOPULATIONUSINGIMPROVEDWATER" DataType="TinyInt" Caption="Percent of urban population using improved water sources" />
+			<common:FormField FieldID="PERCENTRUALPOPULATIONUSINGIMPROVEDWATER" DataType="TinyInt" Caption="Percent of rural population using improved water sources" />
+			<common:FormField FieldID="PERCENTTOTALPOPULATIONUSINGIMPROVEDWATER" DataType="TinyInt" Caption="Percent of total population using improved water sources" />
+			<common:FormField FieldID="PERCENTURBANPOPULATIONUSINGADEQUATESANITATION" DataType="TinyInt" Caption="Percent of urban population using adequate sanitation facilities" />
+			<common:FormField FieldID="PERCENTRURALPOPULATIONUSINGADEQUATESANITATION" DataType="TinyInt" Caption="Percent of rural population using adequate sanitation facilities" />
+			<common:FormField FieldID="PERCENTTOTALPOPULATIONUSINGADEQUATESANITATION" DataType="TinyInt" Caption="Percent of total population using adequate sanitation facilities" />
+			<common:FormField FieldID="HIVAIDSADULTPREVALENCERATE" DataType="TinyInt" Caption="HIV/AIDS adult prevalence rate" />
+			<common:FormField FieldID="NUMBERPEOPLELIVINGWITHIVAIDS" DataType="Integer" Caption="Number of people living with HIV/AIDS" />
+
+		</common:FormFields>
+
+        <common:WebUIComponent>
+            <common:UIModel AssemblyName="MoM.Sponsorship.Country.UIModel.dll" ClassName="MoM.Sponsorship.Country.UIModel.CountryOtherInfoEditFormUIModel" />
+            <common:WebUI>
+                <common:ExternalResource Url="browser/htmlforms/custom/Country.OtherInfo.EditForm.html" />
+            </common:WebUI>
+        </common:WebUIComponent>
+
+		
+	</common:FormMetaData>
+</EditDataFormTemplateSpec>

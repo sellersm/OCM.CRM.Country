@@ -1,0 +1,10 @@
+﻿<UIModelWizardMetadata>
+  <SpecFileName>Country.Demographics.Edit.xml</SpecFileName>
+  <Namespace></Namespace>
+  <ClassName>CountryDemographicsEditFormUIModel</ClassName>
+  <HtmlInfo GenerateHtml="false">
+    <HtmlFile>Country.Demographics.EditForm.html</HtmlFile>
+    <HtmlFolder></HtmlFolder>
+  </HtmlInfo>
+  <GenerateFromDatabase>true</GenerateFromDatabase>
+</UIModelWizardMetadata>

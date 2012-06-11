@@ -1,0 +1,10 @@
+﻿<UIModelWizardMetadata>
+  <SpecFileName>Country.OtherInfo.View.xml</SpecFileName>
+  <Namespace></Namespace>
+  <ClassName>Country.OtherInfo.ViewForm.UIModel</ClassName>
+  <HtmlInfo GenerateHtml="false">
+    <HtmlFile>CountryExtentionOtherInfoViewDataForm.html</HtmlFile>
+    <HtmlFolder></HtmlFolder>
+  </HtmlInfo>
+  <GenerateFromDatabase>true</GenerateFromDatabase>
+</UIModelWizardMetadata>

@@ -1,0 +1,95 @@
+﻿<PageDefinitionSpec 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	ID="8bc1a2a0-c984-49b3-bd7a-6b4a62dba25f" 
+	Name="Country Extension Page" 
+	Description="Country extension page" 
+	Author="Cary Mayeda" 
+	ExpressionDataFormID="1a997144-6598-47dc-966a-62ff307b0feb" 
+	ContextRecordType="Country Extention" 
+	xmlns="bb_appfx_pagedefinition"
+	>
+	
+	<PageHeader Caption="=Page.Fields!COUNTRYCODE + &quot; - &quot; + Page.Fields!FULLCOUNTRYNAME" ImageKey="CATALOG:Blackbaud.AppFx.Mapping.Catalog,Blackbaud.AppFx.Mapping.Catalog.map.png" />
+	<SummarySection ID="ab8f6289-6585-4131-8be1-d79d362156c7">
+		<DataForm ID="1a997144-6598-47dc-966a-62ff307b0feb" />
+	</SummarySection>
+	<Tabs>
+		<Tab Caption="Demographics" ID="65e98f24-0f26-4032-a8cb-802b2ff11c08">
+			<Sections>
+				<Section ID="9e162381-5a0f-4f06-bf51-19901f83362f" Caption="Demographics">
+					<DataForm ID="2f066553-6365-4b3d-940d-ee4e23c62dea" />
+					<Actions>
+						<Action ID="8f31bd7c-a94e-4acf-b38c-57743d403623" Caption="Edit">
+							<ShowDataForm DataFormID="0e1898c7-f153-48f3-9a2b-972e80278463" xmlns="bb_appfx_commontypes">
+								<ActionContext>
+									<PageContextID />
+								</ActionContext>
+							</ShowDataForm>
+						</Action>
+					</Actions>
+				</Section>
+			</Sections>
+		</Tab>
+		<Tab Caption="Other Info" ID="e0eb57ab-dab8-4890-a3a2-215093e51791">
+			<Sections>
+				<Section ID="b3cb08f8-2cf0-415e-bdd2-a808e6522518" Caption="Other Information">
+					<DataForm ID="6e1e7cea-452e-4ef9-b564-aeead1b56bd5" />
+					<Actions>
+						<Action ID="314afcf2-4368-4001-959e-140666c5eb0f" Caption="Edit">
+							<ShowDataForm DataFormID="6174582c-29a2-4afd-a919-9457c862baa2" xmlns="bb_appfx_commontypes">
+								<ActionContext>
+									<PageContextID />
+								</ActionContext>
+							</ShowDataForm>
+						</Action>
+					</Actions>
+				</Section>
+			</Sections>
+		</Tab>
+		<Tab Caption="Quota" ID="e6ab6ca5-12f3-4964-84e4-2c6bca10d8b7">
+			<Sections>
+				<Section ID="12f9a27e-cfaa-4b01-af04-4ef80cdd2e2a" Caption="Country Quota">
+					<DataForm ID="2f3b5aa6-71cb-423b-9340-480ab2584c44" />
+					<Actions>
+						<Action ID="17079880-ee20-4f0a-9e8e-40326a4e4f3b" Caption="Edit">
+							<ShowDataForm DataFormID="f29fddda-7ff0-4f95-96d9-59f0582f58cc" xmlns="bb_appfx_commontypes">
+								<ActionContext>
+									<PageContextID />
+								</ActionContext>
+							</ShowDataForm>
+						</Action>
+					</Actions>
+				</Section>
+			</Sections>
+		</Tab>
+	</Tabs>
+	<PageActionGroups>
+		<PageActionGroup ID="332a43c6-360f-4bdb-9c7e-9c395da3224f" Caption="Tasks">
+			<Actions>
+				<Action ID="c8f31e8a-8f46-4c14-b479-eda2a50854c6" Caption="Edit">
+					<ShowDataForm DataFormID="3c579ef8-3e1b-47f7-91e5-39febdb2e021" xmlns="bb_appfx_commontypes">
+						<ActionContext>
+							<PageContextID />
+						</ActionContext>
+						<PostActionEvent>
+							<RefreshPage />
+						</PostActionEvent>
+					</ShowDataForm>
+				</Action>
+			</Actions>
+		</PageActionGroup>
+		<PageActionGroup ID="58307DB2-67DB-4128-83DD-3ABAEF86FD90" Caption="View as">
+			<Actions>
+				<Action ID="5E64F5A8-3DD8-43A2-B005-C158A4C76634" Caption="Constituent" ImageKey="CATALOG:Blackbaud.AppFx.ProspectResearch.Catalog,Blackbaud.AppFx.ProspectResearch.Catalog.organization.png">
+					<ShowPage PageID="88159265-2b7e-4c7b-82a2-119d01ecd40f" TabID="00000000-0000-0000-0000-000000000000" xmlns="bb_appfx_commontypes">
+						<ActionContext>
+							<PageContextID />
+						</ActionContext>
+					</ShowPage>
+				</Action>
+			</Actions>
+		</PageActionGroup>
+
+	</PageActionGroups>
+</PageDefinitionSpec>

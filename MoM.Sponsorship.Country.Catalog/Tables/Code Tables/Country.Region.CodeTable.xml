@@ -1,0 +1,11 @@
+﻿<CodeTableSpec 
+	xmlns="bb_appfx_codetable" 
+	xmlns:common="bb_appfx_commontypes"
+	ID="0f73eeb5-fb40-47e0-926f-62c1b5573e25" 
+	Name="CountryRegion"
+	Description="Country Region Code"
+	Author="Bill Elfstrom"
+	DBTablename="USR_COUNTRYREGIONCODE"
+	Category="Country Extension"
+	SortMethod="Alpha"
+/>

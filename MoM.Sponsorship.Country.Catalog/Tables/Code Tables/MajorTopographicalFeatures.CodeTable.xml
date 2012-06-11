@@ -1,0 +1,11 @@
+﻿<CodeTableSpec 
+	xmlns="bb_appfx_codetable" 
+	xmlns:common="bb_appfx_commontypes"
+	ID="431280f8-c040-4108-a63a-31451a6a0ffa" 
+	Name="MajorTopographicalFeatures"
+	Description="Major topographical feature values"
+	Author="Bill Elfstrom"
+	DBTablename="USR_MAJORTOPOGRAPHICALFEATURECODE"
+	Category="Constituent Extention"
+	SortMethod="UserDefined"
+/>

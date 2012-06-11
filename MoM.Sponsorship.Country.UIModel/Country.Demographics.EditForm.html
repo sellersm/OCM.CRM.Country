@@ -1,0 +1,384 @@
+﻿<style type="text/css">
+    .toolbar
+    {
+        width: 350px;
+        border-bottom: solid 1px #D4DCB9;
+        padding-bottom: 5px;
+    }
+    .toolbar-headertext
+    {
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .boldtext
+    {
+        font-weight: bold;
+    }
+    .smallspacer
+    {
+        width: 2px;
+    }
+    .spacer
+    {
+        width: 7px;
+    }
+    .largespacer
+    {
+        width: 20px;
+    }
+    
+    
+    /* Form / Section Divs */
+    
+    ##MAP#CountryDemographicsEditForm
+    {
+        width: 880px;
+        height: 450px;
+        padding: 10px;
+    }
+    #ColumnOne
+    {
+        float: left;
+        padding-right: 30px;
+        width: 400px;
+    }
+    #ColumnTwo
+    {
+        float: right;
+        width: 450px;
+    }
+    #Community2
+    {
+        clear: both;
+    }
+    
+    /* object widths */
+    ##MAP#AREAINSQUAREKM_value, ##MAP#TOTALPOPULATION_value, ##MAP#URBANPOPULATION_value, ##MAP#RURALPOPULATION_value, ##MAP#TOTALPOPULATION_value
+    {
+        width: 75px;
+    }
+    ##MAP#LANGUAGEOTHERDESC_value, ##MAP#RELIGIONOTHERDESC_value, ##MAP#GOVERNMENTOTHERDESC_value
+    {
+        width: 125px;
+    }
+    
+</style>
+<div id="#MAP#CountryDemographicsEditForm">
+    <h2 class="HeaderHeight">
+        Edit demographic information</h2>
+    <div id="ColumnOne">
+        <table>
+            <tr id="#MAP#AREAINSQUAREKM_container">
+                <td>
+                    <span id="#MAP#AREAINSQUAREKM_caption"></span>
+                </td>
+                <td>
+                    <input type="text" id="#MAP#AREAINSQUAREKM_value" />
+                </td>
+            </tr>
+            <tr id="#MAP#URBANPOPULATION_container">
+                <td>
+                    <span id="#MAP#URBANPOPULATION_caption"></span>
+                </td>
+                <td>
+                    <input type="text" id="#MAP#URBANPOPULATION_value" />
+                </td>
+            </tr>
+            <tr id="#MAP#RURALPOPULATION_container">
+                <td>
+                    <span id="#MAP#RURALPOPULATION_caption"></span>
+                </td>
+                <td>
+                    <input type="text" id="#MAP#RURALPOPULATION_value" />
+                </td>
+            </tr>
+            <tr id="#MAP#TOTALPOPULATION_container">
+                <td>
+                    <span id="#MAP#TOTALPOPULATION_caption"></span>
+                </td>
+                <td>
+                    <input type="text" id="#MAP#TOTALPOPULATION_value" />
+                </td>
+            </tr>
+            <tr id="#MAP#PEOPLEGROUPS_container">
+                <td>
+                    <span id="#MAP#PEOPLEGROUPS_caption"></span>
+                </td>
+                <td>
+                    <textarea id="#MAP#PEOPLEGROUPS_value" class="bbui-pre" rows="2" cols="2" />
+                </td>
+            </tr>
+            <tr id="#MAP#MAJORTOPOGRAPHICALFEATURECODEID_container">
+                <td>
+                    <span id="#MAP#MAJORTOPOGRAPHICALFEATURECODEID_caption"></span>
+                </td>
+                <td>
+                    <input type="text" id="#MAP#MAJORTOPOGRAPHICALFEATURECODEID_value" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <h3>
+            Language</h3>
+        <table>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGEAMHARIC_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEAMHARIC_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEARABIC_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEARABIC_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEBENGALI_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEBENGALI_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEBURMESE_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEBURMESE_value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGECHINESE_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGECHINESE_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGECREOLE_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGECREOLE_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEENGLISH_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEENGLISH_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEFRENCH_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEFRENCH_value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGEHINDI_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEHINDI_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEKHMER_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEKHMER_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEKIRGHIZ_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEKIRGHIZ_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGELAO_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGELAO_value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGENEPALI_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGENEPALI_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEROMANIAN_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEROMANIAN_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGERUSSIAN_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGERUSSIAN_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGESINHALESE_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGESINHALESE_value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGESISWATI_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGESISWATI_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGESPANISH_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGESPANISH_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGESWAHILI_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGESWAHILI_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGETAGALOG_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGETAGALOG_value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#LANGUAGETAMIL_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGETAMIL_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGETHAI_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGETHAI_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#LANGUAGEURDU_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEURDU_value" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <input id="#MAP#LANGUAGEOTHER_value" type="checkbox" />
+                    <label for="#MAP#LANGUAGEOTHER_value" />
+                    <input id="#MAP#LANGUAGEOTHERDESC_value" type="text" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="ColumnTwo">
+        <h3>
+            Religion</h3>
+        <table>
+            <tr>
+                <td>
+                    <input id="#MAP#RELIGIONANIMIST_value" type="checkbox" />
+                    <label for="#MAP#RELIGIONANIMIST_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONBUDDHIST_value" type="checkbox" />
+                    <label for="#MAP#RELIGIONBUDDHIST_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONCATHOLIC_value" type="checkbox" />
+                    <label for="#MAP#RELIGIONCATHOLIC_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONCOPTIC_value" type="checkbox" />
+                    <label for="#MAP#RELIGIONCOPTIC_value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#RELIGIONHINDU_value" type="checkbox" />
+                    <label for="#MAP#RELIGIONHINDU_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONMUSLIM_value" type="checkbox" />
+                    <label for="#MAP#RELIGIONMUSLIM_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONORTHODOX_value" type="checkbox" />
+                    <label for="#MAP#RELIGIONORTHODOX_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONPROTESTANT_value" type="checkbox" />
+                    <label for="#MAP#RELIGIONPROTESTANT_value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#RELIGIONVOODOO_value" type="checkbox" />
+                    <label for="#MAP#RELIGIONVOODOO_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#RELIGIONWITCHCRAFT_value" type="checkbox" />
+                    <label for="#MAP#RELIGIONWITCHCRAFT_value" />
+                </td>
+                <td class="largespacer" />
+                <td colspan="3">
+                    <input id="#MAP#RELIGIONOTHER_value" type="checkbox" />
+                    <label for="#MAP#RELIGIONOTHER_value" />
+                    <input id="#MAP#RELIGIONOTHERDESC_value" type="text" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <h3>
+            Government</h3>
+        <table>
+            <tr>
+                <td>
+                    <input id="#MAP#GOVERNMENTCAPITALIST_value" type="checkbox" />
+                    <label for="#MAP#GOVERNMENTCAPITALIST_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTCOMMUNIST_value" type="checkbox" />
+                    <label for="#MAP#GOVERNMENTCOMMUNIST_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTDEMOCRACY_value" type="checkbox" />
+                    <label for="#MAP#GOVERNMENTDEMOCRACY_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTDICTATORSHIP_value" type="checkbox" />
+                    <label for="#MAP#GOVERNMENTDICTATORSHIP_value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#GOVERNMENTMONARCHY_value" type="checkbox" />
+                    <label for="#MAP#GOVERNMENTMONARCHY_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTREPUBLIC_value" type="checkbox" />
+                    <label for="#MAP#GOVERNMENTREPUBLIC_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTREVOLUTIONARY_value" type="checkbox" />
+                    <label for="#MAP#GOVERNMENTREVOLUTIONARY_value" />
+                </td>
+                <td class="largespacer" />
+                <td>
+                    <input id="#MAP#GOVERNMENTSOCIALIST_value" type="checkbox" />
+                    <label for="#MAP#GOVERNMENTSOCIALIST_value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="#MAP#GOVERNMENTTRANSITIONAL_value" type="checkbox" />
+                    <label for="#MAP#GOVERNMENTTRANSITIONAL_value" />
+                </td>
+                <td class="largespacer" />
+                <td colspan="5">
+                    <input id="#MAP#GOVERNMENTOTHER_value" type="checkbox" />
+                    <label for="#MAP#GOVERNMENTOTHER_value" />
+                    <input type="text" id="#MAP#GOVERNMENTOTHERDESC_value" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- To define fields in multiple columns on the form, simply add/move the fields to this div
+        <div class="bbui-forms-fieldset-column">
+            <table>
+            </table>
+        </div>
+        -->
+</div>

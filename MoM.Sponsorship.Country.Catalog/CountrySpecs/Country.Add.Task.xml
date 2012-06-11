@@ -1,0 +1,33 @@
+﻿<TaskSpec
+	xmlns="bb_appfx_task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	ID="f7504404-a824-47bb-9cf6-498375a14764"
+	Name="Add a country"
+	Description="Add a new country."
+	Author="Cary Mayeda"
+	ImageKey="CATALOG:Blackbaud.AppFx.Mapping.Catalog,Blackbaud.AppFx.Mapping.Catalog.map.png"
+	FunctionalAreaID="9ea48d9c-7e2d-42e6-91cc-210792618017"
+	TaskGroup="Opportunity"
+	Sequence="27"
+	>
+
+	<!-- 
+Remarks:    
+
+History:
+Date            Modified By     Comments
+07-May-2012     CMayeda         Initial Version
+-->
+
+	<ShowAddDataForm DataFormID="a948530a-4c31-42ac-88d7-5d6610dadd07" xmlns="bb_appfx_commontypes">
+		<PostActionEvent>
+			<GoToPage>
+				<SpecificPage PageID="8bc1a2a0-c984-49b3-bd7a-6b4a62dba25f" TabID="00000000-0000-0000-0000-000000000000">
+					<ActionContext />
+				</SpecificPage>
+			</GoToPage>
+		</PostActionEvent>
+	</ShowAddDataForm>
+</TaskSpec>
+
