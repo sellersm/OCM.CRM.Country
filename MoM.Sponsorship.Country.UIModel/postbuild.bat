@@ -1,6 +1,5 @@
 echo copy uimodel assembly to local bin and release folders...
 xcopy "C:\MissionOfMercy\CRM\Source\MoM.Sponsorship.Country\MoM.Sponsorship.Country.UIModel\bin\Release\MoM.Sponsorship.Country.UIModel.dll" "C:\Program Files\Blackbaud\bbappfx\vroot\bin\custom" /y /d
-xcopy "C:\MissionOfMercy\CRM\Source\MoM.Sponsorship.Country\MoM.Sponsorship.Country.UIModel\bin\Release\MoM.Sponsorship.Country.UIModel.dll" "C:\MissionOfMercy\CRM\Releases\DEV\UIModel Assemblies" /y /d
 
 echo.
 echo copy all htmlforms to the appropriate location on the webserver...
