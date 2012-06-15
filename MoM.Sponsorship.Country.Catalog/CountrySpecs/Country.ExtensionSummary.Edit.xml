@@ -2,21 +2,31 @@
 	xmlns="bb_appfx_editdataformtemplate"
 	xmlns:common="bb_appfx_commontypes" 
 	ID="88106c5b-9984-48f5-bb50-4cb5cb657eaa" 
-	Name="Country Extention Summary Edit Data Form"
-	Description="Used for editing the given Country Extention summary fields"
+	Name="Country Extension Summary Edit Data Form"
+	Description="Used for editing the given Country Extension summary fields"
 	Author="Cary Mayeda"
 	DataFormInstanceID="3c579ef8-3e1b-47f7-91e5-39febdb2e021" 
-	RecordType="Country Extention"
+	RecordType="Country Extension"
     common:SecurityUIFolder="Sponsorship\Opportunity\Country"
 	>
 
+<!-- 
+	Remarks:    
+
+	History:
+	Date            Modified By     Comments
+	02-May-2012		CMayeda			Initial Version
+	19-May-2012     CMayeda			fixed spelling error (extention)
+
+-->
+	
 	<SPDataForm>
 
 		<!-- define the edit load SP, which is used to load the data for the form -->
-		<LoadImplementation SPName="USP_DATAFORMTEMPLATE_EDITLOAD_COUNTRYEXTENTION_SUMMARY">
+		<LoadImplementation SPName="USP_DATAFORMTEMPLATE_EDITLOAD_COUNTRYEXTENSION_SUMMARY">
 			<common:CreateProcedureSQL>
 				<![CDATA[
-create procedure dbo.USP_DATAFORMTEMPLATE_EDITLOAD_COUNTRYEXTENTION_SUMMARY(
+create procedure dbo.USP_DATAFORMTEMPLATE_EDITLOAD_COUNTRYEXTENSION_SUMMARY(
     @ID uniqueidentifier,
     @DATALOADED bit = 0 output,
     @TSLONG bigint = 0 output,
@@ -45,7 +55,7 @@ as
 			@COUNTRYSTATUSCODEID = COUNTRYSTATUSCODEID, 
 			@COUNTRYSTATUSDATE = COUNTRYSTATUSDATE, 
 			@COUNTRYREGIONCODEID = COUNTRYREGIONCODEID
-	  from  dbo.USR_COUNTRYEXTENTION
+	  from  dbo.USR_COUNTRYEXTENSION
 	 where  ID = @ID
 
 
@@ -54,10 +64,10 @@ as
 			</common:CreateProcedureSQL>
 		</LoadImplementation>
 
-		<SaveImplementation SPName="USP_DATAFORMTEMPLATE_EDIT_COUNTRYEXTENTION_SUMMARY">
+		<SaveImplementation SPName="USP_DATAFORMTEMPLATE_EDIT_COUNTRYEXTENSION_SUMMARY">
 			<common:CreateProcedureSQL>
 				<![CDATA[
-create procedure dbo.USP_DATAFORMTEMPLATE_EDIT_COUNTRYEXTENTION_SUMMARY (
+create procedure dbo.USP_DATAFORMTEMPLATE_EDIT_COUNTRYEXTENSION_SUMMARY (
 	@ID uniqueidentifier,
 	@CHANGEAGENTID uniqueidentifier = null,
 	@FULLCOUNTRYNAME nvarchar(50),
@@ -83,7 +93,7 @@ as
 		 where ID = @ID;
 	 
 		-- handle updating the data
-		update dbo.USR_COUNTRYEXTENTION set
+		update dbo.USR_COUNTRYEXTENSION set
 			FULLCOUNTRYNAME = @FULLCOUNTRYNAME,
 			COUNTRYCODE = @COUNTRYCODE,
 			COUNTRYSTATUSCODEID = @COUNTRYSTATUSCODEID,

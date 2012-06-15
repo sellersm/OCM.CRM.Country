@@ -1,0 +1,75 @@
+<PackageSpec 
+    xmlns="bb_appfx_package"
+    xmlns:common="bb_appfx_commontypes"
+    ID="2d14d62b-dbfa-4375-97c5-38204ac3a4ed"
+    Name="Country Extension Package - Preload table"
+    Description="Package to load a version of the country extension table first so that ufn can be loaded"
+    Author="Cary Mayeda"
+    >
+
+<!-- 
+	Remarks:  *************                  THIS IS ONLY USED WHEN USR_COUNTRYEXTENSION DOES NOT EXIST YET                  *************
+	          *************  USE THE SPEC FILE Country.Extension.Package.xml TO MAKE ANY CHANGES USR_COUNTRYEXTENSION EXISTS *************
+			  ***********************************************************************************************************************
+	
+			  This is used to create the first pass of the table to extend an Organization Constituent to accomadate Country information.  
+			  The reason is that the fields DECREASEDQUOTA, GROWTHQUOTA, CURRENTQUOTA all use USR_UFN_COUNTRYCURRENTQUOTA. 
+			  However, USR_UFN_COUNTRYCURRENTQUOTA can not be loaded until the table exists. 
+			  Country.Extension.Package.xml  is only used once.  After that use Country.Extension.Package.xml
+			  
+	History:
+	Date            Modified By     Comments
+	21-May-2012     CMayeda         Initial Version
+-->
+
+	<!-- Note:  the order of the items listed here is important.  For example, you won't be able to load a data form that references 
+	a table that hasn't been loaded, etc.  In general, the following order is recommended:
+	
+		(functions and procedures first)
+		SQLFunctionSpec
+		SQLStoredProcedureSpec
+		TranslationFunctionSpec
+
+		(tables next)
+		CodeTableSpec
+		TableSpec
+
+		(features next)
+		SimpleDataListSpec		
+		SearchListSpec
+		RecordOperationSpec
+		DataListSpec
+		
+		(forms next)
+		AddDataFormTemplateSpec
+		EditDataFormTemplateSpec
+		ViewDataFormTemplateSpec		
+
+		(more feature types)
+		BatchTypeSpec
+		BusinessProcessSpec
+		FlashDashSpec
+		IDMapperSpec
+		KpiSpec
+		MergeConfiguration
+		MergeTaskSpec
+		QueryViewSpec
+		ReportSpec
+		SmartFieldSpec
+		SmartQuerySpec
+
+		(functional areas, pages, and tasks last)
+		PageDefinitionSpec
+		FunctionalAreaSpec
+		TaskSpec	
+	-->
+	
+	<common:DependencyList>
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Region.CodeTable.xml" />
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Status.CodeTable.xml" />
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.MajorTopographicalFeatures.CodeTable.xml" />
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.ChildProjectCountry.Performance.CodeTable.xml" />
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.ExtensionPass1.Table.xml" />
+	</common:DependencyList>
+
+</PackageSpec>

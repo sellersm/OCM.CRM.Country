@@ -6,10 +6,20 @@
     Description="Used to edit country quota data"
     Author="Cary Mayeda"
     DataFormInstanceID="f29fddda-7ff0-4f95-96d9-59f0582f58cc"
-    RecordType="Country Extention"
+    RecordType="Country Extension"
     common:SecurityUIFolder="Sponsorship\Opportunity\Country"
     >
 
+<!-- 
+	Remarks:    
+
+	History:
+	Date            Modified By     Comments
+	02-May-2012		CMayeda			Initial Version
+	19-May-2012     CMayeda			fixed spelling error (extention)
+
+-->
+	
 	<SPDataForm>
 
 		<!-- define the edit load SP, which is used to load the data for the form -->
@@ -74,7 +84,7 @@ as
         @MARKETINGDEMANDSTATUSCODE = MARKETINGDEMANDSTATUSCODE, 
         @OVERRIDETRIGGERSTATUSCODE = OVERRIDETRIGGERSTATUSCODE, 
         @CHILDRENNOTENTERED = CHILDRENNOTENTERED
-	from dbo.USR_COUNTRYEXTENTION
+	from dbo.USR_COUNTRYEXTENSION
 
 	where ID = @ID
 
@@ -121,7 +131,7 @@ as
 
 	begin try
 		-- handle updating the data
-		update dbo.USR_COUNTRYEXTENTION set
+		update dbo.USR_COUNTRYEXTENSION set
 			QUOTATYPECODE = @QUOTATYPECODE,
             APPROVEDQUOTAINITIAL = @APPROVEDQUOTAINITIAL,
             APPROVEDQUOTA01OCT = @APPROVEDQUOTA01OCT,
@@ -204,7 +214,7 @@ return 0;
 				</common:ValueList>
 			</common:FormField>
 			<common:FormField FieldID="PERFORMANCECODEID" DataType="Guid" Caption="Performance">
-				<common:CodeTable CodeTableName="USR_CHILDPROJECTPERFORMANCECODE" />
+				<common:CodeTable CodeTableName="USR_CHILDPROJECTCOUNTRYPERFORMANCECODE" />
 			</common:FormField>
 			<common:FormField FieldID="MARKETINGDEMANDSTATUSCODE" DataType="TinyInt" Caption="Marketing demand status">
 				<common:ValueList>

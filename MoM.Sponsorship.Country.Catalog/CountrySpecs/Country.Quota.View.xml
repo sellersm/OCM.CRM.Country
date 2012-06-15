@@ -6,16 +6,17 @@
     Description="Used to view Country Quota View Form"
     Author="Cary Mayeda"
     DataFormInstanceID="2f3b5aa6-71cb-423b-9340-480ab2584c44"
-    RecordType="Country Extention"
+    RecordType="Country Extension"
     common:SecurityUIFolder="Sponsorship\Opportunity\Country"
     >
 
 <!-- 
-Remarks:    ID is a foreign key to the related CONSTITUENT.ID
+	Remarks:    ID is a foreign key to the related CONSTITUENT.ID
 
-History:
-Date            Modified By     Comments
-07-May-2012     CMayeda         Initial Version
+	History:
+	Date            Modified By     Comments
+	07-May-2012     CMayeda         Initial Version
+	19-May-2012     CMayeda			fixed spelling error (extention)
 -->
 
 	<SPDataForm SPName="USR_USP_DATAFORMTEMPLATE_VIEW_COUNTRY_QUOTA">
@@ -78,11 +79,11 @@ as
            @APPROVEDQUOTA11AUG = APPROVEDQUOTA11AUG, 
            @APPROVEDQUOTA12SEP = APPROVEDQUOTA12SEP, 
            @NEWCHILDRENSTATUS = NEWCHILDRENSTATUS, 
-           @PERFORMANCECODE = (select DESCRIPTION from dbo.USR_CHILDPROJECTPERFORMANCECODE where ID = PERFORMANCECODEID), 
+           @PERFORMANCECODE = (select DESCRIPTION from dbo.USR_CHILDPROJECTCOUNTRYPERFORMANCECODE where ID = PERFORMANCECODEID), 
            @MARKETINGDEMANDSTATUS = MARKETINGDEMANDSTATUS, 
            @OVERRIDETRIGGERSTATUS = OVERRIDETRIGGERSTATUS,
 		   @CHILDRENNOTENTERED = CHILDRENNOTENTERED
-	from dbo.USR_COUNTRYEXTENTION (nolock)
+	from dbo.USR_COUNTRYEXTENSION (nolock)
 	where ID = @ID
 	
 	return 0;

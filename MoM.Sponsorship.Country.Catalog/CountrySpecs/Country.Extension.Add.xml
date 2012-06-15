@@ -1,19 +1,30 @@
 ﻿<AddDataFormTemplateSpec
     xmlns:c="bb_appfx_commontypes"
     ID="8f4fe61e-4459-42da-99bc-7d4f53315d97"
-    Name="Country Extention Add Form"
-    Description="Used for adding a new Country Extention"
-    Author="BETHESDA\cmayeda"
-    RecordType="Country Extention"
+    Name="Country Extenion Add Form"
+    Description="Used for adding a new Country Extension"
+    Author="Cary Mayeda"
+    RecordType="Country Extension"
     DataFormInstanceID="a948530a-4c31-42ac-88d7-5d6610dadd07"
-    c:SecurityUIFolder="Country Extention"
+    c:SecurityUIFolder="Sponsorship\Opportunity\Country"
     xmlns="bb_appfx_adddataformtemplate"
     >
+
+<!-- 
+	Remarks:    
+
+	History:
+	Date            Modified By     Comments
+	02-May-2012		CMayeda			Initial Version
+	19-May-2012     CMayeda			fixed spelling error (extention)
+
+-->
+
 	<SPDataForm>
-		<SaveImplementation SPName="USP_DATAFORMTEMPLATE_ADD_COUNTRY_EXTENTION">
+		<SaveImplementation SPName="USP_DATAFORMTEMPLATE_ADD_COUNTRY_EXTENSION">
 			<c:CreateProcedureSQL>
 				<![CDATA[
-create procedure dbo.USP_DATAFORMTEMPLATE_ADD_COUNTRY_EXTENTION
+create procedure dbo.USP_DATAFORMTEMPLATE_ADD_COUNTRY_EXTENSION
 (
     @ID uniqueidentifier = null output,
     @CHANGEAGENTID uniqueidentifier = null,
@@ -94,7 +105,7 @@ begin try
 					@CONSTITUENCYCODEID = @countryOfficeConstituencyCode;
 					
 	-- handle inserting the data
-	insert into dbo.USR_COUNTRYEXTENTION
+	insert into dbo.USR_COUNTRYEXTENSION
 		(ID, FULLCOUNTRYNAME, COUNTRYCODE, COUNTRYSTATUSCODEID, COUNTRYSTATUSDATE, COUNTRYREGIONCODEID, ADDEDBYID, CHANGEDBYID, DATEADDED, DATECHANGED)
     values
 		(@ID, @FULLCOUNTRYNAME, @COUNTRYCODE, @COUNTRYSTATUSCODEID, @COUNTRYSTATUSDATE, @COUNTRYREGIONCODEID, @CHANGEAGENTID, @CHANGEAGENTID, @CURRENTDATE, @CURRENTDATE)
@@ -111,8 +122,8 @@ return 0
 			</c:CreateProcedureSQL>
 			<c:ExpectedDBExceptions>
 				<c:Constraints>
-					<c:Constraint Name="FK_USR_COUNTRYEXTENTION_COUNTRYSTATUSCODEID" Field="COUNTRYSTATUSCODEID" Type="ForeignKey" />
-					<c:Constraint Name="FK_USR_COUNTRYEXTENTION_COUNTRYREGIONCODEID" Field="COUNTRYREGIONCODEID" Type="ForeignKey" />
+					<c:Constraint Name="FK_USR_COUNTRYEXTENSION_COUNTRYSTATUSCODEID" Field="COUNTRYSTATUSCODEID" Type="ForeignKey" />
+					<c:Constraint Name="FK_USR_COUNTRYEXTENSION_COUNTRYREGIONCODEID" Field="COUNTRYREGIONCODEID" Type="ForeignKey" />
 				</c:Constraints>
 			</c:ExpectedDBExceptions>
 		</SaveImplementation>

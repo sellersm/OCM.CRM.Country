@@ -11,6 +11,15 @@
 	ImageKey="CATALOG:Blackbaud.AppFx.Mapping.Catalog,Blackbaud.AppFx.Mapping.Catalog.map.png"		
 	>
 
+<!-- 
+	Remarks:    
+
+	History:
+	Date            Modified By     Comments
+	02-May-2012		CMayeda			Initial Version
+-->
+
+
 	<!-- indicate what this task should do (navigate to a page, show a form, etc. -->
 	<ShowPage PageID="8bc1a2a0-c984-49b3-bd7a-6b4a62dba25f" TabID="00000000-0000-0000-0000-000000000000" xmlns="bb_appfx_commontypes">
 		<ActionContext>

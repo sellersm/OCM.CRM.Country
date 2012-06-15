@@ -1,9 +1,9 @@
 ﻿<UIModelWizardMetadata>
   <SpecFileName>Country.ExtensionSummary.View.xml</SpecFileName>
   <Namespace></Namespace>
-  <ClassName>CountryExtentionSummaryViewFormUIModel</ClassName>
-  <HtmlInfo GenerateHtml="true">
-    <HtmlFile>Country.ExtentionSummary.ViewForm.html</HtmlFile>
+  <ClassName>CountryExtensionSummaryViewFormUIModel</ClassName>
+  <HtmlInfo GenerateHtml="false">
+    <HtmlFile>Country.ExtensionSummary.ViewForm.html</HtmlFile>
     <HtmlFolder></HtmlFolder>
   </HtmlInfo>
   <GenerateFromDatabase>true</GenerateFromDatabase>
