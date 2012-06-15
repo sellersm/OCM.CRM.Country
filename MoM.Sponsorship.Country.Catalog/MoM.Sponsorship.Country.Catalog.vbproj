@@ -154,6 +154,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Tables\Code Tables\ChildProjectCountry.Performance.CodeTable.xml" />
     <EmbeddedResource Include="CountrySpecs\Country.ExtensionPass1.Package.xml" />
     <Content Include="Tables\Country.Extension.Table.xml" />
   </ItemGroup>

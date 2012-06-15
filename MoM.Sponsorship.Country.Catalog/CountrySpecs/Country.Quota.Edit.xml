@@ -214,7 +214,7 @@ return 0;
 				</common:ValueList>
 			</common:FormField>
 			<common:FormField FieldID="PERFORMANCECODEID" DataType="Guid" Caption="Performance">
-				<common:CodeTable CodeTableName="USR_CHILDPROJECTPERFORMANCECODE" />
+				<common:CodeTable CodeTableName="USR_CHILDPROJECTCOUNTRYPERFORMANCECODE" />
 			</common:FormField>
 			<common:FormField FieldID="MARKETINGDEMANDSTATUSCODE" DataType="TinyInt" Caption="Marketing demand status">
 				<common:ValueList>
