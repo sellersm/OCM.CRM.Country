@@ -12,10 +12,10 @@ Option Infer On
 ' </auto-generated>
 '------------------------------------------------------------------------------
 ''' <summary>
-''' Represents the UI model for the 'Country Extention View Form' data form
+''' Represents the UI model for the 'Country Extension View Form' data form
 ''' </summary>
-<Global.Blackbaud.AppFx.UIModeling.Core.DataFormUIModelMetadata(Global.Blackbaud.AppFx.UIModeling.Core.DataFormMode.View, "5b4584b5-8925-4401-b001-75895eeaf978", "1a997144-6598-47dc-966a-62ff307b0feb", "Country Extention")> _
-Partial Public Class [CountryExtentionSummaryViewFormUIModel]
+<Global.Blackbaud.AppFx.UIModeling.Core.DataFormUIModelMetadata(Global.Blackbaud.AppFx.UIModeling.Core.DataFormMode.View, "5b4584b5-8925-4401-b001-75895eeaf978", "1a997144-6598-47dc-966a-62ff307b0feb", "Country Extension")> _
+Partial Public Class [CountryExtensionSummaryViewFormUIModel]
 	Inherits Global.Blackbaud.AppFx.UIModeling.Core.DataFormUIModel
 
 #Region "Extensibility methods"
@@ -44,9 +44,9 @@ Partial Public Class [CountryExtentionSummaryViewFormUIModel]
         MyBase.Mode = Global.Blackbaud.AppFx.UIModeling.Core.DataFormMode.View
         MyBase.DataFormTemplateId = New Guid("5b4584b5-8925-4401-b001-75895eeaf978")
         MyBase.DataFormInstanceId = New Guid("1a997144-6598-47dc-966a-62ff307b0feb")
-        MyBase.RecordType = "Country Extention"
+        MyBase.RecordType = "Country Extension"
         MyBase.FixedDialog = True
-        MyBase.UserInterfaceUrl = "browser/htmlforms/Country.ExtentionSummary.ViewForm.html"
+        MyBase.UserInterfaceUrl = "browser/htmlforms/custom/Country.ExtensionSummary.ViewForm.html"
 
         '
         '_fullcountryname

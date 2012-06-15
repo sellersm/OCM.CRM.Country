@@ -10,13 +10,14 @@
 
 
 <!-- 
-Remarks:    This finds the first month with a non zero quota value starting with the current month and going backwards in time.  Future months are ignored
-			If no non-zero value is found, use the Inital Quota value.
-			Used in computed columns in the Country Extension table
+	Remarks:    This finds the first month with a non zero quota value starting with the current month and going backwards in time.  Future months are ignored
+				If no non-zero value is found, use the Inital Quota value.
+				Used in computed columns in the Country Extension table
 
-History:
-Date            Modified By     Comments
-03-May-2012     CMayeda         Initial Version
+	History:
+	Date            Modified By     Comments
+	03-May-2012     CMayeda         Initial Version
+	19-May-2012     CMayeda			fixed spelling error (extention)
 -->
 
 		<CreateFunctionSQL>
@@ -44,19 +45,19 @@ BEGIN
 	)
 
 	-- Insert the quota values
-	insert @quotaMonths select 0, APPROVEDQUOTAINITIAL from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 1, APPROVEDQUOTA01OCT from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 2, APPROVEDQUOTA02NOV from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 3, APPROVEDQUOTA03DEC from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 4, APPROVEDQUOTA04JAN from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 5, APPROVEDQUOTA05FEB from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 6, APPROVEDQUOTA06MAR from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 7, APPROVEDQUOTA07APR from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 8, APPROVEDQUOTA08MAY from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 9, APPROVEDQUOTA09JUN from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 10, APPROVEDQUOTA10JUL from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 11, APPROVEDQUOTA11AUG from dbo.USR_COUNTRYEXTENTION where ID=@ID
-	insert @quotaMonths select 12, APPROVEDQUOTA12SEP from dbo.USR_COUNTRYEXTENTION where ID=@ID
+	insert @quotaMonths select 0, APPROVEDQUOTAINITIAL from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 1, APPROVEDQUOTA01OCT from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 2, APPROVEDQUOTA02NOV from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 3, APPROVEDQUOTA03DEC from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 4, APPROVEDQUOTA04JAN from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 5, APPROVEDQUOTA05FEB from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 6, APPROVEDQUOTA06MAR from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 7, APPROVEDQUOTA07APR from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 8, APPROVEDQUOTA08MAY from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 9, APPROVEDQUOTA09JUN from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 10, APPROVEDQUOTA10JUL from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 11, APPROVEDQUOTA11AUG from dbo.USR_COUNTRYEXTENSION where ID=@ID
+	insert @quotaMonths select 12, APPROVEDQUOTA12SEP from dbo.USR_COUNTRYEXTENSION where ID=@ID
 
 	-- Find the current quota
 	select @currentQuota = quota from @quotaMonths

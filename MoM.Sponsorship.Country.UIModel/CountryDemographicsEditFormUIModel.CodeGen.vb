@@ -14,7 +14,7 @@ Option Infer On
 ''' <summary>
 ''' Represents the UI model for the 'Country Demographics Edit Form' data form
 ''' </summary>
-<Global.Blackbaud.AppFx.UIModeling.Core.DataFormUIModelMetadata(Global.Blackbaud.AppFx.UIModeling.Core.DataFormMode.Edit, "7fb760e9-e9c5-4644-a26d-20226b6f8194", "0e1898c7-f153-48f3-9a2b-972e80278463", "Country Extention")> _
+<Global.Blackbaud.AppFx.UIModeling.Core.DataFormUIModelMetadata(Global.Blackbaud.AppFx.UIModeling.Core.DataFormMode.Edit, "7fb760e9-e9c5-4644-a26d-20226b6f8194", "0e1898c7-f153-48f3-9a2b-972e80278463", "Country Extension")> _
 Partial Public Class [CountryDemographicsEditFormUIModel]
 	Inherits Global.Blackbaud.AppFx.UIModeling.Core.DataFormUIModel
 
@@ -142,7 +142,7 @@ Partial Public Class [CountryDemographicsEditFormUIModel]
         MyBase.Mode = Global.Blackbaud.AppFx.UIModeling.Core.DataFormMode.Edit
         MyBase.DataFormTemplateId = New Guid("7fb760e9-e9c5-4644-a26d-20226b6f8194")
         MyBase.DataFormInstanceId = New Guid("0e1898c7-f153-48f3-9a2b-972e80278463")
-        MyBase.RecordType = "Country Extention"
+        MyBase.RecordType = "Country Extension"
         MyBase.FixedDialog = True
         MyBase.UserInterfaceUrl = "browser/htmlforms/custom/Country.Demographics.EditForm.html"
 

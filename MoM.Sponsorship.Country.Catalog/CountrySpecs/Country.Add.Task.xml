@@ -12,12 +12,12 @@
 	Sequence="27"
 	>
 
-	<!-- 
-Remarks:    
+<!-- 
+	Remarks:    
 
-History:
-Date            Modified By     Comments
-07-May-2012     CMayeda         Initial Version
+	History:
+	Date            Modified By     Comments
+	07-May-2012     CMayeda         Initial Version
 -->
 
 	<ShowAddDataForm DataFormID="a948530a-4c31-42ac-88d7-5d6610dadd07" xmlns="bb_appfx_commontypes">
