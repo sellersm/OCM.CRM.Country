@@ -27,7 +27,7 @@ create function dbo.USR_UFN_COUNTRYCURRENTQUOTA(@ID uniqueidentifier)
 returns smallint with execute as caller
 as
 BEGIN 
-	declare @currentQuota smallint -- used to store return value
+	declare @currentQuota smallint = 0 -- used to store return value
 
 	declare @CalendarMonth tinyint  -- The current calendar month
 	set @CalendarMonth = month(getdate())

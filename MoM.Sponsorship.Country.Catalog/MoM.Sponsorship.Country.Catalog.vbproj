@@ -111,7 +111,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CountrySpecs\USR_UFN_COUNTRYCURRENTQUOTA.xml" />
+    <EmbeddedResource Include="CountrySpecs\USR_UFN_COUNTRYCURRENTQUOTA.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CountrySpecs\Country.Extension.Add.xml" />
@@ -158,7 +160,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Tables\Code Tables\ChildProjectCountry.Performance.CodeTable.xml" />
     <EmbeddedResource Include="CountrySpecs\Country.ExtensionPass1.Package.xml" />
-    <Content Include="Tables\Country.Extension.Table.xml" />
+    <Content Include="Tables\Country.Extension.Table.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
