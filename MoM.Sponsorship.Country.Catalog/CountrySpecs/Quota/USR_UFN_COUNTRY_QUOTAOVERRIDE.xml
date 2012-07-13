@@ -1,0 +1,35 @@
+﻿<SQLFunctionSpec
+	xmlns="bb_appfx_sqlfunction"
+	xmlns:common="bb_appfx_commontypes" 
+	ID="3CEF0288-2A3F-4CA5-9A0C-BFE0651892C0"
+	Name="USR_UFN_COUNTRY_QUOTAOVERRIDE"
+	Description="Determine if the country has the quota override trigger set to yes"
+	Author="Cary Mayeda"
+	DBFunctionName="USR_UFN_COUNTRY_QUOTAOVERRIDE"
+	>
+
+	<CreateFunctionSQL>
+		<![CDATA[
+		
+create function dbo.USR_UFN_COUNTRY_QUOTAOVERRIDE(
+	@countryID uniqueidentifier					-- Country Extension ID (same as the Constituent ID) of the country to check the override trigger for
+)
+returns bit
+with execute as caller
+as 
+begin
+
+	declare @overrideTriggerStatusCode bit = 0
+	
+	select @overrideTriggerStatusCode = OVERRIDETRIGGERSTATUSCODE
+	  from dbo.USR_COUNTRYEXTENSION
+	 where ID = @countryID
+
+
+	return @overrideTriggerStatusCode
+	
+end
+		]]>
+	</CreateFunctionSQL>
+
+</SQLFunctionSpec>

@@ -1,0 +1,43 @@
+﻿<SQLFunctionSpec
+	xmlns="bb_appfx_sqlfunction"
+	xmlns:common="bb_appfx_commontypes" 
+	ID="7774617F-FF09-4E2A-9297-DC9A225BCE3D"
+	Name="USR_UFN_COUNTRY_REGISTEREDCHILDCOUNT"
+	Description="Total Number of children registered to a child project"
+	Author="Cary Mayeda"
+	DBFunctionName="USR_UFN_COUNTRY_REGISTEREDCHILDCOUNT"
+	>
+
+	<CreateFunctionSQL>
+		<![CDATA[
+create function dbo.USR_UFN_COUNTRY_REGISTEREDCHILDCOUNT (
+	@countryID uniqueidentifier 		-- Country Extension ID (same as the Constituent ID) of the country to check the quota "room" for
+)
+returns smallint
+with execute as caller
+as begin
+	declare @countryOfficeLocationType uniqueidentifier	
+	select @countryOfficeLocationType = ID from SPONSORSHIPLOCATIONTYPECODE where DESCRIPTION = 'Country Office'
+	
+	declare @registeredChildrenCount smallint = 0;
+	select 	@registeredChildrenCount = count(so.ID)
+      from	sponsorshipopportunity so
+	  join	dbo.SPONSORSHIPLOCATION projectlocation on
+				so.SPONSORSHIPLOCATIONID = projectlocation.ID 	
+ left join  dbo.SPONSORSHIPLOCATION parentlocation ON 
+				parentlocation.HIERARCHYPATH = projectlocation.HIERARCHYPATH.GetAncestor(1)
+ left join  dbo.SPONSORSHIPLOCATION grandparentlocation ON 		
+				grandparentlocation.HIERARCHYPATH = parentlocation.HIERARCHYPATH.GetAncestor(1)
+	 where  so.ELIGIBILITYCODE in (0,1)  -- Pending, Eligible
+	   and ((parentlocation.SPONSORSHIPLOCATIONTYPECODEID =  @countryOfficeLocationType and parentlocation.FIELDOFFICEID = @countryID)
+	         or (grandparentlocation.SPONSORSHIPLOCATIONTYPECODEID =  @countryOfficeLocationType and grandparentlocation.FIELDOFFICEID = @countryID))
+
+	return @registeredChildrenCount;
+	
+	
+end
+
+		]]>
+	</CreateFunctionSQL>
+
+</SQLFunctionSpec>

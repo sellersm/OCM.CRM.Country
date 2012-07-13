@@ -1,0 +1,38 @@
+﻿<SQLFunctionSpec
+	xmlns="bb_appfx_sqlfunction"
+	xmlns:common="bb_appfx_commontypes" 
+	ID="6FBC3DA8-6421-4960-8A8E-0456EE92EB4C"
+	Name="USR_UFN_COUNTRY_QUOTATYPE"
+	Description="Determines the quota type for a particular country"
+	Author="Cary Mayeda"
+	DBFunctionName="USR_UFN_COUNTRY_QUOTATYPE"
+	>
+	<!-- 
+	Remarks:    This finds the quota type for the child project passed in @childProjectID
+			
+				Returns 0 if the project is using a project quota
+						1 if the project is using a country quota.  
+
+	History:
+	Date            Modified By     Comments
+	10-Jul-2012		CMayeda			Initial Version
+-->
+
+	<CreateFunctionSQL>
+		<![CDATA[
+		
+create function dbo.USR_UFN_COUNTRY_QUOTATYPE (
+	@countryID uniqueidentifier				-- Country Extension ID (same as the Constituent ID) of the country to check the quota type for
+)	
+returns tinyint with execute as caller
+as
+begin
+	declare @quotaTypeCode tinyint = 99
+	select @quotaTypeCode = QUOTATYPECODE from dbo.USR_COUNTRYEXTENSION where ID = @countryID
+	
+	return @quotaTypeCode
+end
+		]]>
+	</CreateFunctionSQL>
+
+</SQLFunctionSpec>

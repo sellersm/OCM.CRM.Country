@@ -1,0 +1,30 @@
+﻿<SQLFunctionSpec
+	xmlns="bb_appfx_sqlfunction"
+	xmlns:common="bb_appfx_commontypes" 
+	ID="A84EFC0A-57C5-45C5-A704-A219B8540806"
+	Name="USR_UFN_COUNTRY_QUOTAVARIANCE"
+	Description="Determine how many kids can be registered for a country based on the currently registered kids and the current quota"
+	Author="Cary Mayeda"
+	DBFunctionName="USR_UFN_COUNTRY_QUOTAVARIANCE"
+	>
+
+	<CreateFunctionSQL>
+		<![CDATA[
+create function dbo.USR_UFN_COUNTRY_QUOTAVARIANCE (
+	@countryID uniqueidentifier			-- Country Extension ID (same as the Constituent ID) of the country to check the quota "room" for
+)
+returns int
+with execute as caller
+as 
+begin
+	declare @QuotaVariance int
+		
+	set @QuotaVariance = dbo.USR_UFN_COUNTRY_CURRENTQUOTA (@countryID) - dbo.USR_UFN_COUNTRY_REGISTEREDCHILDCOUNT (@countryID)
+		
+	return @QuotaVariance 
+end
+
+		]]>
+	</CreateFunctionSQL>
+
+</SQLFunctionSpec>
