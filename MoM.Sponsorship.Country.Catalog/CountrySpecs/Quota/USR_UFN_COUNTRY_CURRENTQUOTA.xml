@@ -2,10 +2,10 @@
 	xmlns="bb_appfx_sqlfunction"
 	xmlns:common="bb_appfx_commontypes" 
 	ID="8307875b-4dce-4677-bb64-52bbd09a1285"
-	Name="USR_UFN_COUNTRYCURRENTQUOTA"
+	Name="USR_UFN_COUNTRY_CURRENTQUOTA"
 	Description="Returns the current quota for a country"
 	Author="Cary Mayeda"
-	DBFunctionName="USR_UFN_COUNTRYCURRENTQUOTA"
+	DBFunctionName="USR_UFN_COUNTRY_CURRENTQUOTA"
 	>
 
 
@@ -23,7 +23,7 @@
 		<CreateFunctionSQL>
 			<![CDATA[
 		
-create function dbo.USR_UFN_COUNTRYCURRENTQUOTA(@ID uniqueidentifier) 
+create function dbo.USR_UFN_COUNTRY_CURRENTQUOTA(@ID uniqueidentifier) 
 returns smallint with execute as caller
 as
 BEGIN 

@@ -111,7 +111,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CountrySpecs\USR_UFN_COUNTRYCURRENTQUOTA.xml">
+    <EmbeddedResource Include="CountrySpecs\Quota\USR_UFN_COUNTRY_CURRENTQUOTA.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
@@ -158,8 +158,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Tables\Code Tables\ChildProjectCountry.Performance.CodeTable.xml" />
-    <EmbeddedResource Include="CountrySpecs\Country.ExtensionPass1.Package.xml" />
+    <EmbeddedResource Include="Tables\Code Tables\ChildProjectCountry.Performance.CodeTable.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CountrySpecs\Country.ExtensionPass1.Package.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="CountrySpecs\Quota\USR_UFN_COUNTRY_QUOTAOVERRIDE.xml" />
+    <Content Include="CountrySpecs\Quota\USR_UFN_COUNTRY_QUOTATYPE.xml" />
+    <Content Include="CountrySpecs\Quota\USR_UFN_COUNTRY_QUOTAVARIANCE.xml" />
+    <Content Include="CountrySpecs\Quota\USR_UFN_COUNTRY_REGISTEREDCHILDCOUNT.xml" />
+    <Content Include="CountrySpecs\Quota\USR_USP_COUNTRY_DETERMINEQUOTAELIGIBILITY.xml" />
     <Content Include="Tables\Country.Extension.Table.xml">
       <SubType>Designer</SubType>
     </Content>
