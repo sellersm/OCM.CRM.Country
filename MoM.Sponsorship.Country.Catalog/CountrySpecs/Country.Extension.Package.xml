@@ -60,8 +60,13 @@
 	-->
 	
 	<common:DependencyList>
-        <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_UFN_COUNTRYCURRENTQUOTA.xml" />
-        <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Region.CodeTable.xml" />
+        <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_UFN_COUNTRY_CURRENTQUOTA.xml" />
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_UFN_COUNTRY_QUOTAOVERRIDE.xml" />
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_UFN_COUNTRY_QUOTATYPE.xml" />
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_UFN_COUNTRY_QUOTAVARIANCE.xml" />
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_UFN_COUNTRY_REGISTEREDCHILDCOUNT.xml" />
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_USP_COUNTRY_DETERMINEQUOTAELIGIBILITY.xml" />		
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Region.CodeTable.xml" />
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Status.CodeTable.xml" />
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.MajorTopographicalFeatures.CodeTable.xml" />
 		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.ChildProjectCountry.Performance.CodeTable.xml" />
