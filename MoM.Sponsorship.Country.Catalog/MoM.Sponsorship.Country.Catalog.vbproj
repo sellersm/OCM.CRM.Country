@@ -150,7 +150,9 @@
     <EmbeddedResource Include="CountrySpecs\Country.Search.Task.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CountrySpecs\Country.Extension.Package.xml" />
+    <EmbeddedResource Include="CountrySpecs\Country.Extension.Package.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Tables\Country.ExtensionPass1.Table.xml">
