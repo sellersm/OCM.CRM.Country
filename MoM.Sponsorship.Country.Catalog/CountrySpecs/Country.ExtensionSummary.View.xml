@@ -7,18 +7,17 @@
     Author="Cary Mayeda"
     DataFormInstanceID="1a997144-6598-47dc-966a-62ff307b0feb"
     RecordType="Country Extension"
-    common:SecurityUIFolder="Sponsorship\Opportunity\Country"
-    >
+    common:SecurityUIFolder="Sponsorship\Opportunity\Country" >
 
-<!-- 
+	<!-- 
 	Remarks:    
 
 	History:
 	Date            Modified By     Comments
 	02-May-2012		CMayeda			Initial Version
 	19-May-2012     CMayeda			fixed spelling error (extention)
-
--->
+	-->
+	
 	<!-- define the SP that returns the data used by the form -->
 	<SPDataForm SPName="USP_DATAFORMTEMPLATE_VIEW_COUNTRY_EXTENSION">
 		<common:CreateProcedureSQL>

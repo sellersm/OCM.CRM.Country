@@ -108,34 +108,38 @@
     <Import Include="System.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Country.OtherInfo.ViewForm.UIModel.vb" />
-    <Compile Include="CountryDemographicsEditFormUIModel.CodeGen.vb">
+    <Compile Include="CountryForms\Country.OtherInfo.ViewForm.UIModel.vb" />
+    <Compile Include="CountryForms\CountryDemographicsEditFormUIModel.CodeGen.vb">
       <DependentUpon>Country.Demographics.EditForm.UIModel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Country.Demographics.EditForm.UIModel.vb" />
-    <Compile Include="CountryDemographicsViewFormUIModel.CodeGen.vb">
+    <Compile Include="CountryForms\Country.Demographics.EditForm.UIModel.vb" />
+    <Compile Include="CountryForms\CountryDemographicsViewFormUIModel.CodeGen.vb">
       <DependentUpon>Country.Demographics.ViewForm.UIModel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Country.Demographics.ViewForm.UIModel.vb" />
-    <Compile Include="Country.OtherInfo.EditForm.UIModel.vb" />
-    <Compile Include="CountryExtensionSummaryViewFormUIModel.CodeGen.vb">
+    <Compile Include="CountryForms\Country.Demographics.ViewForm.UIModel.vb" />
+    <Compile Include="CountryForms\Country.OtherInfo.EditForm.UIModel.vb" />
+    <Compile Include="CountryForms\CountryExtensionSummaryViewFormUIModel.CodeGen.vb">
       <DependentUpon>Country.ExtensionSummary.ViewForm.UIModel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Country.ExtensionSummary.ViewForm.UIModel.vb" />
-    <Compile Include="CountryOtherInfoEditFormUIModel.CodeGen.vb">
+    <Compile Include="CountryForms\Country.ExtensionSummary.ViewForm.UIModel.vb" />
+    <Compile Include="CountryForms\CountryOtherInfoEditFormUIModel.CodeGen.vb">
       <DependentUpon>Country.OtherInfo.EditForm.UIModel.vb</DependentUpon>
     </Compile>
-    <Compile Include="CountryOtherInfoViewFormUIModel.CodeGen.vb">
+    <Compile Include="CountryForms\CountryOtherInfoViewFormUIModel.CodeGen.vb">
       <DependentUpon>Country.OtherInfo.ViewForm.UIModel.vb</DependentUpon>
     </Compile>
-    <Compile Include="CountryQuotaEditFormUIModel.CodeGen.vb">
+    <Compile Include="CountryForms\CountryQuotaEditFormUIModel.CodeGen.vb">
       <DependentUpon>Country.Quota.EditForm.UIModel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Country.Quota.EditForm.UIModel.vb" />
-    <Compile Include="CountryQuotaViewFormUIModel.CodeGen.vb">
+    <Compile Include="CountryForms\Country.Quota.EditForm.UIModel.vb" />
+    <Compile Include="CountryForms\CountryQuotaViewFormUIModel.CodeGen.vb">
       <DependentUpon>Country.Quota.ViewForm.UIModel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Country.Quota.ViewForm.UIModel.vb" />
+    <Compile Include="CountryForms\Country.Quota.ViewForm.UIModel.vb" />
+    <Compile Include="CountryForms\CountryUIModelVersionViewFormUIModel.CodeGen.vb">
+      <DependentUpon>Country.UIModelVersion.ViewForm.UIModel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CountryForms\Country.UIModelVersion.ViewForm.UIModel.vb" />
     <Compile Include="Helpers\CountryFields.vb" />
     <Compile Include="Helpers\DemographicsHelper.vb" />
     <Compile Include="Helpers\QuotaHelper.vb" />
@@ -163,9 +167,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Country.ExtensionSummary.ViewForm.html" />
-    <Content Include="Country.ExtensionSummary.ViewForm.UIModel.xml">
+    <None Include="..\MoM.Sponsorship.Country.Catalog\CountrySpecs\Country.UIModelVersion.View.xml">
+      <Link>LinkedSpecs\Country.UIModelVersion.View.xml</Link>
+    </None>
+    <Content Include="CountryForms\Country.ExtensionSummary.ViewForm.html" />
+    <Content Include="CountryForms\Country.ExtensionSummary.ViewForm.UIModel.xml">
       <DependentUpon>Country.ExtensionSummary.ViewForm.UIModel.vb</DependentUpon>
+    </Content>
+    <Content Include="CountryForms\Country.UIModelVersion.ViewForm.html" />
+    <Content Include="CountryForms\Country.UIModelVersion.ViewForm.UIModel.xml">
+      <DependentUpon>Country.UIModelVersion.ViewForm.UIModel.vb</DependentUpon>
     </Content>
     <None Include="..\MoM.Sponsorship.Country.Catalog\CountrySpecs\Country.ExtensionSummary.View.xml">
       <Link>LinkedSpecs\Country.ExtensionSummary.View.xml</Link>
@@ -173,43 +184,43 @@
     <None Include="..\MoM.Sponsorship.Country.Catalog\CountrySpecs\Country.Quota.Edit.xml">
       <Link>LinkedSpecs\Country.Quota.Edit.xml</Link>
     </None>
-    <Content Include="Country.Quota.EditForm.html" />
-    <Content Include="Country.Quota.EditForm.UIModel.xml">
+    <Content Include="CountryForms\Country.Quota.EditForm.html" />
+    <Content Include="CountryForms\Country.Quota.EditForm.UIModel.xml">
       <DependentUpon>Country.Quota.EditForm.UIModel.vb</DependentUpon>
     </Content>
     <None Include="..\MoM.Sponsorship.Country.Catalog\CountrySpecs\Country.OtherInfo.Edit.xml">
       <Link>LinkedSpecs\Country.OtherInfo.Edit.xml</Link>
     </None>
-    <Content Include="Country.OtherInfo.EditForm.html" />
-    <Content Include="Country.OtherInfo.EditForm.UIModel.xml">
+    <Content Include="CountryForms\Country.OtherInfo.EditForm.html" />
+    <Content Include="CountryForms\Country.OtherInfo.EditForm.UIModel.xml">
       <DependentUpon>Country.OtherInfo.EditForm.UIModel.vb</DependentUpon>
     </Content>
     <None Include="..\MoM.Sponsorship.Country.Catalog\CountrySpecs\Country.Demographics.Edit.xml">
       <Link>LinkedSpecs\Country.Demographics.Edit.xml</Link>
     </None>
-    <Content Include="Country.Demographics.EditForm.html" />
-    <Content Include="Country.Demographics.EditForm.UIModel.xml">
+    <Content Include="CountryForms\Country.Demographics.EditForm.html" />
+    <Content Include="CountryForms\Country.Demographics.EditForm.UIModel.xml">
       <DependentUpon>Country.Demographics.EditForm.UIModel.vb</DependentUpon>
     </Content>
     <None Include="..\MoM.Sponsorship.Country.Catalog\CountrySpecs\Country.Quota.View.xml">
       <Link>LinkedSpecs\Country.Quota.View.xml</Link>
     </None>
-    <Content Include="Country.Quota.ViewForm.html" />
-    <Content Include="Country.Quota.ViewForm.UIModel.xml">
+    <Content Include="CountryForms\Country.Quota.ViewForm.html" />
+    <Content Include="CountryForms\Country.Quota.ViewForm.UIModel.xml">
       <DependentUpon>Country.Quota.ViewForm.UIModel.vb</DependentUpon>
     </Content>
     <None Include="..\MoM.Sponsorship.Country.Catalog\CountrySpecs\Country.OtherInfo.View.xml">
       <Link>LinkedSpecs\Country.OtherInfo.View.xml</Link>
     </None>
-    <Content Include="Country.OtherInfo.ViewForm.UIModel.xml">
+    <Content Include="CountryForms\Country.OtherInfo.ViewForm.UIModel.xml">
       <DependentUpon>Country.OtherInfo.ViewForm.UIModel.vb</DependentUpon>
     </Content>
-    <Content Include="Country.OtherInfo.ViewForm.html" />
+    <Content Include="CountryForms\Country.OtherInfo.ViewForm.html" />
     <None Include="..\MoM.Sponsorship.Country.Catalog\CountrySpecs\Country.Demographics.View.xml">
       <Link>LinkedSpecs\Country.Demographics.View.xml</Link>
     </None>
-    <Content Include="Country.Demographics.ViewForm.html" />
-    <Content Include="Country.Demographics.ViewForm.UIModel.xml">
+    <Content Include="CountryForms\Country.Demographics.ViewForm.html" />
+    <Content Include="CountryForms\Country.Demographics.ViewForm.UIModel.xml">
       <DependentUpon>Country.Demographics.ViewForm.UIModel.vb</DependentUpon>
     </Content>
   </ItemGroup>

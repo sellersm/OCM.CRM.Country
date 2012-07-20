@@ -4,10 +4,9 @@
     ID="2d14d62b-dbfa-4375-97c5-38204ac3a4ed"
     Name="Country Extension Package - Preload table"
     Description="Package to load a version of the country extension table first so that ufn can be loaded"
-    Author="Cary Mayeda"
-    >
+    Author="Cary Mayeda" >
 
-<!-- 
+	<!-- 
 	Remarks:  *************                  THIS IS ONLY USED WHEN USR_COUNTRYEXTENSION DOES NOT EXIST YET                  *************
 	          *************  USE THE SPEC FILE Country.Extension.Package.xml TO MAKE ANY CHANGES USR_COUNTRYEXTENSION EXISTS *************
 			  ***********************************************************************************************************************
@@ -20,7 +19,7 @@
 	History:
 	Date            Modified By     Comments
 	21-May-2012     CMayeda         Initial Version
--->
+	-->
 
 	<!-- Note:  the order of the items listed here is important.  For example, you won't be able to load a data form that references 
 	a table that hasn't been loaded, etc.  In general, the following order is recommended:

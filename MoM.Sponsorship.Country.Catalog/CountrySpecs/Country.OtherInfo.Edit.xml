@@ -7,18 +7,16 @@
     Author="Cary Mayeda"
     DataFormInstanceID="6174582c-29a2-4afd-a919-9457c862baa2"
     RecordType="Country Extension"
-    common:SecurityUIFolder="Sponsorship\Opportunity\Country"
-    >
+    common:SecurityUIFolder="Sponsorship\Opportunity\Country" >
 
-<!-- 
+	<!-- 
 	Remarks:    
 
 	History:
 	Date            Modified By     Comments
 	02-May-2012		CMayeda			Initial Version
 	19-May-2012     CMayeda			fixed spelling error (extention)
-
--->
+	-->
 	
 	<SPDataForm>
 

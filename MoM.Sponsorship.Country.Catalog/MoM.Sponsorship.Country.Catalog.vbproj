@@ -160,9 +160,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Tables\Code Tables\ChildProjectCountry.Performance.CodeTable.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="CountrySpecs\Country.ExtensionPass1.Package.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -172,9 +169,13 @@
     <EmbeddedResource Include="CountrySpecs\Quota\USR_UFN_COUNTRY_REGISTEREDCHILDCOUNT.xml" />
     <EmbeddedResource Include="CountrySpecs\Quota\USR_USP_COUNTRY_DETERMINEQUOTAELIGIBILITY.xml" />
     <EmbeddedResource Include="CountrySpecs\Country.PackageVersion.DataList.xml" />
+    <EmbeddedResource Include="CountrySpecs\Country.UIModelVersion.View.xml" />
     <Content Include="Tables\Country.Extension.Table.xml">
       <SubType>Designer</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="postbuild.bat" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>

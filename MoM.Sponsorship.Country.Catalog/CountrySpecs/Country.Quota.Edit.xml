@@ -7,18 +7,16 @@
     Author="Cary Mayeda"
     DataFormInstanceID="f29fddda-7ff0-4f95-96d9-59f0582f58cc"
     RecordType="Country Extension"
-    common:SecurityUIFolder="Sponsorship\Opportunity\Country"
-    >
+    common:SecurityUIFolder="Sponsorship\Opportunity\Country" >
 
-<!-- 
+	<!-- 
 	Remarks:    
 
 	History:
 	Date            Modified By     Comments
 	02-May-2012		CMayeda			Initial Version
 	19-May-2012     CMayeda			fixed spelling error (extention)
-
--->
+	-->
 	
 	<SPDataForm>
 
@@ -214,7 +212,7 @@ return 0;
 				</common:ValueList>
 			</common:FormField>
 			<common:FormField FieldID="PERFORMANCECODEID" DataType="Guid" Caption="Performance">
-				<common:CodeTable CodeTableName="USR_CHILDPROJECTCOUNTRYPERFORMANCECODE" />
+				<common:CodeTable CodeTableName="USR_SPONSORSHIPPERFORMANCECODE" />
 			</common:FormField>
 			<common:FormField FieldID="MARKETINGDEMANDSTATUSCODE" DataType="TinyInt" Caption="Marketing demand status">
 				<common:ValueList>
