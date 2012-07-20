@@ -170,9 +170,9 @@
     <EmbeddedResource Include="CountrySpecs\Quota\USR_USP_COUNTRY_DETERMINEQUOTAELIGIBILITY.xml" />
     <EmbeddedResource Include="CountrySpecs\Country.PackageVersion.DataList.xml" />
     <EmbeddedResource Include="CountrySpecs\Country.UIModelVersion.View.xml" />
-    <Content Include="Tables\Country.Extension.Table.xml">
+    <EmbeddedResource Include="Tables\Country.Extension.Table.xml">
       <SubType>Designer</SubType>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="postbuild.bat" />
