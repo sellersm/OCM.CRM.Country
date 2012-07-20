@@ -98,6 +98,7 @@
 
 
 		<!-- Package Versions -->
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.PackageVersion.DataList.xml" />
 		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.UIModelVersion.View.xml" />
 
 	</common:DependencyList>
