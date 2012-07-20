@@ -4,18 +4,16 @@
     ID="180e5b62-7ab3-4c5f-8288-feee59d0c781"
     Name="Country Extension Package"
     Description="Package for country extension specs"
-    Author="Cary Mayeda"
-    >
+    Author="Cary Mayeda" >
 
-<!-- 
+	<!-- 
 	Remarks:	This package should be used for any maintenance / updates to the Country Extension
 
 	History:
 	Date            Modified By     Comments
 	02-May-2012		CMayeda			Initial Version
 	19-May-2012     CMayeda			fixed spelling error (extention)
-
--->
+	-->
 	
 	<!-- Note:  the order of the items listed here is important.  For example, you won't be able to load a data form that references 
 	a table that hasn't been loaded, etc.  In general, the following order is recommended:
@@ -60,18 +58,27 @@
 	-->
 	
 	<common:DependencyList>
+		<!-- SQL Procedures and Functions -->
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_UFN_COUNTRY_CURRENTQUOTA.xml" />
 		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_UFN_COUNTRY_QUOTAOVERRIDE.xml" />
 		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_UFN_COUNTRY_QUOTATYPE.xml" />
 		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_UFN_COUNTRY_QUOTAVARIANCE.xml" />
 		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_UFN_COUNTRY_REGISTEREDCHILDCOUNT.xml" />
 		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.USR_USP_COUNTRY_DETERMINEQUOTAELIGIBILITY.xml" />		
+		
+		<!-- Code Tables -->
 		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Region.CodeTable.xml" />
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Status.CodeTable.xml" />
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.MajorTopographicalFeatures.CodeTable.xml" />
 		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.ChildProjectCountry.Performance.CodeTable.xml" />
+		
+		<!-- Tables -->
 		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Extension.Table.xml" />
+		
+		<!-- Features-->
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Extension.Search.xml" />
+		
+		<!-- Forms -->
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Extension.Add.xml" />
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Demographics.Edit.xml" />
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.ExtensionSummary.Edit.xml" />
@@ -81,9 +88,18 @@
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.ExtensionSummary.View.xml" />
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.OtherInfo.View.xml" />
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Quota.View.xml" />
+		
+		<!-- Pages -->
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Extension.Page.xml" />
+		
+		<!-- Tasks -->
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Add.Task.xml" />
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Search.Task.xml" />
-    </common:DependencyList>
+
+
+		<!-- Package Versions -->
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.UIModelVersion.View.xml" />
+
+	</common:DependencyList>
 
 </PackageSpec>

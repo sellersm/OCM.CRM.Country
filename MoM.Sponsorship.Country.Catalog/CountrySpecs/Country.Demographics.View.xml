@@ -7,17 +7,16 @@
     Author="Cary Mayeda"
     DataFormInstanceID="2f066553-6365-4b3d-940d-ee4e23c62dea"
     RecordType="Country Extension"
-    common:SecurityUIFolder="Sponsorship\Opportunity\Country"
-    >
+    common:SecurityUIFolder="Sponsorship\Opportunity\Country" >
 
-<!-- 
+	<!-- 
 	Remarks:    
 
 	History:
 	Date            Modified By     Comments
 	02-May-2012		CMayeda			Initial Version
 	19-May-2012     CMayeda			fixed spelling error (extention)
--->
+	-->
 	
 	<!-- define the SP that returns the data used by the form -->
 	<SPDataForm SPName="USP_DATAFORMTEMPLATE_VIEW_COUNTRY_DEMOGRAPHICS">

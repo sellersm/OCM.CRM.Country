@@ -1,0 +1,10 @@
+﻿<UIModelWizardMetadata>
+  <SpecFileName>Country.UIModelVersion.View.xml</SpecFileName>
+  <Namespace></Namespace>
+  <ClassName>CountryUIModelVersionViewFormUIModel</ClassName>
+  <HtmlInfo GenerateHtml="false">
+    <HtmlFile>Country.UIModelVersion.ViewForm.html</HtmlFile>
+    <HtmlFolder></HtmlFolder>
+  </HtmlInfo>
+  <GenerateFromDatabase>true</GenerateFromDatabase>
+</UIModelWizardMetadata>

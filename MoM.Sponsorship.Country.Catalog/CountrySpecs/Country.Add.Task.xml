@@ -9,16 +9,15 @@
 	ImageKey="CATALOG:Blackbaud.AppFx.Mapping.Catalog,Blackbaud.AppFx.Mapping.Catalog.map.png"
 	FunctionalAreaID="9ea48d9c-7e2d-42e6-91cc-210792618017"
 	TaskGroup="Opportunity"
-	Sequence="27"
-	>
-
-<!-- 
+	Sequence="27" >
+	
+	<!-- 
 	Remarks:    
 
 	History:
 	Date            Modified By     Comments
 	07-May-2012     CMayeda         Initial Version
--->
+	-->
 
 	<ShowAddDataForm DataFormID="a948530a-4c31-42ac-88d7-5d6610dadd07" xmlns="bb_appfx_commontypes">
 		<PostActionEvent>
