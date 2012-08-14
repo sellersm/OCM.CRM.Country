@@ -13,6 +13,7 @@
 	Date            Modified By     Comments
 	02-May-2012		CMayeda			Initial Version
 	19-May-2012     CMayeda			fixed spelling error (extention)
+	13-Aug-2012		CMayeda			Added ConstituentExpression.View.xml
 	-->
 	
 	<!-- Note:  the order of the items listed here is important.  For example, you won't be able to load a data form that references 
@@ -87,6 +88,10 @@
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.ExtensionSummary.View.xml" />
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.OtherInfo.View.xml" />
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Quota.View.xml" />
+
+		<!-- Expression Data -->
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.ConstituentExpression.View.xml" />
+		
 		
 		<!-- Pages -->
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Extension.Page.xml" />
