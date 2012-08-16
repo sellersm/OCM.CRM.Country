@@ -80,7 +80,7 @@ as
 		<OutputFields>
 			<OutputField FieldID="ID" Caption="ID" DataType="Guid" IsHidden="true" />
 			<OutputField FieldID="LOOKUPID" Caption="Lookup ID" DataType="String" />
-			<OutputField FieldID="NAME" Caption="Project Name" DataType="String" />
+			<OutputField FieldID="NAME" Caption="Country Name" DataType="String" />
 			<OutputField FieldID="STATUS" Caption="Status" DataType="String" />
 		</OutputFields>
 	</Output>
