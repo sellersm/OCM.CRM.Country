@@ -41,14 +41,19 @@ as
 	-- populate the output parameters, which correspond to fields on the form.  Note that
 	-- we set @DATALOADED = 1 to indicate that the load was successful.  Otherwise, the system
 	-- will display a "no data loaded" message.
-	select @DATALOADED = 1,
-		   @FULLCOUNTRYNAME = FULLCOUNTRYNAME, 
-           @COUNTRYCODE = COUNTRYCODE, 
-           @COUNTRYSTATUSCODE = (select DESCRIPTION from dbo.USR_COUNTRYSTATUSCODE where ID = COUNTRYSTATUSCODEID), 
-           @COUNTRYSTATUSDATE = COUNTRYSTATUSDATE, 
-           @COUNTRYREGIONCODE = (select DESCRIPTION from dbo.USR_COUNTRYREGIONCODE where ID = COUNTRYREGIONCODEID)
-	 from dbo.USR_COUNTRYEXTENSION
-	where ID = @ID
+	select	@DATALOADED = 1,
+			@FULLCOUNTRYNAME = CONSTITUENT.KEYNAME, 
+			@COUNTRYCODE = CONSTITUENT.LOOKUPID, 
+			@COUNTRYSTATUSCODE = (select DESCRIPTION from dbo.USR_COUNTRYSTATUSCODE where ID = c_ext.COUNTRYSTATUSCODEID), 
+			@COUNTRYSTATUSDATE = c_ext.COUNTRYSTATUSDATE, 
+			@COUNTRYREGIONCODE = (select DESCRIPTION from dbo.USR_COUNTRYREGIONCODE where ID = c_ext.COUNTRYREGIONCODEID)
+			
+	  from  dbo.USR_COUNTRYEXTENSION c_ext
+inner join	dbo.CONSTITUENT on 
+				CONSTITUENT.ID = c_ext.ID
+
+	 where  c_ext.ID = @ID
+	
 	
 	return 0;
 			]]>

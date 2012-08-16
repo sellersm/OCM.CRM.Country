@@ -6,11 +6,9 @@
 	Description="Country - Constituent Organization Extension"
 	Author="Bill Elfstrom"
 	Tablename="USR_COUNTRYEXTENSION"
-	PrimaryKeyAsForeignKeyTablename="CONSTITUENT"
+	PrimaryKeyAsForeignKeyTablename="CONSTITUENT" >
 
-	>
-
-<!-- 
+	<!-- 
 	Remarks:  This is used to extend an Organization Constituent to accomadate Country information.   
 			  Country.ExtensionPass1.Table.xml and USR_UFN_COUNTRY_CURRENTQUOTA.xml must be loaded first.
 			  The reason is that the fields DECREASEDQUOTA, GROWTHQUOTA, CURRENTQUOTA all use USR_UFN_COUNTRY_CURRENTQUOTA. 
@@ -24,12 +22,14 @@
 	15-Apr-2012     belfstrom       Initial Version
 	05-May-2012     CMayeda			converted some fields to enums
 	19-May-2012     CMayeda			fixed spelling error (extention) and created Country.ExtensionPass1.Table.xml to fix package load error.
--->
+	08-Aug-2012		CMayeda			Removed FULLCOUNTRYNAME and COUNTRYCODE, since these should pull from KEYNAME and LOOKUPID
+	-->
   
 	<!-- define fields on the table -->
 	<Fields>
+		<!-- Removed.  Using Constituent fields for these
 		<TextField Name="FULLCOUNTRYNAME" Description="Full Country Name" Length="100"/>
-		<TextField Name="COUNTRYCODE" Description="ISO Country Code" Length="2"/>
+		<TextField Name="COUNTRYCODE" Description="ISO Country Code" Length="2"/>-->
 	
 		<CodeTableField Name="COUNTRYSTATUSCODEID" Description="Country Status Code" CodeTable="USR_COUNTRYSTATUSCODE" />
 		<DateField Name="COUNTRYSTATUSDATE" Description="Country Status Date" />
