@@ -28,7 +28,7 @@
   
 	<!-- define fields on the table -->
 	<Fields>
-		<TextField Name="FULLCOUNTRYNAME" Description="Full Country Name" Length="50"/>
+		<TextField Name="FULLCOUNTRYNAME" Description="Full Country Name" Length="100"/>
 		<TextField Name="COUNTRYCODE" Description="ISO Country Code" Length="2"/>
 	
 		<CodeTableField Name="COUNTRYSTATUSCODEID" Description="Country Status Code" CodeTable="USR_COUNTRYSTATUSCODE" />
