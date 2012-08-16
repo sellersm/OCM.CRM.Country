@@ -87,7 +87,8 @@ as
 	begin try
 		-- Change the LookupID to the one entered by the user
 		update CONSTITUENT
-		   set CUSTOMIDENTIFIER = @COUNTRYCODE
+		   set CUSTOMIDENTIFIER = @COUNTRYCODE,
+				KEYNAME = @FULLCOUNTRYNAME
 		 where ID = @ID;
 	 
 		-- handle updating the data
