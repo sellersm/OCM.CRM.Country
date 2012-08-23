@@ -11,7 +11,7 @@
 	>
 	
 	<PageHeader Caption="=Page.Fields!COUNTRYCODE + &quot; - &quot; + Page.Fields!FULLCOUNTRYNAME" ImageKey="CATALOG:Blackbaud.AppFx.Mapping.Catalog,Blackbaud.AppFx.Mapping.Catalog.map.png" />
-	<SummarySection ID="ab8f6289-6585-4131-8be1-d79d362156c7">
+	<SummarySection ID="ab8f6289-6585-4131-8be1-d79d362156c7" Caption="" HideCaption="true">
 		<DataForm ID="1a997144-6598-47dc-966a-62ff307b0feb" />
 	</SummarySection>
 	<Tabs>
@@ -76,6 +76,18 @@
 							<RefreshPage />
 						</PostActionEvent>
 					</ShowDataForm>
+				</Action>
+				<Action ID="ff8ac3fb-e79d-40a6-a138-5dd89f4d38a3" Caption="=&quot;Delete &quot; + Page.Fields!FULLCOUNTRYNAME" ImageKey="RES:Delete">
+					<ExecuteRecordOperation RecordOperationID="cafd99f8-51b4-432c-a6d9-926c66ad7e65" xmlns="bb_appfx_commontypes">
+						<ActionContext>
+							<PageContextID />
+						</ActionContext>
+						<PostActionEvent>
+							<GoToPage>
+								<FunctionalArea FunctionalAreaID="9ea48d9c-7e2d-42e6-91cc-210792618017" />
+							</GoToPage>
+						</PostActionEvent>
+					</ExecuteRecordOperation>
 				</Action>
 			</Actions>
 		</PageActionGroup>

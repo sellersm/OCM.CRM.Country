@@ -150,7 +150,7 @@
     <EmbeddedResource Include="CountrySpecs\Country.Search.Task.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CountrySpecs\Country.Extension.Package.xml">
+    <EmbeddedResource Include="CountrySpecs\Packages\Country.Extension.Package.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
@@ -160,7 +160,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CountrySpecs\Country.ExtensionPass1.Package.xml">
+    <EmbeddedResource Include="CountrySpecs\Packages\Country.ExtensionPass1.Package.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CountrySpecs\Quota\USR_UFN_COUNTRY_QUOTAOVERRIDE.xml" />
@@ -179,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CountrySpecs\Country.ConstituentExpression.View.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CountrySpecs\Country.ExtentionDelete.RecordOperation.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
