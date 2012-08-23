@@ -75,8 +75,11 @@
 		<!-- Tables -->
 		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Extension.Table.xml" />
 		
-		<!-- Features-->
+		<!-- Search List -->
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Extension.Search.xml" />
+		
+		<!-- Record Operation -->
+		<common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.ExtentionDelete.RecordOperation.xml" />
 		
 		<!-- Forms -->
         <common:Dependency CatalogAssembly="MoM.Sponsorship.Country.Catalog.dll" CatalogItem="MoM.Sponsorship.Country.Catalog.Country.Extension.Add.xml" />
