@@ -16,6 +16,7 @@
 	Date            Modified By     Comments
 	02-May-2012		CMayeda			Initial Version
 	19-May-2012     CMayeda			fixed spelling error (extention)
+	24-Aug=2012		CMayeda			Added Report Recipients
 	-->
 	
 	<!-- define the SP that returns the data used by the form -->
@@ -30,7 +31,9 @@ create procedure dbo.USP_DATAFORMTEMPLATE_VIEW_COUNTRY_EXTENSION
     @COUNTRYCODE nvarchar(2) = null output,
     @COUNTRYSTATUSCODE nvarchar(100) = null output,
     @COUNTRYSTATUSDATE datetime = null output,
-    @COUNTRYREGIONCODE nvarchar(100) = null output
+    @COUNTRYREGIONCODE nvarchar(100) = null output,
+	@LOCATIONREPORTRECIPIENTS nvarchar(max) = null output
+
 )
 as
 	set nocount on;
@@ -54,6 +57,7 @@ inner join	dbo.CONSTITUENT on
 
 	 where  c_ext.ID = @ID
 	
+	set @LOCATIONREPORTRECIPIENTS = dbo.USR_UFN_SPONSORSHIPLOCATION_GETRECIPIENTS_BYFIELDOFFICEID (@ID)
 	
 	return 0;
 			]]>
@@ -69,6 +73,7 @@ inner join	dbo.CONSTITUENT on
 			<common:FormField FieldID="COUNTRYSTATUSCODE" MaxLength="100" Caption="Status" />
 			<common:FormField FieldID="COUNTRYSTATUSDATE" DataType="Date" Caption="Status date" />
 			<common:FormField FieldID="COUNTRYREGIONCODE" MaxLength="100" Caption="Region" />
+			<common:FormField FieldID="LOCATIONREPORTRECIPIENTS" DataType="String" Caption="Report recipients" />
 		</common:FormFields>
 
         <common:WebUIComponent>
