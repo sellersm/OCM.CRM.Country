@@ -135,7 +135,9 @@
     <EmbeddedResource Include="CountrySpecs\Country.Quota.Edit.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="CountrySpecs\Pages\Country.Extension.Page.xml" />
+    <EmbeddedResource Include="CountrySpecs\Pages\Country.Extension.Page.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="CountrySpecs\Country.Add.Task.xml" />
     <EmbeddedResource Include="Tables\Code Tables\Country.Region.CodeTable.xml" />
     <EmbeddedResource Include="Tables\Code Tables\Country.Status.CodeTable.xml" />
