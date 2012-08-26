@@ -82,7 +82,7 @@ as
            @MARKETINGDEMANDSTATUS = MARKETINGDEMANDSTATUS, 
            @OVERRIDETRIGGERSTATUS = OVERRIDETRIGGERSTATUS,
 		   @CHILDRENNOTENTERED = CHILDRENNOTENTERED
-	from dbo.USR_COUNTRYEXTENSION (nolock)
+	from dbo.USR_COUNTRYEXTENSION
 	where ID = @ID
 	
 	return 0;
@@ -91,7 +91,6 @@ as
 		</SPDataForm>
 		<common:FormMetaData FixedDialog="true">
 			<common:FormFields>
-				<common:FormField FieldID="ID" DataType="Guid" Hidden="true" Caption="ID" />
 				<common:FormField FieldID="QUOTATYPE" DataType="String" Caption="Quota type" />
 				<common:FormField FieldID="QUOTATYPECODE" DataType="TinyInt" Caption="Quota type code" Hidden="true" />
 				<common:FormField FieldID="APPROVEDQUOTAINITIAL" DataType="SmallInt" Caption="Initial quota" />
