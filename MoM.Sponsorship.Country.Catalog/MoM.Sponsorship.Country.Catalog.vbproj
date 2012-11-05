@@ -162,9 +162,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CountrySpecs\Packages\Country.ExtensionPass1.Package.xml">
+    <None Include="CountrySpecs\Packages\NotIncluded Country.ExtensionPass1.Package.xml">
       <SubType>Designer</SubType>
-    </EmbeddedResource>
+    </None>
     <EmbeddedResource Include="CountrySpecs\Quota\USR_UFN_COUNTRY_QUOTAOVERRIDE.xml" />
     <EmbeddedResource Include="CountrySpecs\Quota\USR_UFN_COUNTRY_QUOTATYPE.xml" />
     <EmbeddedResource Include="CountrySpecs\Quota\USR_UFN_COUNTRY_QUOTAVARIANCE.xml" />
