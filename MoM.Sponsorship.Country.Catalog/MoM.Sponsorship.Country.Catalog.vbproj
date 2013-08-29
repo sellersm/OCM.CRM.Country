@@ -185,6 +185,9 @@
   <ItemGroup>
     <EmbeddedResource Include="CountrySpecs\Country.ExtentionDelete.RecordOperation.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CountrySpecs\Country.BB.SimpleList.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PostBuildEvent>$(ProjectDir)postbuild.bat</PostBuildEvent>

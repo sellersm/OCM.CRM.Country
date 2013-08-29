@@ -1,0 +1,41 @@
+﻿<SimpleDataListSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="bb_appfx_simpledatalist" ID="c9649672-353d-42e8-8c25-4d34bbabfbba" Name="Country List" Description="Returns a list of all countries.  Optionally can exclude inactive and/or return abbreviations." Author="Blackbaud Product Development" TranslationFunctionID="2035aec3-daa1-4ac6-b3e9-87eacea0edbe" NoSecurityRequired="true">
+	<DependencyList xmlns="bb_appfx_commontypes">
+		<Dependency CatalogAssembly="Blackbaud.AppFx.Platform.Catalog.dll" CatalogItem="Blackbaud.AppFx.Platform.Catalog.UFN_COUNTRY_GETDESCRIPTION.xml" />
+	</DependencyList>
+	<SPSimpleList SPName="USP_SIMPLEDATALIST_COUNTRY">
+		<CreateProcedureSQL xmlns="bb_appfx_commontypes">
+
+			create procedure dbo.USP_SIMPLEDATALIST_COUNTRY(@INCLUDEINACTIVE bit = 0) AS
+			if dbo.UFN_GETLISTSORTMETHOD('COUNTRY') = 0
+			begin
+			if @INCLUDEINACTIVE = 0
+			select ID as VALUE, DESCRIPTION as LABEL from dbo.COUNTRY where ACTIVE = 1 order by DESCRIPTION
+			else
+			select ID as VALUE, DESCRIPTION as LABEL from dbo.COUNTRY order by DESCRIPTION
+			end
+			else
+			begin
+			if @INCLUDEINACTIVE = 0
+			select ID as VALUE, DESCRIPTION as LABEL from dbo.COUNTRY where ACTIVE = 1 order by SEQUENCE, DESCRIPTION
+			else
+			select ID as VALUE, DESCRIPTION as LABEL from dbo.COUNTRY order by SEQUENCE, DESCRIPTION
+			end
+
+
+		</CreateProcedureSQL>
+	</SPSimpleList>
+	<LookupView ViewName="V_SIMPLEDATALIST_COUNTRY">
+		<ViewSQL>
+
+			select DESCRIPTION [LABEL] from dbo.COUNTRY where ACTIVE = 1;
+
+		</ViewSQL>
+	</LookupView>
+	<Parameters>
+		<FormMetaData xmlns="bb_appfx_commontypes">
+			<FormFields>
+				<FormField FieldID="INCLUDEINACTIVE" DataType="Boolean" Caption="Include inactive" DefaultValueText="0" />
+			</FormFields>
+		</FormMetaData>
+	</Parameters>
+</SimpleDataListSpec>
