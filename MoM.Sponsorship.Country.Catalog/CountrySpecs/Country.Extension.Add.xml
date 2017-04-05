@@ -16,6 +16,7 @@
 	Date            Modified By     Comments
 	02-May-2012		CMayeda			Initial Version
 	19-May-2012     CMayeda			fixed spelling error (extention)
+  04-Apr-2017   MSellers    Updated Raiserror call for 4.0
 	-->
 
 	<SPDataForm>
@@ -50,7 +51,8 @@ declare @countryOfficeConstituencyCode uniqueidentifier
 begin try    
 	select @countryOfficeConstituencyCode = ID from CONSTITUENCYCODE where lower(DESCRIPTION) = 'country office'
 	if @countryOfficeConstituencyCode is null
-		  RAISERROR 1000000 'Could not find Country Office constituency code'		
+    raiserror('Could not find Country Office constituency code',16,1);
+		  --RAISERROR 1000000 'Could not find Country Office constituency code'		
 
 	exec dbo.USP_ORGANIZATION_ADD	@ID output, 
                                     @CHANGEAGENTID, 

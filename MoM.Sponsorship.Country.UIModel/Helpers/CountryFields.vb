@@ -1,4 +1,5 @@
-﻿Public Class CountryFields
+﻿<CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1053:StaticHolderTypesShouldNotHaveConstructors")>
+Public Class CountryFields
     Public Const FULLCOUNTRYNAME As String = "FULLCOUNTRYNAME"
     Public Const COUNTRYCODE As String = "COUNTRYCODE"
     Public Const COUNTRYSTATUSCODEID As String = "COUNTRYSTATUSCODEID"
