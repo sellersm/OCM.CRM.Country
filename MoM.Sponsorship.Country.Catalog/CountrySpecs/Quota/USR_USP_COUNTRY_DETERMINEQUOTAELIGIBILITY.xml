@@ -29,7 +29,7 @@
 	History:
 	Date            Modified By     Comments
 	12-Jul-2012		CMayeda			Initial Version copied from USR_USP_CHILDPROJECT_DETERMINEQUOTAELIGIBILITY
-
+  04-Apr-2017   MSellers    Updated the Raiserror call to match SQL 2014...
 -->
 
 	
@@ -53,17 +53,20 @@ begin
 		declare @countryStatusActiveID uniqueidentifier = null
 		select @countryStatusActiveID = ID from dbo.USR_COUNTRYSTATUSCODE where lower (DESCRIPTION) = 'active'
 		if @countryStatusActiveID is null
-			RAISERROR 1000000 'Couldn''t find the "Active" child project status code'		
+      raiserror('Couldn''t find the "Active" child project status code',16,1);
+			--RAISERROR 1000000 'Couldn''t find the "Active" child project status code'		
 		
 		declare @countryStatusActiveReservedID uniqueidentifier = null
 		select @countryStatusActiveReservedID = ID from dbo.USR_COUNTRYSTATUSCODE where lower (DESCRIPTION) = 'active - reserved'
 		if @countryStatusActiveReservedID is null
-			RAISERROR 1000000 'Couldn''t find the "Active - Reserved" country status code'		
+      raiserror('Couldn''t find the "Active - Reserved" country status code',16,1);
+			--RAISERROR 1000000 'Couldn''t find the "Active - Reserved" country status code'		
 		
 		declare @performancePoorID uniqueidentifier = null
 		select @performancePoorID = ID from dbo.USR_SPONSORSHIPPERFORMANCECODE where lower (DESCRIPTION) = 'poor'
 		if @performancePoorID is null
-			RAISERROR 1000000 'Couldn''t find the "Poor" country performance code'		
+      raiserror('Couldn''t find the "Poor" country performance code',16,1);
+			--RAISERROR 1000000 'Couldn''t find the "Poor" country performance code'		
 
   
   		-- Waiting List reasons - finding these individually instead of all the start with 'Waiting List' in order to minimize accidental data entry issues
@@ -71,22 +74,26 @@ begin
 		declare @waitingListMarketDemandID uniqueidentifier = null
 		select @waitingListMarketDemandID = ID from SPONSORSHIPREASON where lower (REASON) = 'waiting list - market demand'
 		if @waitingListMarketDemandID is null
-			RAISERROR 1000000 'Couldn''t find the "Waiting List - market demand" sponsorship reason'		
+      raiserror('Couldn''t find the "Waiting List - market demand" sponsorship reason',16,1);
+			--RAISERROR 1000000 'Couldn''t find the "Waiting List - market demand" sponsorship reason'		
 	
 		declare @waitingListNotAcceptingID uniqueidentifier = null
 		select @waitingListNotAcceptingID = ID from SPONSORSHIPREASON where lower (REASON) = 'waiting list - not accepting new children'
 		if @waitingListNotAcceptingID is null
-			RAISERROR 1000000 'Couldn''t find the "Waiting List - not accepting new children" sponsorship reason'		
+      raiserror('Couldn''t find the "Waiting List - not accepting new children" sponsorship reason',16,1);
+			--RAISERROR 1000000 'Couldn''t find the "Waiting List - not accepting new children" sponsorship reason'		
 	
 		declare @waitingListCountryPerformanceID uniqueidentifier = null
 		select @waitingListCountryPerformanceID = ID from SPONSORSHIPREASON where lower (REASON) = 'waiting list - project performance'
 		if @waitingListCountryPerformanceID is null
-			RAISERROR 1000000 'Couldn''t find the "Waiting List - project performance" sponsorship reason'		
+      raiserror('Couldn''t find the "Waiting List - project performance" sponsorship reason',16,1);
+			--RAISERROR 1000000 'Couldn''t find the "Waiting List - project performance" sponsorship reason'		
 
 		declare @waitingListCountryStatusID uniqueidentifier = null
 		select @waitingListCountryStatusID = ID from SPONSORSHIPREASON where lower (REASON) = 'waiting list - project status'
 		if @waitingListCountryStatusID is null
-			RAISERROR 1000000 'Couldn''t find the "Waiting List - country status" sponsorship reason'		
+      raiserror('Couldn''t find the "Waiting List - country status" sponsorship reason',16,1);
+			--RAISERROR 1000000 'Couldn''t find the "Waiting List - country status" sponsorship reason'		
 
   	end try
 	begin catch
